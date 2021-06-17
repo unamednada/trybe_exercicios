@@ -29,3 +29,7 @@ div:hover {
     background-color: olivedrab;
     color: orange;
 }
+
+.impar {
+    font-style: italic;
+}
