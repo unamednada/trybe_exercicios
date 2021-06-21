@@ -35,6 +35,30 @@ ul:nth-of-type(1) li:nth-of-type(-n + 3) {
     color: blue;
 }
 
-/* ul:nth-of-type(1) li:nth-of-type( ) {
+.java {
     background-color: pink;
-} */
+}
+
+ul:nth-of-type(2) li:hover {
+    font-weight: 700;
+}
+
+li a[href*="stackoverflow"]:hover {
+    color: orange;
+}
+
+li a[href*="w3schools"]:hover {
+    color: green;
+}
+
+li a[href*="mozilla"]:hover {
+    color: black;
+}
+
+li a[href*="devdocs"]:hover {
+    color: yellow;
+}
+
+li a[href*="trybe"]:hover {
+    color: green;
+}
