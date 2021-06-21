@@ -14,3 +14,27 @@ h1,
 h3 {
     color: red;
 }
+
+h1 em,
+h3 em {
+    font-size: 40px;
+    border: 1px solid black;
+}
+
+li {
+    font-size: 20px;
+}
+
+li em {
+    font-weight: bold;
+}
+
+/* Código retirado de: https://stackoverflow.com/questions/50406795/how-to-select-only-first-three-elements-using-css */
+
+ul:nth-of-type(1) li:nth-of-type(-n + 3) {
+    color: blue;
+}
+
+/* ul:nth-of-type(1) li:nth-of-type( ) {
+    background-color: pink;
+} */
