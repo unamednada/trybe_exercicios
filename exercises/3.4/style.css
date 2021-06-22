@@ -1,6 +1,6 @@
-h1 {
-    text-align: center;
-  }
+  h1 {
+      text-align: center;
+    }
 
   .first {
     background-color: rgb(235, 200, 84);
@@ -8,6 +8,8 @@ h1 {
     height: 50px;
     text-align: center;
     width: 200px;
+    display: block;
+    margin: auto;
   }
 
   .second {
@@ -24,4 +26,12 @@ h1 {
     height: 50px;
     text-align: center;
     width: 300px;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  section {
+    text-align: center;
   }
