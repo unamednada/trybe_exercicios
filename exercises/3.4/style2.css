@@ -13,6 +13,7 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  border-bottom: 4px solid red;
 }
 
 .flex-between {
@@ -26,12 +27,23 @@ header {
 }
 
 header .inline-block {
-  margin: 0 20px;
+  margin: 0 10px;
+}
+
+.colorful-background {
+  background-color: white;
+  padding: 0.5em 1em;
+  border-radius: 12px;
+  color: red;
+  border: 2px solid red;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: 550;
 }
 
 main {
