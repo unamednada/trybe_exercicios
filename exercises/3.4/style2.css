@@ -10,6 +10,8 @@ header {
   width: 100%;
   z-index: 1;
   background-color: orangered;
+  display: flex;
+  justify-content: space-between;
 }
 
 
