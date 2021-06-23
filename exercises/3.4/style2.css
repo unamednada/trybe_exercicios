@@ -6,19 +6,25 @@
 
 header {
   position: fixed;
-  height: 80px;
+  height: 90px;
   width: 100%;
   z-index: 1;
   background-image: url(./mantis_header.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  border-bottom: 4px solid red;
+  border-bottom: 4px solid orangered;
 }
 
 .flex-between {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.flex-middle {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -31,11 +37,11 @@ header .inline-block {
 }
 
 .colorful-background {
-  background-color: white;
+  background-color: whitesmoke;
   padding: 0.5em 1em;
   border-radius: 12px;
-  color: red;
-  border: 2px solid red;
+  color: orangered;
+  border: 2px solid orangered;
 }
 
 a {
@@ -46,13 +52,29 @@ a {
   font-weight: 550;
 }
 
+h1 {
+  font-size: 25px;
+  font-family: 'Open Sans', sans-serif;
+}
+
 main {
   position: relative;
-  top: 80px;
+  top: 90px;
   margin-bottom: 80px;
+  padding: 20px 10px;
+}
+
+aside {
+  padding: 10px;
+  margin: 10px;
 }
 
 footer {
-  height: 80px;
+  height: fit-content;
   width: 100%;
+  padding: 10px;
+  margin: 10px;
+  background-color: purple;
+  border-radius: 12px;
+  color: whitesmoke;
 }
