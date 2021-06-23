@@ -9,7 +9,10 @@ header {
   height: 80px;
   width: 100%;
   z-index: 1;
-  background-color: orangered;
+  background-image: url(./mantis_header.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .flex-between {
