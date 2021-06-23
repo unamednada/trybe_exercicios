@@ -20,5 +20,5 @@ switch (peca) {
     console.log("A rainha se move na diagonal, vertical ou horizontal, quantas casas quiser.");
     break;
   default:
-    console.log("Peça não identificada!");
+    throw new Error("Peça inválida!");
 }
