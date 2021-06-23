@@ -10,14 +10,25 @@ header {
   width: 100%;
   z-index: 1;
   background-color: orangered;
-  display: flex;
-  justify-content: space-between;
 }
 
-
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .inline-block {
   display: inline-block;
+}
+
+header .inline-block {
+  margin: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 main {
