@@ -8,9 +8,19 @@ header {
   position: fixed;
   height: 80px;
   width: 100%;
+  z-index: 1;
+  background-color: orangered;
 }
+
+
 
 main {
   position: relative;
   top: 80px;
+  margin-bottom: 80px;
+}
+
+footer {
+  height: 80px;
+  width: 100%;
 }
