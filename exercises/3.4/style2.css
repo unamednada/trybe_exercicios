@@ -171,9 +171,33 @@ p {
   background-color: lightseagreen;
 }
 
-aside {
-  padding: 10px;
+#referencias li {
+  display: inline-block;
   margin: 10px;
+}
+
+#referencias ul {
+  margin-left: 10px;
+}
+
+aside {
+  padding: 20px;
+  margin: 10px;
+  background-color: orangered;
+}
+
+.video {
+  background-color: whitesmoke;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  font-style: normal;
+  font-size: 40px;
+}
+
+.video:hover {
+  background-color: lightseagreen;
+  color: whitesmoke;
 }
 
 footer {
@@ -196,3 +220,6 @@ footer a {
   background-color: lightseagreen;
   margin-left: 20px;
 }
+
+
+
