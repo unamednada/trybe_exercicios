@@ -17,6 +17,11 @@ header {
   border-bottom: 2px solid lightseagreen;
 }
 
+header li:hover {
+  background-color: lightseagreen;
+  color: whitesmoke;
+}
+
 .flex-between {
   display: flex;
   justify-content: space-between;
@@ -174,6 +179,13 @@ p {
 #referencias li {
   display: inline-block;
   margin: 10px;
+  padding: 4px;
+}
+
+#referencias li:hover {
+  background-color: whitesmoke;
+  color: orchid;
+  border-radius: 20px;
 }
 
 #referencias ul {
@@ -219,6 +231,11 @@ footer a {
   border-radius: 12px;
   background-color: lightseagreen;
   margin-left: 20px;
+}
+
+footer a:hover {
+  background-color: orange;
+  color: orangered;
 }
 
 
