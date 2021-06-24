@@ -141,6 +141,17 @@ th {
   color: whitesmoke;
 }
 
+#habitat {
+  background-color: orange;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+#habitat img {
+  border-radius: 20px;
+}
+
 aside {
   padding: 10px;
   margin: 10px;
