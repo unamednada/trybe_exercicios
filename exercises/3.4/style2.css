@@ -75,6 +75,23 @@ main {
   margin: 20px;
 }
 
+.table-container {
+  background-color: lightgreen;
+  display: flex;
+  padding: 80px;
+  margin: 20px;
+  border-radius: 12px;
+}
+
+.table-container img {
+  max-width: 100%;
+  border-radius: 25px;
+}
+
+.table-container div {
+  text-align: center;
+}
+
 aside {
   padding: 10px;
   margin: 10px;
