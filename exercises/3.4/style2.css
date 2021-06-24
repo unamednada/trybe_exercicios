@@ -4,16 +4,16 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+main {
+  background-color: whitesmoke;
+}
+
 header {
   position: fixed;
   height: 90px;
   width: 100%;
   z-index: 1;
   background-color: orchid;
-  /* background-image: url(./mantis_header.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
   border-bottom: 2px solid greenyellow;
 }
 
@@ -106,9 +106,18 @@ main {
 th, td {
   padding: 10px;
   background-color: orchid;
-  border-radius: 12px;
-  columns: 500px;
+  border-radius: 30px;
   max-height: 20px;
+  font-size: 30px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 2px;
+}
+
+th {
+  font-size: 32px;
+  background-color: black;
+  color: orchid;
 }
 
 aside {
