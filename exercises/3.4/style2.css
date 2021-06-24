@@ -9,11 +9,12 @@ header {
   height: 90px;
   width: 100%;
   z-index: 1;
-  background-image: url(./mantis_header.jpg);
+  background-color: orchid;
+  /* background-image: url(./mantis_header.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  border-bottom: 4px solid orangered;
+  background-size: cover; */
+  border-bottom: 2px solid greenyellow;
 }
 
 .flex-between {
@@ -39,9 +40,9 @@ header .inline-block {
 .colorful-background {
   background-color: whitesmoke;
   padding: 0.5em 1em;
-  border-radius: 12px;
-  color: orangered;
-  border: 2px solid orangered;
+  border-radius: 30px;
+  color: orchid;
+  border: 1px solid greenyellow;
   text-align: center;
 }
 
