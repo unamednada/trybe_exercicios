@@ -83,14 +83,17 @@ main {
   letter-spacing: 1px;
 }
 
+.margin-padding {
+  margin: 20px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
 .table-container {
   background-color: lightseagreen;
   display: flex;
-  margin: 20px;
-  border-radius: 20px;
   min-height: fit-content;
   flex-direction: column;
-  padding: 20px;
 }
 
 .force-block {
@@ -143,13 +146,18 @@ th {
 
 #habitat {
   background-color: orange;
-  margin: 20px;
-  border-radius: 20px;
-  padding: 20px;
 }
 
-#habitat img {
+img {
   border-radius: 20px;
+}
+
+#olhos {
+  background-color: orchid;
+}
+
+#olhos p {
+  margin: 20px;
 }
 
 aside {
