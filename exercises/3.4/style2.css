@@ -89,11 +89,14 @@ main {
   padding: 20px;
 }
 
-.table-container {
+#table-container {
   background-color: lightseagreen;
+}
+
+.column-flex {
   display: flex;
-  min-height: fit-content;
   flex-direction: column;
+  min-height: fit-content;
 }
 
 .force-block {
@@ -116,13 +119,17 @@ table {
   margin: 20px 80px 40px 80px;
 }
 
-.table-container img {
+.center-image img {
   max-width: 100%;
   border-radius: 25px;
   margin: 20px;
 }
 
-.table-container div {
+img {
+  border-radius: 20px;
+}
+
+.center-image {
   text-align: center;
   vertical-align: middle;
 }
@@ -148,16 +155,16 @@ th {
   background-color: orange;
 }
 
-img {
-  border-radius: 20px;
-}
-
 #olhos {
   background-color: orchid;
 }
 
-#olhos p {
+p {
   margin: 20px;
+}
+
+#soco {
+  background-color: greenyellow;
 }
 
 aside {
