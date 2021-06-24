@@ -70,26 +70,44 @@ main {
 }
 
 #main-title {
-  color: purple;
-  border-color: lightgreen;
+  color:  orchid;
   margin: 20px;
+  background-color: greenyellow;
+}
+
+#main-title h2 {
+  font-family: 'Lobster';
+  font-size: 80px;
+  letter-spacing: 1px;
 }
 
 .table-container {
-  background-color: lightgreen;
+  background-color: greenyellow;
   display: flex;
-  padding: 80px;
   margin: 20px;
   border-radius: 12px;
+  min-height: fit-content;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .table-container img {
   max-width: 100%;
   border-radius: 25px;
+  margin-top: 20px;
 }
 
 .table-container div {
   text-align: center;
+  vertical-align: middle;
+}
+
+th, td {
+  padding: 10px;
+  background-color: orchid;
+  border-radius: 12px;
+  columns: 500px;
+  max-height: 20px;
 }
 
 aside {
