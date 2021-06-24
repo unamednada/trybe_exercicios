@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 main {
@@ -14,7 +14,7 @@ header {
   width: 100%;
   z-index: 1;
   background-color: orchid;
-  border-bottom: 2px solid greenyellow;
+  border-bottom: 2px solid lightseagreen;
 }
 
 .flex-between {
@@ -42,21 +42,21 @@ header .inline-block {
   padding: 0.5em 1em;
   border-radius: 30px;
   color: orchid;
-  border: 1px solid greenyellow;
+  border: 1px solid lightseagreen;
   text-align: center;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
   font-size: 15px;
   font-weight: 550;
 }
 
 h1 {
   font-size: 25px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 li {
@@ -73,7 +73,8 @@ main {
 #main-title {
   color:  orchid;
   margin: 20px;
-  background-color: greenyellow;
+  background-color: lightseagreen;
+  margin-bottom: 40px;
 }
 
 #main-title h2 {
@@ -83,19 +84,39 @@ main {
 }
 
 .table-container {
-  background-color: greenyellow;
+  background-color: lightseagreen;
   display: flex;
   margin: 20px;
-  border-radius: 12px;
+  border-radius: 20px;
   min-height: fit-content;
   flex-direction: column;
   padding: 20px;
 }
 
+.force-block {
+  width: 100%;
+  display: block;
+  font-size: 40px;
+  margin: 20px auto;
+  color: whitesmoke;
+}
+
+caption {
+  font-size: 30px;
+  margin: 40px 0 60px 0;
+  font-style: italic;
+  color: black;
+  font-family: 'Lobster', cursive;
+}
+
+table {
+  margin: 20px 80px 40px 80px;
+}
+
 .table-container img {
   max-width: 100%;
   border-radius: 25px;
-  margin-top: 20px;
+  margin: 20px;
 }
 
 .table-container div {
@@ -116,8 +137,8 @@ th, td {
 
 th {
   font-size: 32px;
-  background-color: black;
-  color: orchid;
+  background-color: orange;
+  color: whitesmoke;
 }
 
 aside {
@@ -127,19 +148,19 @@ aside {
 
 footer {
   height: fit-content;
-  width: 100%;
   padding: 10px;
-  margin: 10px;
-  background-color: purple;
+  margin: 20px 60px;
+  background-color: orchid;
   border-radius: 12px;
   color: whitesmoke;
+  position: relative;
 }
 
 footer a {
   font-size: inherit;
   font-weight: 500;
-  color: yellow;
-  border: 1px solid orangered;
+  color: whitesmoke;
+  border: 1px solid orange;
   padding: 0.2em;
   border-radius: 12px;
   background-color: lightseagreen;
