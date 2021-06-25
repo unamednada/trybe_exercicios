@@ -98,4 +98,60 @@ const piramideDeAsteriscos = n => {
   }
 }
 
-piramideDeAsteriscos(14);
+// piramideDeAsteriscos(14);
+
+const piramideVazia = n => {
+  let linha = "";
+  let ceil = Math.ceil(n / 2);
+  let linhaCeil;
+  for (let i = 0; i < ceil; i += 1) {
+    let spaces;
+    
+    if (n % 2 != 0) {
+      spaces = i + ceil;
+    } else {
+      spaces = i + ceil + 1;
+    }
+
+    while (spaces < n) {
+      linha += " ";
+      spaces += 1;
+    }
+    
+    if (n % 2 != 0) {
+      linhaCeil = i;
+    } else {
+      linhaCeil = i + 1;
+    }
+    
+    if (i == ceil - 1) {
+      for (let j = 0; j < i + 1; j += 1) {
+        linha += "*";
+      }
+      for (let k = 0; k < linhaCeil - 1; k += 1) {
+        linha += "*";
+      }
+    } else {
+      linha += "*";
+      
+      if (n % 2 == 0) {
+        linhaCeil = i * 2 + 1;
+      } else {
+        linhaCeil = i * 2;
+      }
+
+      for (let k = 0; k < linhaCeil - 1; k += 1) {
+        linha += " ";
+      }
+    }
+
+    if (i != 0 || n % 2 == 0) {
+      linha += "*";
+    } 
+
+    console.log(linha);
+    linha = "";
+  }
+}
+
+piramideVazia(11);
