@@ -1,0 +1,101 @@
+// let fruits = [3, 4, 10, 1, 12];
+
+// let soma = fruits.reduce((total, current) => total + current);
+// soma > 15 ? console.log(soma) : console.log("valor menor que 16");
+
+
+// let resultado = 100;
+// for (let i = 0; i <= 9; i++) {
+//   resultado -= i;
+// }
+// console.log(resultado);
+
+
+const quadradoDeAsteriscos = n => {
+  let linha = "";
+  
+  for (let i = 0; i < n; i += 1) {
+    for (let j = 0; j < n; j += 1) {
+      linha += "*"
+    }
+    console.log(linha);
+    linha = "";
+  }
+}
+
+//Referência quadradoDeAsteriscos: https://stackoverflow.com/questions/33089739/javascript-for-loop-console-print-in-one-line/33089779
+
+// quadradoDeAsteriscos(6);
+
+const descidaDeAsteriscos = n => {
+  let linha = "";
+
+  for (let i = 0; i < n; i += 1) {
+    for (let j = 0; j < i + 1; j += 1) {
+      linha += "*";
+    }
+    console.log(linha);
+    linha = "";
+  }
+}
+
+// descidaDeAsteriscos(6);
+
+const subidaDeAsteriscos = n => {
+  let linha = "";
+
+  for (let i = 0; i < n; i += 1) {
+    let spaces = i + 1;
+    while (spaces < n) {
+      linha += " ";
+      spaces += 1;
+    }
+    
+    for (let j = 0; j < i + 1; j += 1) {
+      linha += "*";
+    }
+    console.log(linha);
+    linha = "";
+  }
+}
+
+// subidaDeAsteriscos(10);
+
+const piramideDeAsteriscos = n => {
+  let linha = "";
+  let ceil = Math.ceil(n / 2);
+  let linhaCeil;
+  for (let i = 0; i < ceil; i += 1) {
+    let spaces;
+    
+    if (n % 2 != 0) {
+      spaces = i + ceil;
+    } else {
+      spaces = i + ceil + 1;
+    }
+    
+    while (spaces < n) {
+      linha += " ";
+      spaces += 1;
+    }
+    
+    for (let j = 0; j < i + 1; j += 1) {
+      linha += "*";
+    }
+    
+    if (n % 2 != 0) {
+      linhaCeil = i;
+    } else {
+      linhaCeil = i + 1;
+    }
+
+    for (let k = 0; k < linhaCeil; k += 1) {
+      linha += "*";
+    }
+
+    console.log(linha);
+    linha = "";
+  }
+}
+
+piramideDeAsteriscos(10);
