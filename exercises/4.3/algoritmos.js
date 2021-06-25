@@ -73,7 +73,7 @@ const piramideDeAsteriscos = n => {
     } else {
       spaces = i + ceil + 1;
     }
-    
+
     while (spaces < n) {
       linha += " ";
       spaces += 1;
@@ -98,7 +98,7 @@ const piramideDeAsteriscos = n => {
   }
 }
 
-// piramideDeAsteriscos(14);
+// piramideDeAsteriscos(11);
 
 const piramideVazia = n => {
   let linha = "";
@@ -168,4 +168,4 @@ const primoOuNao = n => {
   }
 }
 
-primoOuNao(7);
+// primoOuNao(7);
