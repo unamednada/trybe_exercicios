@@ -109,19 +109,15 @@ const piramideVazia = n => {
     
     if (n % 2 != 0) {
       spaces = i + ceil;
+      linhaCeil = i;
     } else {
       spaces = i + ceil + 1;
+      linhaCeil = i + 1;
     }
 
     while (spaces < n) {
       linha += " ";
       spaces += 1;
-    }
-    
-    if (n % 2 != 0) {
-      linhaCeil = i;
-    } else {
-      linhaCeil = i + 1;
     }
     
     if (i == ceil - 1) {
