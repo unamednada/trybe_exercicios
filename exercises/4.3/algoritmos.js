@@ -25,7 +25,7 @@ const quadradoDeAsteriscos = n => {
 
 //Referência quadradoDeAsteriscos: https://stackoverflow.com/questions/33089739/javascript-for-loop-console-print-in-one-line/33089779
 
-// quadradoDeAsteriscos(6);
+// quadradoDeAsteriscos(10);
 
 const descidaDeAsteriscos = n => {
   let linha = "";
@@ -98,4 +98,4 @@ const piramideDeAsteriscos = n => {
   }
 }
 
-piramideDeAsteriscos(10);
+piramideDeAsteriscos(14);
