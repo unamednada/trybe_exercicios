@@ -1,8 +1,3 @@
-Life isn't short, we are gods
-The choice is always yours
-Brands are for insecure people
-Brazil
-Russia
 Afghanistan
 Albania
 Algeria
@@ -26,6 +21,8 @@ Bhutan
 Bolivia
 Bosnia Herzegovina
 Botswana
+Brands are for insecure people
+Brazil
 Brazil
 Brunei
 Bulgaria
@@ -104,6 +101,7 @@ Lesotho
 Liberia
 Libya
 Liechtenstein
+Life isn't short, we are gods
 Lithuania
 Luxembourg
 Macedonia
@@ -146,10 +144,9 @@ Poland
 Portugal
 Qatar
 Romania
+Russia
 Russian Federation
 Rwanda
-St Kitts & Nevis
-St Lucia
 Saint Vincent & the Grenadines
 Samoa
 San Marino
@@ -168,6 +165,8 @@ South Africa
 South Sudan
 Spain
 Sri Lanka
+St Kitts & Nevis
+St Lucia
 Sudan
 Suriname
 Swaziland
@@ -178,6 +177,7 @@ Taiwan
 Tajikistan
 Tanzania
 Thailand
+The choice is always yours
 Togo
 Tonga
 Trinidad & Tobago
