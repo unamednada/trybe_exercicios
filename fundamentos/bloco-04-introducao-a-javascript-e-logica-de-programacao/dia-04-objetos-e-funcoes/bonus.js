@@ -92,3 +92,42 @@ const basket = [
   'Banana', 'Pera', 'Abacate', 'Uva',
 ];
 
+
+// function onlyUnique retirada de https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+let unique = basket.filter(onlyUnique);
+// console.log(unique);
+
+let frutasQtdes = {
+
+}
+
+let mensagem = 'Sua cesta possui: ';
+
+for (let fruta of unique) {
+  frutasQtdes[fruta] = 0;
+  for (let item of basket) {
+    if (fruta === item) {
+      frutasQtdes[fruta] += 1;
+    }
+  }
+
+  if (unique.indexOf(fruta) === unique.length - 1) {
+    mensagem += frutasQtdes[fruta] + ' ' + fruta + 's';
+  } else {
+    mensagem += frutasQtdes[fruta] + ' ' + fruta + 's , ';
+  }
+
+}
+
+console.log(mensagem);
+
+
+
+
+
+
