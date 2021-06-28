@@ -29,7 +29,7 @@ const indexMaiorValor = array => {
 const indexMenorValor = array => {
   let min = array[0];
   let minIndex = 0;
-  for (index in array) {
+  for (let index in array) {
     if (array[index] < min) {
       min = array[index];
       minIndex = index;
@@ -39,4 +39,18 @@ const indexMenorValor = array => {
   return minIndex;
 }
 
-console.log(indexMenorValor([2, 4, 6, 7, 10, 0, -3]));
+// console.log(indexMenorValor([2, 4, 6, 7, 10, 0, -3]));
+
+const nomeMaisLongo = array => {
+  let maxLength = 0;
+  let MaxNome = '';
+  for (let nome of array) {
+    if (nome.length > maxLength) {
+      maxNome = nome;
+    }
+  }
+
+  return maxNome;
+}
+
+console.log(nomeMaisLongo(['Fernanda', 'Augusto', 'Maria', 'Carla', 'Espafregundo']));
