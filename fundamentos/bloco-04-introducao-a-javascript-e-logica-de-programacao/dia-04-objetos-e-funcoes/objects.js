@@ -17,3 +17,6 @@ for (let propriedade in info) {
   console.log(propriedade);
 }
 
+for (let propriedade in info) {
+  console.log(info[propriedade]);
+}
