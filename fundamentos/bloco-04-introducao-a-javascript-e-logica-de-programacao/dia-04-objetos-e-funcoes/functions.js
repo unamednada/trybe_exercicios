@@ -75,4 +75,15 @@ const repetente = array => {
   return repetenteMax;
 }
 
-console.log(repetente([2, 3, 3, 5, 5, 4, 4, 4, 7, 8, 7, 6, 4, 3, 2, 7, 3]));
+// console.log(repetente([2, 3, 3, 5, 5, 4, 4, 4, 7, 8, 7, 6, 4, 3, 2, 7, 3]));
+
+const somaAteN = n => {
+  let soma = 0;
+  for (let i = 1; i <= n; i += 1) {
+    soma += i;
+  }
+
+  return soma;
+}
+
+console.log(somaAteN(5));
