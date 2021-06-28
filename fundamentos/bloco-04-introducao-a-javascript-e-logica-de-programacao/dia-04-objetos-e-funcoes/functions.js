@@ -100,4 +100,4 @@ const verificaFimPalavra = (word, ending) => {
   return true;
 }
 
-console.log(verificaFimPalavra('trybe', 'ibe'));
+// console.log(verificaFimPalavra('trybe', 'be'));
