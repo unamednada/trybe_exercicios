@@ -9,4 +9,19 @@ const isPalindromo = word => {
   return false;
 }
 
-console.log(isPalindromo('araru'));
+// console.log(isPalindromo('araru'));
+
+const indexMaiorValor = array => {
+  let max = array[0];
+  let maxIndex = 0;
+  for (index in array) {
+    if (array[index] > max) {
+      max = array[index];
+      maxIndex = index;
+    }
+  }
+
+  return maxIndex;
+}
+
+console.log(indexMaiorValor([2, 3, 6, 7, 10, 1]));
