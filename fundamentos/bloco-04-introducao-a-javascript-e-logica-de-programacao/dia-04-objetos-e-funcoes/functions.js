@@ -86,4 +86,18 @@ const somaAteN = n => {
   return soma;
 }
 
-console.log(somaAteN(5));
+// console.log(somaAteN(5));
+
+const verificaFimPalavra = (word, ending) => {
+  let end = ending.length;
+  let newWord = word.slice(end + 1);
+  
+  for (let i = 0; i < end - 1; i += 1) {
+    if (newWord[i] != ending[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(verificaFimPalavra('trybe', 'ibe'));
