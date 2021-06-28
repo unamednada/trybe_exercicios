@@ -56,4 +56,19 @@ const subtraiOsNegativos = (romanoStr, arabe) => {
   return arabe;
 }
 
-console.log(romanosParaArabes('mccxciv'));
+// console.log(romanosParaArabes('mccxciv'));
+
+const arrayOfNumbers = vector => {
+  let pares = [];
+  for (array of vector) {
+    for (item of array) {
+      if (item % 2 === 0) {
+        pares.push(item);
+      }
+    }
+  }
+
+  return pares;
+}
+let vector = [[1, 2], [3,4,5,6], [7,8,9,10]];
+console.log(arrayOfNumbers(vector));
