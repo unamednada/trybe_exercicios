@@ -7,5 +7,13 @@ let info = {
   }
 }
 
-console.log(info.mensagem);
+// console.log(info.mensagem);
+
+info.recorrente = 'Sim';
+
+// console.log(info);
+
+for (let propriedade in info) {
+  console.log(propriedade);
+}
 
