@@ -53,4 +53,26 @@ const nomeMaisLongo = array => {
   return maxNome;
 }
 
-console.log(nomeMaisLongo(['Fernanda', 'Augusto', 'Maria', 'Carla', 'Espafregundo']));
+// console.log(nomeMaisLongo(['Fernanda', 'Augusto', 'Maria', 'Carla', 'Espafregundo']));
+
+const repetente = array => {
+  let maxRepete = 0;
+  let repetenteMax = array[0];
+
+  for (let number of array) {
+    let repete = 0;
+    for (let comparing of array) {
+      if (number === comparing) {
+        repete += 1;
+      }
+    }
+
+    if (repete > maxRepete) {
+      maxRepete = repete;
+      repetenteMax = number;
+    }
+  }
+  return repetenteMax;
+}
+
+console.log(repetente([2, 3, 3, 5, 5, 4, 4, 4, 7, 8, 7, 6, 4, 3, 2, 7, 3]));
