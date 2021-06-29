@@ -124,7 +124,7 @@ for (let fruta of unique) {
 
 }
 
-console.log(mensagem);
+// console.log(mensagem);
 
 
 
