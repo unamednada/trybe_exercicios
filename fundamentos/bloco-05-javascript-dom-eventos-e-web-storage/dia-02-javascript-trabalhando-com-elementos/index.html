@@ -85,7 +85,12 @@
       for (let i = 0; i < 3; i += 1) {
         mainContent.appendChild(document.createElement('h3')).innerText = 'H3!!!';
       }
+      titulo.className = 'title';
       
+      for (let tag of document.querySelectorAll('h3')) {
+        tag.className = 'description';
+      }
+
     </script>
   </body>
 </html>
