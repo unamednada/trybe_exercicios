@@ -65,12 +65,12 @@
       mainContent.className = 'main-content';
       document.body.appendChild(mainContent);
 
-      document.body.querySelector('.main-content').appendChild(document.createElement('div')).className = 'center-content';
+      mainContent.appendChild(document.createElement('div')).className = 'center-content';
       
       document.querySelector('.center-content').appendChild(document.createElement('p')).innerText = 'These exercises are FUN!';
 
-      document.querySelector('.main-content').appendChild(document.createElement('div')).className = 'left-content';
-      document.querySelector('.main-content').appendChild(document.createElement('div')).className = 'right-content';
+      mainContent.appendChild(document.createElement('div')).className = 'left-content';
+      mainContent.appendChild(document.createElement('div')).className = 'right-content';
 
       document.querySelector('.left-content').appendChild(document.createElement('img')).src = 'https://picsum.photos/200'; 
       document.querySelector('img').className = 'small-image';
@@ -80,6 +80,10 @@
 
       for (let i = 1; i <= 10; i += 1) {
         listsFather.firstElementChild.appendChild(document.createElement('li')).innerText = i.toString();
+      }
+      
+      for (let i = 0; i < 3; i += 1) {
+        mainContent.appendChild(document.createElement('h3')).innerText = 'H3!!!';
       }
       
     </script>
