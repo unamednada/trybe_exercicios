@@ -74,6 +74,14 @@
 
       document.querySelector('.left-content').appendChild(document.createElement('img')).src = 'https://picsum.photos/200'; 
       document.querySelector('img').className = 'small-image';
+
+      let listsFather = document.querySelector('.right-content');
+      listsFather.appendChild(document.createElement('ul'));
+
+      for (let i = 1; i <= 10; i += 1) {
+        listsFather.firstElementChild.appendChild(document.createElement('li')).innerText = i.toString();
+      }
+      
     </script>
   </body>
 </html>
