@@ -135,7 +135,20 @@ function addTask() {
 
 function addColor(color) {
   let subColor = document.createElement('div');
-  subColor.classList.add('.task');
+  subColor.classList.add('task');
   subColor.style.backgroundColor = color;
   tasks.appendChild(subColor);
+}
+
+tasks.addEventListener('click', selectTask);
+
+function selectTask(event) {
+  let element = event.target;
+  if (Array.from(element.classList).includes('task')) {
+    if (Array.from(element.classList).includes('selected')) {
+      element.classList.remove('selected');
+    } else {
+      element.classList.add('selected');
+    }
+  }
 }
