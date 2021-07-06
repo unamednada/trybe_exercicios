@@ -108,3 +108,26 @@ function zoomIn(currentDay) {
   currentDay.target.style.fontSize = '26px';
 }
 
+let tasks = document.querySelector('.my-tasks');
+
+let label = document.createElement('label');
+label.for = 'task-input';
+label.innerText = 'Nova: ';
+tasks.appendChild(label);
+
+let addActivity = document.createElement('input');
+addActivity.placeholder = 'Entre sua atividade';
+tasks.appendChild(addActivity);
+
+let confirmAdd = document.createElement('button');
+confirmAdd.id = 'btn-activity';
+confirmAdd.innerText = 'Adicionar';
+tasks.appendChild(confirmAdd);
+
+confirmAdd.addEventListener('click', addTask);
+
+function addTask() {
+  let task = document.createElement('span');
+  task.innerText = '\n' + addActivity.value;
+  tasks.appendChild(task);
+}
