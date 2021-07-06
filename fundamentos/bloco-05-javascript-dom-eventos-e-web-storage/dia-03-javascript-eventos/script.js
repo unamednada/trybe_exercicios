@@ -93,3 +93,18 @@ function changeFridayText() {
   }
 }
 
+let daysArray = Array.from(document.querySelectorAll('.day'));
+console.log(daysArray);
+for (let day of daysArray) {
+  day.addEventListener('mouseover', zoomIn);
+  day.addEventListener('mouseleave', zoomOut);
+}
+
+function zoomOut(currentDay) {
+  currentDay.target.style.fontSize = '20px';
+}
+
+function zoomIn(currentDay) {
+  currentDay.target.style.fontSize = '26px';
+}
+
