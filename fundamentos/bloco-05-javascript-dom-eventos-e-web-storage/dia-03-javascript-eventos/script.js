@@ -133,10 +133,13 @@ function addTask() {
   tasks.appendChild(task);
 }
 
-function addColor(color) {
+function addColor() {
   let subColor = document.createElement('div');
   subColor.classList.add('task');
-  subColor.style.backgroundColor = color;
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  subColor.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   tasks.appendChild(subColor);
 }
 
@@ -150,5 +153,19 @@ function selectTask(event) {
     } else {
       element.classList.add('selected');
     }
+  }
+}
+
+let daysList = document.querySelector('#days');
+
+daysList.addEventListener('click', colorTaskDay);
+
+function colorTaskDay(event) {
+  let day = event.target;
+  let isSelected = document.querySelector('.selected');
+  if (isSelected && day.style.color !== isSelected.style.backgroundColor) {
+    day.style.color= isSelected.style.backgroundColor;
+  } else {
+    day.style.color = 'rgb(119, 119, 119)';
   }
 }

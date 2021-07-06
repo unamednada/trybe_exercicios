@@ -154,5 +154,5 @@ label {
 }
 
 .selected {
-  background-color: brown;
+  border: 3px solid green!important;
 }
