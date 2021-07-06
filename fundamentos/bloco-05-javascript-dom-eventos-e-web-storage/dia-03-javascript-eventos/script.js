@@ -62,7 +62,34 @@ function changeHolidayColor() {
   }
 }
   
+function createFridayButton(str) {
+  let buttonFather = document.querySelector('.buttons-container');
+  let button = document.createElement('button');
+  button.id = 'btn-friday';
+  button.innerText = str;
+  buttonFather.appendChild(button);
+  return button;
+}
 
+let buttonFri = createFridayButton('Sexta-feira');
 
+buttonFri.addEventListener('click', changeFridayText);
 
+function changeFridayText() {
+  let fridayArray = Array.from(document.querySelectorAll('.friday'));
+  console.log(fridayArray);
+  for (let i = 0; i < fridayArray.length; i += 1) {
+    let numberDay = 4 + 7 * i;
+    if (fridayArray[i].innerText === 'HAPPY HOUR DAY!') {
+      fridayArray[i].innerText = numberDay;
+    } else {
+      fridayArray[i].innerText = 'HAPPY HOUR DAY!';
+    } 
+  }
+  if (buttonFri.style.color === 'red') {
+    buttonFri.style.color = '#777';
+  } else {
+    buttonFri.style.color = 'red';
+  }
+}
 
