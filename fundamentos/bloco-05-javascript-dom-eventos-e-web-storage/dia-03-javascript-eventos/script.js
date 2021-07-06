@@ -39,6 +39,30 @@ function createHolidayButton(str) {
   button.id = 'btn-holiday';
   button.innerText = str;
   buttonFather.appendChild(button);
+  return button;
 }
 
-createHolidayButton('Feriados');
+let button = createHolidayButton('Feriados');
+
+button.addEventListener('click', changeHolidayColor);
+
+function changeHolidayColor() {
+  let holidayArray = Array.from(document.querySelectorAll('.holiday'));
+  for (let holy of holidayArray) {
+    if (holy.style.backgroundColor === 'green') {
+      holy.style.backgroundColor = 'rgb(238,238,238)';
+    } else {
+      holy.style.backgroundColor = 'green';
+    } 
+  }
+  if (button.style.color === 'green') {
+    button.style.color = '#777';
+  } else {
+    button.style.color = 'green';
+  }
+}
+  
+
+
+
+
