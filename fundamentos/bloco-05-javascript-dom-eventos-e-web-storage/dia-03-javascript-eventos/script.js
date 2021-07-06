@@ -80,10 +80,10 @@ function changeFridayText() {
   console.log(fridayArray);
   for (let i = 0; i < fridayArray.length; i += 1) {
     let numberDay = 4 + 7 * i;
-    if (fridayArray[i].innerText === 'HAPPY HOUR DAY!') {
+    if (fridayArray[i].innerText === 'HAPPY HOUR!') {
       fridayArray[i].innerText = numberDay;
     } else {
-      fridayArray[i].innerText = 'HAPPY HOUR DAY!';
+      fridayArray[i].innerText = 'HAPPY HOUR!';
     } 
   }
   if (buttonFri.style.color === 'red') {
@@ -125,9 +125,17 @@ confirmAdd.innerText = 'Adicionar';
 tasks.appendChild(confirmAdd);
 
 confirmAdd.addEventListener('click', addTask);
+confirmAdd.addEventListener('click', addColor);
 
 function addTask() {
   let task = document.createElement('span');
   task.innerText = '\n' + addActivity.value;
   tasks.appendChild(task);
+}
+
+function addColor(color) {
+  let subColor = document.createElement('div');
+  subColor.classList.add('.task');
+  subColor.style.backgroundColor = color;
+  tasks.appendChild(subColor);
 }
