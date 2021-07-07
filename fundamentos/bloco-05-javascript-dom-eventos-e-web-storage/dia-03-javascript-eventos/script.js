@@ -169,3 +169,28 @@ function colorTaskDay(event) {
     day.style.color = 'rgb(119, 119, 119)';
   }
 }
+
+let addApp = document.querySelector('#btn-add');
+let addInput = document.querySelector('#task-input');
+addApp.addEventListener('click', function() {
+  if (addInput.value.length > 0) {
+    addAppointment();
+  } else {
+    window.alert('Escreva seu compromisso e clique em adicionar!');
+  }
+});
+
+function addAppointment() {
+  let taskList = document.querySelector('.task-list');
+  let newTask = document.createElement('li');
+  newTask.innerText = addInput.value;
+  taskList.appendChild(newTask);
+}
+
+addInput.addEventListener('keydown', enter);
+
+function enter(event) {
+  if (event.keyCode === 13) {
+    addAppointment();
+  }
+}
