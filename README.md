@@ -29,9 +29,9 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 4: IntroduÃ§Ã£o - JavaScript
 
-- [:white_check_mark:]  4-1: _JavaScript - Primeiros passos_
-- [:white_check_mark:]  4-2: _JavaScript - Array e loop For_
-- [:white_check_mark:]  4-3: _JavaScript - LÃ³gica de ProgramaÃ§Ã£o e Algoritmos_
+- [:white_check_mark:] 4-1: _JavaScript - Primeiros passos_
+- [:white_check_mark:] 4-2: _JavaScript - Array e loop For_
+- [:white_check_mark:] 4-3: _JavaScript - LÃ³gica de ProgramaÃ§Ã£o e Algoritmos_
 - [:white_check_mark:] 4-4: _JavaScript - Objetos e funÃ§Ãµes_
 - [:white_check_mark:] 4-5: _[Projeto - Playground Functions](https://github.com/tryber/sd-014-a-project-playground-functions/pull/35)_
 
@@ -39,10 +39,10 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [:white_check_mark:] 5-1: _JavaScript - DOM e seletores_
 - [:white_check_mark:] 5-2: _JavaScript - Trabalhando com elementos_
-- [:white_check_mark:]  5-3: _JavaScript - Eventos_
-- [ ] 5-4: _JavaScript - Web Storage_
+- [:white_check_mark:] 5-3: _JavaScript - Eventos_
+- [:white_check_mark:] 5-4: _JavaScript - Web Storage_
 - [ ] 5-5: _[Projeto - Meme Generator]()_
-- [ ] 5-6: _[Projeto - Arte com Pixels]()_
+- [:white_check_mark:] 5-6: _[Projeto - Arte com Pixels](https://github.com/tryber/sd-014-a-project-pixels-art/pull/126)_
 - [ ] 5-7: _[Projeto - Lista de tarefas]()_
 - [ ] 5-7: _[Projeto - Adivinhe a Cor]()_
 - [ ] 5-7: _[Projeto - Carta Misteriosa]()_
