@@ -145,12 +145,20 @@ function addColor() {
 
 tasks.addEventListener('click', selectTask);
 
+function clearSelected() {
+  let tasks = Array.from(document.querySelectorAll('.task'));
+  for (let i = 0; i < tasks.length; i += 1) {
+    tasks[i].classList.remove('selected');
+  }
+}
+
 function selectTask(event) {
   let element = event.target;
   if (Array.from(element.classList).includes('task')) {
     if (Array.from(element.classList).includes('selected')) {
       element.classList.remove('selected');
     } else {
+      clearSelected();
       element.classList.add('selected');
     }
   }
