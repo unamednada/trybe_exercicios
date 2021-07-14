@@ -5,8 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forms</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <form action="" method="GET">
+    <fieldset>
+      <label for="name">Nome</label>
+      <input type="text" name="name" id="name" maxlength="40" required>
+      <br>
+      <label for="email">E-mail</label>
+      <input type="text" name="email" id="email" maxlength="40" required>
+      <br>
+      <label for="cpf">CPF:</label>
+      <input type="text" name="cpf" id="cpf" maxlength="40" required>
+    </fieldset>
+  </form>
 </body>
 </html>
