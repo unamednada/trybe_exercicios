@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
-label, input {
-  margin: 2px;
+label, input, p {
+  margin: 4px;
+}
+
+fieldset {
+  margin: 10px;
 }

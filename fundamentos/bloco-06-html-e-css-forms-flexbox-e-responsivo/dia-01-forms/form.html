@@ -22,11 +22,14 @@
       <label for="address">Endereço</label>
       <input type="text" name="address" id="address" maxlength="200" required>
       <br>
-      <label for="city">Endereço</label>
+      <label for="city">Cidade</label>
       <input type="text" name="city" id="city" maxlength="28" required>
       <label for="state">Estado:</label>
-      <select name="state" id="state"></select>
+      <select name="state" id="state" required></select>
       <br>
+      <p>Selecione o tipo de moradia:</p>
+      <label for="house"><input type="radio" name="type" id="house">Casa</label>
+      <label for="flat"><input type="radio" name="type" id="flat">Apartamento</label>
     </fieldset>
   </form>
   <script src="script.js"></script>
