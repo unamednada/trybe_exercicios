@@ -32,6 +32,7 @@ estadosBrasileiros.forEach(value => {
   const state = document.createElement('option');
   state.name = 'state';
   state.innerText = value;
+  state.id = value;
   selectEstados.appendChild(state);
 });
 
@@ -64,32 +65,43 @@ function isEmail(input) {
   return false;
 }
 
-function validateName() {
-  const name = document.querySelector('#name').value;
-  if (!isRequired(name) || !charLimit(name, 40)) {
-    window.alert('Insira seu nome!');
-    return false;
+const firstFieldset = document.querySelector('#part-one');
+const inputList = Array.from(document.querySelectorAll('#part-one input'));
+
+function validateForm() {
+  let isValidForm = 1;
+  for (let i = 0; i < inputList.length; i += 1) {
+    const input = inputList[i];
+    const maxLength = input.maxlength;
+    if (!isRequired(input.value) || !charLimit(input.value, maxLength)) {
+      window.alert(`Insira um(a) ${input.name} válido(a)`);
+      isValidForm -= 1;
+    }
+    if (input.id === 'email' && !isEmail(input.value)) {
+      window.alert(`Insira um(a) ${input.name} válido(a)`);
+      isValidForm -= 1;
+    }
   }
-  return true;
+  if (isValidForm === 1) {
+    returnCV();
+  }
 }
 
-submitBtn.addEventListener('click', validateName);
+submitBtn.addEventListener('click', validateForm);
 
-function validateEmail() {
-  const email = document.querySelector('#email').value;
-  if (!isRequired(email) || !charLimit(email, 50) || !isEmail(email)) {
-    window.alert('Insira um e-mail válido!');
-    return false;
+function returnCV() {
+  const form = document.querySelector('form');
+  form.innerHTML = '';
+  const CV = document.createElement('div');
+  form.appendChild(CV);
+  for (let i = 0; i < inputList.length; i += 1) {
+    const input = inputList[i];
+    const info = document.createElement('p');
+    info.innerText = `${input.name}: ${input.value}`
+    CV.appendChild(info);
+    CV.appendChild(document.createElement('br'));
   }
-  return true;
+  const state = document.createElement('p');
+  state.innerText = `Estado: ${selectEstados.options[selectEstados.selectedIndex].text}`;
+  CV.appendChild(state);
 }
-
-submitBtn.addEventListener('click', validateEmail);
-
-submitBtn.addEventListener('click', function() {
-  const cpf = document.querySelector('#cpf').value;
-  if (!isRequired(cpf) || !charLimit(cpf, 11)) {
-    window.alert('Insira um número de CPF válido!');
-  }
-});
-
