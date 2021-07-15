@@ -35,3 +35,61 @@ estadosBrasileiros.forEach(value => {
   selectEstados.appendChild(state);
 });
 
+const submitBtn = document.querySelector('#submit-btn');
+
+submitBtn.addEventListener('click', function(event) {
+  event.preventDefault();
+});
+
+function charLimit(input, lim) {
+  if (input.length > lim) {
+    return false;
+  }
+  return true;
+}
+
+function isRequired(input) {
+  if (!input) {
+    return false;
+  }
+  return true;
+}
+
+// Inspiração para regex: https://gist.github.com/jacksonfdam/3000275
+
+function isEmail(input) {
+  if (/\w@\w/.test(input)) {
+    return true;
+  }
+  return false;
+}
+
+function validateName() {
+  const name = document.querySelector('#name').value;
+  if (!isRequired(name) || !charLimit(name, 40)) {
+    window.alert('Insira seu nome!');
+    return false;
+  }
+  return true;
+}
+
+submitBtn.addEventListener('click', validateName);
+
+function validateEmail() {
+  const email = document.querySelector('#email').value;
+  if (!isRequired(email) || !charLimit(email, 50) || !isEmail(email)) {
+    window.alert('Insira um e-mail válido!');
+    return false;
+  }
+  return true;
+}
+
+submitBtn.addEventListener('click', validateEmail);
+
+submitBtn.addEventListener('click', function() {
+  const cpf = document.querySelector('#cpf').value;
+  if (!isRequired(cpf) || !charLimit(cpf, 11)) {
+    window.alert('Insira um número de CPF válido!');
+  }
+});
+
