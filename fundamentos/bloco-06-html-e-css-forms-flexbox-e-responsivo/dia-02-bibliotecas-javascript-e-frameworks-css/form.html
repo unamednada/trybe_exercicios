@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action="" method="GET">
+    <fieldset id="part-one">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome" maxlength="40" required>
+      <br>
+      <label for="email">E-mail</label>
+      <input type="email" name="email" id="email" maxlength="40" required>
+      <br>
+      <label for="cpf">CPF:</label>
+      <input type="text" name="cpf" id="cpf" maxlength="11" required>
+      <br>
+      <label for="endereço">Endereço</label>
+      <input type="text" name="endereço" id="endereço" maxlength="200" required>
+      <br>
+      <label for="cidade">Cidade</label>
+      <input type="text" name="cidade" id="cidade" maxlength="28" required>
+      <label for="state">Estado:</label>
+      <select name="state" id="state" required></select>
+      <br>
+      <p>Selecione o tipo de moradia:</p>
+      <label for="house"><input type="radio" name="house" id="house" required checked>Casa</label>
+      <label for="flat"><input type="radio" name="house" id="flat" required>Apartamento</label>
+    </fieldset>
+    <fieldset id="part-two">
+      <label for="cv" id="cv-label">Resumo do Currículo:</label>
+      <textarea name="cv" id="cv" cols="30" rows="10" maxlength="1000" required></textarea>
+      <br>
+      <label for="cargo">Cargo:</label>
+      <input type="text" name="cargo" id="cargo" required>
+      <br>
+      <label for="descricao">Descrição do cargo:</label>
+      <input type="text" name="descricao" id="descricao" maxlength="500" required>
+      <br>
+      <label for="data-inicio">Data de início:</label>
+      <input type="date" name="data-inicio" id="data-inicio" required>
+    </fieldset>
+    <fieldset>
+      <button type="submit" id="submit-btn">Enviar</button>
+    </fieldset>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
