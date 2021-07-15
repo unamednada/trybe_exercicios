@@ -97,7 +97,11 @@ function returnCV() {
   for (let i = 0; i < inputList.length; i += 1) {
     const input = inputList[i];
     const info = document.createElement('p');
-    info.innerText = `${input.name}: ${input.value}`
+    if (input.type === 'radio' && input.checked) {
+      info.innerText = `Tipo de moradia: ${input.id}`
+    } else if (input.type !== 'radio') {
+      info.innerText = `${input.name}: ${input.value}`
+    }
     CV.appendChild(info);
     CV.appendChild(document.createElement('br'));
   }
