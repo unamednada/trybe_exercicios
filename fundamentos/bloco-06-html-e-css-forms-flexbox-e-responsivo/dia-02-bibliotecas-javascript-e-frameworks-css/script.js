@@ -65,8 +65,9 @@ function isEmail(input) {
   return false;
 }
 
-const firstFieldset = document.querySelector('#part-one');
-const inputList = Array.from(document.querySelectorAll('#part-one input'));
+const inputList = Array.from(document.querySelectorAll('input'));
+const inputList2 = Array.from(document.querySelector('#part-two'));
+
 
 function validateForm() {
   let isValidForm = 1;
@@ -90,9 +91,10 @@ function validateForm() {
 submitBtn.addEventListener('click', validateForm);
 
 function returnCV() {
+  const textArea = document.querySelector('textarea').value;
   const form = document.querySelector('form');
-  form.innerHTML = '';
   const CV = document.createElement('div');
+  form.innerHTML = '';
   form.appendChild(CV);
   for (let i = 0; i < inputList.length; i += 1) {
     const input = inputList[i];
@@ -108,4 +110,10 @@ function returnCV() {
   const state = document.createElement('p');
   state.innerText = `Estado: ${selectEstados.options[selectEstados.selectedIndex].text}`;
   CV.appendChild(state);
+
+  const resumo = document.createElement('p');
+  resumo.innerText = `Resumo do CV: 
+  ${textArea}`;
+  CV.appendChild(resumo);
 }
+
