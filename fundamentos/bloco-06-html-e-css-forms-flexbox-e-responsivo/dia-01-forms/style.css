@@ -11,3 +11,7 @@ label, input, p {
 fieldset {
   margin: 10px;
 }
+
+label#cv-label {
+  vertical-align: top;
+}
