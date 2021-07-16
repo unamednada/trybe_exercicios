@@ -1,3 +1,5 @@
+import './node_modules/just-validate/dist/js/just-validate.js';
+
 const estadosBrasileiros = ['Acre (AC)',
 'Alagoas (AL)',
 'Amapá (AP)',
@@ -130,4 +132,28 @@ const submitBtn = document.querySelector('#submit-btn');
 //   CV.appendChild(resumo);
 // }
 
-new JustValidate('.js-form');
+new JustValidate('#validate-form', {
+  rules: {
+    cpf: {
+      required: true
+    },
+    descricao: {
+      required: true
+    },
+    cv: {
+      required: true
+    },
+    cargo: {
+      required: true
+    },
+    cidade: {
+      required: true
+    },
+    address: {
+      required: true
+    },
+    date: {
+      required: true
+    },
+  },
+});

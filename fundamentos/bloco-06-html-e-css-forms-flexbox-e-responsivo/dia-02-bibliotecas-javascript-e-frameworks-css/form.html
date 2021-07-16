@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="node_modules/pikaday/css/pikaday.css" />
   </head>
   <body>
-    <form action="" method="GET" class= "mx-5 my-5">
+    <form action="" method="GET" class="mx-5 my-5" id="validate-form">
       <div class="container mb-5">
         <h1 class="title">Formulário de Aplicação</h1>
       </div>
@@ -42,6 +42,7 @@
         <div class="field">
           <label class="label" for="cpf">CPF:</label>
           <input
+            data-validate-field="cpf" 
             class="input is-info"
             type="text"
             name="cpf"
@@ -53,7 +54,7 @@
         <div class="field">
           <label class="label" for="endereço">Endereço</label>
           <input
-            data-validate-field="text"
+            data-validate-field="address" 
             class="input is-info"
             type="text"
             name="endereço"
@@ -65,7 +66,7 @@
         <div class="field">
           <label class="label" for="cidade">Cidade</label>
           <input
-            data-validate-field="text"
+            data-validate-field="cidade"
             class="input is-info"
             type="text"
             name="cidade"
@@ -109,7 +110,7 @@
             >Resumo do Currículo:</label
           >
           <textarea
-            data-validate-field="text"
+            data-validate-field="cv"
             class="textarea"
             name="cv"
             id="cv-text"
@@ -122,7 +123,7 @@
         <div class="field">
           <label class="label" for="cargo">Cargo:</label>
           <input
-            data-validate-field="text"
+            data-validate-field="cargo"
             class="input is-info"
             type="text"
             name="cargo"
@@ -133,7 +134,7 @@
         <div class="field">
           <label class="label" for="descricao">Descrição do cargo:</label>
           <input
-            data-validate-field="text"
+            data-validate-field="descricao"
             class="input is-info"
             type="text"
             name="descricao"
@@ -145,6 +146,7 @@
         <div class="field">
           <label class="label" for="data-inicio">Data de início:</label>
           <input
+            data-validate-field="date"
             class="input is-info"
             type="text"
             name="data-inicio"
@@ -160,7 +162,7 @@
         </button>
       </fieldset>
     </form>
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
     <script src="node_modules/pikaday/pikaday.js"></script>
     <script>
       var picker = new Pikaday({
