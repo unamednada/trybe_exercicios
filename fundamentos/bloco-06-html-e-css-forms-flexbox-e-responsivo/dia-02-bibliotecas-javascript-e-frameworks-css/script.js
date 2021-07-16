@@ -65,6 +65,15 @@ function isEmail(input) {
   return false;
 }
 
+// Date regex: https://stackoverflow.com/questions/5465375/javascript-date-regex-dd-mm-yyyy
+
+function isDate(input) {
+  if (/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/.test(input)) {
+    return true;
+  }
+  return false;
+}
+
 const inputList = Array.from(document.querySelectorAll('input'));
 const inputList2 = Array.from(document.querySelector('#part-two'));
 
@@ -79,6 +88,10 @@ function validateForm() {
       isValidForm -= 1;
     }
     if (input.id === 'email' && !isEmail(input.value)) {
+      window.alert(`Insira um(a) ${input.name} válido(a)`);
+      isValidForm -= 1;
+    }
+    if (input.id === 'data-inicio' && !isDate(input.value)) {
       window.alert(`Insira um(a) ${input.name} válido(a)`);
       isValidForm -= 1;
     }
