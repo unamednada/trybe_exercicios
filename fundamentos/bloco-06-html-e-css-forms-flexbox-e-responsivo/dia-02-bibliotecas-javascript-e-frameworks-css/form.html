@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="node_modules/pikaday/css/pikaday.css" />
+  </head>
+  <body>
+    <form action="" method="GET" class="mx-5 my-5" id="validate-form">
+      <div class="container mb-5">
+        <h1 class="title">Formulário de Aplicação</h1>
+      </div>
+      <fieldset id="part-one" class="container">
+        <div class="field">
+          <label class="label" for="nome">Nome</label>
+          <input
+            data-validate-field="name"
+            class="input is-info"
+            type="text"
+            name="nome"
+            id="nome"
+            maxlength="40"
+            required
+          />
+        </div>
+        <div class="field">
+          <label class="label" for="email">E-mail</label>
+          <input
+            data-validate-field="email"
+            class="input is-info"
+            type="email"
+            name="email"
+            id="email"
+            maxlength="40"
+            required
+          />
+        </div>
+        <div class="field">
+          <label class="label" for="cpf">CPF:</label>
+          <input
+            data-validate-field="cpf" 
+            class="input is-info"
+            type="text"
+            name="cpf"
+            id="cpf"
+            maxlength="11"
+            required
+          />
+        </div>
+        <div class="field">
+          <label class="label" for="endereço">Endereço</label>
+          <input
+            data-validate-field="address" 
+            class="input is-info"
+            type="text"
+            name="endereço"
+            id="endereço"
+            maxlength="200"
+            required
+          />
+        </div>
+        <div class="field">
+          <label class="label" for="cidade">Cidade</label>
+          <input
+            data-validate-field="cidade"
+            class="input is-info"
+            type="text"
+            name="cidade"
+            id="cidade"
+            maxlength="28"
+            required
+          />
+        </div>
+        <div class="field">
+          <label class="label" for="state">Estado:</label>
+          <div class="select is-primary">
+            <select name="state" id="state" required></select>
+          </div>
+        </div>
+        <div class="field">
+          <p class="title is-6 mb-3 mt-5">Selecione o tipo de moradia:</p>
+          <label class="radio mx-3" for="house"
+            ><input
+              class="mx-3"
+              type="radio"
+              name="house"
+              id="house"
+              required
+              checked
+            />Casa</label
+          >
+          <label class="radio" for="flat"
+            ><input
+              class="mx-3"
+              type="radio"
+              name="house"
+              id="flat"
+              required
+            />Apartamento</label
+          >
+        </div>
+      </fieldset>
+      <fieldset id="part-two" class="container">
+        <div class="field mt-3">
+          <label class="label" for="cv" id="cv-label"
+            >Resumo do Currículo:</label
+          >
+          <textarea
+            data-validate-field="cv"
+            class="textarea"
+            name="cv"
+            id="cv-text"
+            cols="30"
+            rows="10"
+            maxlength="1000"
+            required
+          ></textarea>
+        </div>
+        <div class="field">
+          <label class="label" for="cargo">Cargo:</label>
+          <input
+            data-validate-field="cargo"
+            class="input is-info"
+            type="text"
+            name="cargo"
+            id="cargo"
+            required
+          />
+        </div>
+        <div class="field">
+          <label class="label" for="descricao">Descrição do cargo:</label>
+          <input
+            data-validate-field="descricao"
+            class="input is-info"
+            type="text"
+            name="descricao"
+            id="descricao"
+            maxlength="500"
+            required
+          />
+        </div>
+        <div class="field">
+          <label class="label" for="data-inicio">Data de início:</label>
+          <input
+            data-validate-field="date"
+            class="input is-info"
+            type="text"
+            name="data-inicio"
+            id="datepicker"
+            maxlength="10"
+            required
+          />
+        </div>
+      </fieldset>
+      <fieldset class="container mt-5">
+        <button class="button is-danger" type="submit" id="submit-btn">
+          Enviar
+        </button>
+      </fieldset>
+    </form>
+    <script src="script.js" type="module"></script>
+    <script src="node_modules/pikaday/pikaday.js"></script>
+    <script>
+      var picker = new Pikaday({
+        field: document.getElementById("datepicker"),
+      });
+    </script>
+  </body>
+</html>
