@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+label, input, p {
+  margin: 4px;
+}
+
+fieldset {
+  margin: 10px;
+}
+
+label#cv-label {
+  vertical-align: top;
+}
