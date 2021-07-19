@@ -210,3 +210,18 @@ new JustValidate('#validate-form', {
     },
   }
 });
+
+const reset = document.querySelector('#reset');
+
+function resetForm(event) {
+  event.preventDefault();
+  const inputList = document.querySelectorAll('input');
+  for (let i = 0; i < inputList.length; i += 1) {
+    inputList[i].value = '';
+  }
+  const inputText = document.querySelector('textarea');
+  inputText.value = '';
+  console.log(inputList);
+}
+
+reset.addEventListener('click', resetForm);
