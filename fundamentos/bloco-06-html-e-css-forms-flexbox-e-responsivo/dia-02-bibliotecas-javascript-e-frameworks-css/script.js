@@ -134,26 +134,79 @@ const submitBtn = document.querySelector('#submit-btn');
 
 new JustValidate('#validate-form', {
   rules: {
+    name: {
+      required: true,
+      maxLength: 40
+    },
+    email: {
+      required: true,
+      maxLength: 40,
+      email: true
+    },
     cpf: {
-      required: true
+      required: true,
+      maxLength: 11
     },
     descricao: {
-      required: true
+      required: true,
+      maxLength: 500
     },
     cv: {
-      required: true
+      required: true,
+      maxLength: 1000
     },
     cargo: {
-      required: true
+      required: true,
+      maxLength: 40
     },
     cidade: {
-      required: true
+      required: true,
+      maxLength: 28
     },
     address: {
-      required: true
+      required: true,
+      maxLength: 200
     },
     date: {
       required: true
     },
   },
+  messages: {
+    name: {
+      required: 'Insira um nome válido',
+      maxLength: 'Campo nome deve possuir no máximo 40 caracteres'
+    },
+    email: {
+      required: 'Insira um e-mail válido',
+      maxLength: 'Campo e-mail deve possuir no máximo 40 caracteres',
+      email: 'Insira um e-mail válido'
+    },
+    cpf: {
+      required: 'Insira um e-mail válido',
+      maxLength: 'Campo CPF deve possuir no máximo 11 números'
+    },
+    descricao: {
+      required: 'Insira um e-mail válido',
+      maxLength: 'Campo descrição deve possuir no máximo 500 caracteres'
+    },
+    cv: {
+      required: 'Insira um e-mail válido',
+      maxLength: 'Campo resumo deve possuir no máximo 1000 caracteres'
+    },
+    cargo: {
+      required: 'Insira um e-mail válido',
+      maxLength: 'Campo cargo deve possuir no máximo 40 caracteres'
+    },
+    cidade: {
+      required: 'Insira um e-mail válido',
+      maxLength: 'Campo cidade deve possuir no máximo 28 caracteres'
+    },
+    address: {
+      required: 'Insira um endereço válido',
+      maxLength: 'Campo endereço deve possuir no máximo 200 caracteres'
+    },
+    date: {
+      required: 'Escolha uma data'
+    },
+  }
 });
