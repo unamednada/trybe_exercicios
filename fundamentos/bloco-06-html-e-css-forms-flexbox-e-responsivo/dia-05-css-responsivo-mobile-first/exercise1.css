@@ -1,17 +1,22 @@
+html {
+  font-size: 22px;
+}
+
 body {
 
 }
 h1 {
-
+  font-size: 1.5em;
 }
+
 h2 {
 
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 figure {
-    margin: 0;
+  margin: 10% 0;
 }
