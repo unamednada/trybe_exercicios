@@ -1,0 +1,43 @@
+html {
+  box-sizing: border-box;
+  font-size: 22px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  text-align: center;
+}
+
+header p {
+  font-size: 1.5rem;
+}
+h1 {
+  font-size: 1.5rem;
+}
+
+nav {
+  display: none;
+}
+
+li {
+  list-style: none;
+}
+
+.aside-one li {
+  text-align: justify;
+}
+
+.aside-two li {
+  text-align: left;
+}
+
+.main-content p {
+  text-align: justify;
+  margin: 0 5%;
+}
+
+footer {
+  margin: 5%;
+}
