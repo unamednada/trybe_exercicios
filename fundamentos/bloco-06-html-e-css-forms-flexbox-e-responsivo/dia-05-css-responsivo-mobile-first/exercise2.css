@@ -13,6 +13,7 @@ body {
 header p {
   font-size: 1.5rem;
 }
+
 h1 {
   font-size: 1.5rem;
 }
@@ -36,6 +37,7 @@ li {
 .main-content p {
   text-align: justify;
   margin: 0 5%;
+  line-height: 1.2rem;
 }
 
 footer {
@@ -55,6 +57,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: lightskyblue;
   }
 
   nav {
@@ -71,4 +74,36 @@ footer {
     max-width: 30%;
     font-size: 0.8rem;
   }
+
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .aside-one, .aside-two {
+    max-width: 50%;
+    padding: 5% 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .main-content {
+    background-color: lightgoldenrodyellow;
+    padding: 5% 0;
+  }
+
+  .main-content p {
+    line-height: 2rem;
+  }
+
+  footer {
+    background-color: lightskyblue;
+    padding: 2%;
+    max-width: 768px;
+    margin: 5% auto;
+  }
 }
+
