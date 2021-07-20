@@ -41,3 +41,34 @@ li {
 footer {
   margin: 5%;
 }
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    background-color: lightcyan;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  nav {
+    display: inherit;
+    margin-right: 2%;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin: 0 3%;
+    max-width: 30%;
+    font-size: 0.8rem;
+  }
+}
