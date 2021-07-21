@@ -182,4 +182,22 @@ footer {
     height: 50%;
     display: block;
   }
+
+  footer {
+    max-width: 80%;
+    position: relative;
+    left: 20%;
+    margin: 0;
+    border-radius: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+  }
+
+  footer p {
+    max-width: 60%;
+    margin: 1%;
+  }
 }
