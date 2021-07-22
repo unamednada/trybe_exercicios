@@ -40,6 +40,13 @@ const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 //   return fat;
 // }
 
-const factRecursive = n => n === 1 ? 1 : n * factRecursive(n - 1);
+// const factRecursive = n => n === 1 ? 1 : n * factRecursive(n - 1);
 
-console.log(factRecursive(5));
+// console.log(factRecursive(5));
+
+const longestWord = sentence => {
+  const wordList = sentence.split(' ');
+  return wordList.sort((a, b) => a.length - b.length)[wordList.length - 1];
+}
+
+console.log(longestWord("Antônio foi no banheiro e não sabemos o que aconteceu"));
