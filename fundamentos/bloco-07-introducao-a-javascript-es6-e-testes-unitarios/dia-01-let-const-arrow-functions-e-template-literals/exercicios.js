@@ -28,10 +28,16 @@ const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
 // Código sort comparefunction de: https://www.javascripttutorial.net/javascript-array-sort/
 
-oddsAndEvens.sort((a, b) => {
-  if(a > b) return 1;
-  if(a < b) return -1;
-  return 0;
-});
+// oddsAndEvens.sort((a, b) => a - b);
 
-console.log(oddsAndEvens); // será necessário alterar essa linha 😉
+// console.log(oddsAndEvens); // será necessário alterar essa linha 😉
+
+const fatorial = n => {
+  let fat = 1;
+  for (i = 1; i <= n; i += 1) {
+    fat *= i;
+  }
+  return fat;
+}
+
+console.log(fatorial(5));
