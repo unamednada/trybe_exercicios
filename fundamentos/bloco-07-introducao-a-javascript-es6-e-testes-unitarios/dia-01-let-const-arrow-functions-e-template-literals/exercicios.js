@@ -32,12 +32,14 @@ const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
 // console.log(oddsAndEvens); // será necessário alterar essa linha 😉
 
-const fatorial = n => {
-  let fat = 1;
-  for (i = 1; i <= n; i += 1) {
-    fat *= i;
-  }
-  return fat;
-}
+// const fatorial = n => {
+//   let fat = 1;
+//   for (i = 1; i <= n; i += 1) {
+//     fat *= i;
+//   }
+//   return fat;
+// }
 
-console.log(fatorial(5));
+const factRecursive = n => n === 1 ? 1 : n * factRecursive(n - 1);
+
+console.log(factRecursive(5));
