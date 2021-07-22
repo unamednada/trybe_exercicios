@@ -14,6 +14,24 @@
 
 const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
-// Seu código aqui.
+
+// for (let i = 0; i < oddsAndEvens.length; i += 1) {
+//   for (let j = 0; j < oddsAndEvens.length; j += 1) {
+//     if (oddsAndEvens[j] > oddsAndEvens[i]) {
+//       let min = oddsAndEvens[i];
+//       oddsAndEvens[i] = oddsAndEvens[j];
+//       oddsAndEvens[j] = min;
+//     }
+//   }
+// }
+
+
+// Código sort comparefunction de: https://www.javascripttutorial.net/javascript-array-sort/
+
+oddsAndEvens.sort((a, b) => {
+  if(a > b) return 1;
+  if(a < b) return -1;
+  return 0;
+});
 
 console.log(oddsAndEvens); // será necessário alterar essa linha 😉
