@@ -25,7 +25,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [:white_check_mark:] 3-2: _HTML & CSS - Primeiros passos em CSS_
 - [:white_check_mark:] 3-3: _HTML & CSS - Seletores e posicionamento_
 - [:white_check_mark:] 3-4: _HTML Semântico_
-- [:white_check_mark:] 3-5: _[Projeto - HTML & CSS](https://github.com/tryber/sd-014-a-project-lessons-learned/pull/13)_
+- [:white_check_mark:] 3-5: _[Projeto - HTML & CSS](https://unamednada.github.io/projects/lessons-learned/index.html)_
 
 ##### Bloco 4: IntroduÃ§Ã£o - JavaScript
 
@@ -43,7 +43,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [:white_check_mark:] 5-4: _JavaScript - Web Storage_
 - [:white_check_mark:] 5-5: _[Projeto - Meme Generator](https://github.com/tryber/sd-014-a-project-meme-generator/pull/26)_
 - [:white_check_mark:] 5-6: _[Projeto - Arte com Pixels](https://github.com/tryber/sd-014-a-project-pixels-art/pull/126)_
-- [:white_check_mark:] 5-7: _[Projeto - Lista de tarefas](https://github.com/tryber/sd-014-a-project-todo-list/pull/102)_
+- [:white_check_mark:] 5-7: _[Projeto - Lista de tarefas](https://unamednada.github.io/projects/todo-list/index.html)_
 - [:white_check_mark:] 5-7: _[Projeto - Adivinhe a Cor](https://github.com/tryber/sd-014-a-project-color-guess/pull/36)_
 - [:white_check_mark:] 5-7: _[Projeto - Carta Misteriosa](https://github.com/tryber/sd-014-a-project-mistery-letter/pull/16)_
 
@@ -52,9 +52,9 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [:white_check_mark:] 6-1: _HTML & CSS - Forms_
 - [:white_check_mark:] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
 - [:white_check_mark:] 6-3: _CSS Flexbox - Part 1_
-- [ ] 6-4: _CSS Flexbox - Part 2_
-- [ ] 6-5: _CSS Responsivo - Mobile First_
-- [ ] 6-6: _[Projeto - PÃ¡gina inicial do Facebook]()_
+- [:white_check_mark:]  6-4: _CSS Flexbox - Part 2_
+- [:white_check_mark:]  6-5: _CSS Responsivo - Mobile First_
+- [:white_check_mark:]  6-6: _[Projeto - Trybewarts](https://unamednada.github.io/projects/trybewarts/index.html)_
 
 ##### Bloco 7: JavaScript ES6 & Testes UnitÃ¡rios
 
