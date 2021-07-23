@@ -295,3 +295,20 @@ footer a:hover {
   }
 }
 
+@media only print {
+  header.flex-between {
+    display: none;
+  }
+
+  main {
+    position: static;
+  }
+
+  th, td {
+    font-size: 1.5rem;
+  }
+
+  #referencias, aside, footer {
+    display: none;
+  }
+}
