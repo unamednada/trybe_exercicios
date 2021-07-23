@@ -17,3 +17,13 @@ const lesson3 = {
   professor: 'Maria Clara',
   turno: 'noite',
 };
+
+const modifyLesson = (lesson, key, value) => {
+  lesson[key] = value;
+}
+
+console.table(lesson2);
+
+modifyLesson(lesson2, 'turno', 'manhã');
+
+console.table(lesson2);
