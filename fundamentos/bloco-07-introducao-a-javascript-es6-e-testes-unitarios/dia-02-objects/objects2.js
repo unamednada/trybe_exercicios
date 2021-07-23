@@ -36,7 +36,7 @@ const modifyLesson = (lesson, key, value) => {
 
 // console.log(sizeObject(lesson1));
 
-// const obviousValues = object => Object.values(object);
+const obviousValues = object => Object.values(object);
 
 // console.log(obviousValues(lesson2));
 
@@ -49,4 +49,11 @@ for (let object in allLessons) {
   totalEstudantes += allLessons[object].numeroEstudantes;
 }
 
-console.log(totalEstudantes);
+// console.log(totalEstudantes);
+
+const getKeyPosition = (object, position) => {
+  keys = obviousValues(object);
+  return keys[position];
+}
+
+console.log(getKeyPosition(lesson1, 0));
