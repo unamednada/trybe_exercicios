@@ -100,3 +100,64 @@
     display: block;
   }
 }
+
+@media only screen and ( max-width : 700px ) {
+
+  #aside {
+    display: none;
+  }
+  
+  body {
+    padding: 0;
+  }
+
+  img, p {
+    max-width: 90%;
+    text-align: justify;
+  }
+
+  #header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  #navigation {
+    position: fixed;
+    top: 79px;
+    left: 0;
+    z-index: 1;
+  }
+
+  #navigation ul {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+  }
+
+  #navigation li {
+    text-align: center;
+  }
+
+  #navigation li a {
+    border: none;
+    width: 100%;
+  }
+
+  main {
+    top: 150px;
+    position: relative;
+  }
+
+  #content-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+  }
+  
+  #content {
+    width: 100%;
+  }
+}
