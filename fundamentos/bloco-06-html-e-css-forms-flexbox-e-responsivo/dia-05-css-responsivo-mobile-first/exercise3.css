@@ -82,7 +82,7 @@
 }
 
 @media only print {
-  
+
   #header {
     display: none;
   }
@@ -93,5 +93,10 @@
 
   #footer {
     display: none;
+  }
+
+  #aside {
+    float: unset;
+    display: block;
   }
 }
