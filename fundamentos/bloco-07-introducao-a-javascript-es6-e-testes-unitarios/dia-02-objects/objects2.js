@@ -28,7 +28,7 @@ const modifyLesson = (lesson, key, value) => {
 
 // console.table(lesson2);
 
-// const obviousKeys = object => Object.keys(object);
+const obviousKeys = object => Object.keys(object);
 
 // console.log(obviousKeys(lesson1));
 
@@ -57,3 +57,8 @@ const getKeyPosition = (object, position) => {
 }
 
 console.log(getKeyPosition(lesson1, 0));
+
+const isPair = (object, key, value) => obviousKeys(object).indexOf(key) === obviousValues(object).indexOf(value);
+
+console.log(isPair(lesson3, 'turno', 'noite'));
+console.log(isPair(lesson3, 'materia', 'Maria Clara'));
