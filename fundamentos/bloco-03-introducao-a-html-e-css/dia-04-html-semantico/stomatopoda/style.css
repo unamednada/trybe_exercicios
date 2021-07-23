@@ -239,5 +239,76 @@ footer a:hover {
   color: whitesmoke;
 }
 
+@media only screen and ( max-width : 675px ) {
 
+  header.flex-between {
+    display: none;
+  }
 
+  main {
+    position: static;
+    padding: 2% 0;
+    top: 0;
+  }
+
+  #main-title h2 {
+    font-size: 2rem;
+  }
+
+  #table-container h3 {
+    font-size: 1.5rem;
+  }
+
+  table {
+    margin: 0;
+  }
+
+  caption {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  th, td {
+    font-size: 1rem;
+  }
+
+  .flex-between {
+    flex-flow: column nowrap;
+  }
+
+  footer {
+    position: static;
+    font-size: 1rem;
+    padding: 10%;
+  }
+
+  footer a {
+    font-size: 1rem;
+  }
+
+  footer strong {
+    display: none;
+  }
+
+  .center-image img {
+    max-width: 80%;
+  }
+}
+
+@media only print {
+  header.flex-between {
+    display: none;
+  }
+
+  main {
+    position: static;
+  }
+
+  th, td {
+    font-size: 1.5rem;
+  }
+
+  #referencias, aside, footer {
+    display: none;
+  }
+}
