@@ -28,17 +28,25 @@ const modifyLesson = (lesson, key, value) => {
 
 // console.table(lesson2);
 
-const obviousKeys = object => Object.keys(object);
+// const obviousKeys = object => Object.keys(object);
 
-console.log(obviousKeys(lesson1));
+// console.log(obviousKeys(lesson1));
 
-const sizeObject = object => obviousKeys(object).length;
+// const sizeObject = object => obviousKeys(object).length;
 
-console.log(sizeObject(lesson1));
+// console.log(sizeObject(lesson1));
 
-const obviousValues = object => Object.values(object);
+// const obviousValues = object => Object.values(object);
 
-console.log(obviousValues(lesson2));
+// console.log(obviousValues(lesson2));
 
 const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
-console.log(allLessons);
+// console.log(allLessons);
+
+let totalEstudantes = 0;
+
+for (let object in allLessons) {
+  totalEstudantes += allLessons[object].numeroEstudantes;
+}
+
+console.log(totalEstudantes);
