@@ -34,11 +34,23 @@ const { type } = require('os');
 // assert.strictEqual(typeof(removeVowels(parameter)), 'string');
 // assert.strictEqual(removeVowels(parameter), result);
 
-const greaterThanTen = array => array.filter((number) => number > 10);
+// const greaterThanTen = array => array.filter((number) => number > 10);
 
-const parameter = [4, 10, 32, 9, 21];
-const result = [32, 21];
+// const parameter = [4, 10, 32, 9, 21];
+// const result = [32, 21];
 
-assert.strictEqual(typeof(greaterThanTen), 'function');
-assert.strictEqual(typeof(greaterThanTen(parameter)), 'object');
-assert.deepStrictEqual(greaterThanTen(parameter), result);
+// assert.strictEqual(typeof(greaterThanTen), 'function');
+// assert.strictEqual(typeof(greaterThanTen(parameter)), 'object');
+// assert.deepStrictEqual(greaterThanTen(parameter), result);
+
+function secondThirdSmallest(array) {
+  let results = []
+  array.sort(function (x, y) {
+      return x + y;
+  });
+  results = [array[1], array[2]];
+  return results;
+};
+
+const parameter = [4, 10, 32, 9, 21, 90, 5, 11, 8, 6];
+const result = [5, 6];
