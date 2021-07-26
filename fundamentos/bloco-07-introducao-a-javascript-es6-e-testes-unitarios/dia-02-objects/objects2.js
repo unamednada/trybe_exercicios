@@ -56,9 +56,26 @@ const getKeyPosition = (object, position) => {
   return keys[position];
 }
 
-console.log(getKeyPosition(lesson1, 0));
+// console.log(getKeyPosition(lesson1, 0));
 
 const isPair = (object, key, value) => obviousKeys(object).indexOf(key) === obviousValues(object).indexOf(value);
 
-console.log(isPair(lesson3, 'turno', 'noite'));
-console.log(isPair(lesson3, 'materia', 'Maria Clara'));
+// console.log(isPair(lesson3, 'turno', 'noite'));
+// console.log(isPair(lesson3, 'materia', 'Maria Clara'));
+
+const createReport = (lessons, teacher) => {
+  const report = {
+    professor: teacher,
+    aulas: [],
+    estudantes: 0
+  }
+  for (let key in allLessons) {
+    if (allLessons[key].professor === teacher) {
+      report.aulas.push(allLessons[key].materia);
+      report.estudantes += allLessons[key].numeroEstudantes;
+    }
+  }
+  return report;
+}
+
+console.log(createReport(allLessons, 'Maria Clara'))
