@@ -22,4 +22,5 @@ function myFizzBuzz(num) {
   return num;
 }
 
-// implemente seus testes aqui
+
+console.log(myFizzBuzz('A'));
