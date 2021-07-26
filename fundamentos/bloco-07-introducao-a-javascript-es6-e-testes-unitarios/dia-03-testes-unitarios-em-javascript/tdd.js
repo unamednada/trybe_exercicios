@@ -23,12 +23,30 @@
 // const output = wordLengths(words);
 // assert.deepStrictEqual(output, expected);
 
+// const assert = require('assert');
+// const sumAllNumbers = () => numbers.reduce((sum, current) => sum + current);
+
+// const numbers = [9, 23, 10, 3, 8];
+// const expected = 53;
+// const output = sumAllNumbers(numbers);
+
+// assert.strictEqual(typeof sumAllNumbers, 'function');
+// assert.strictEqual(output, expected);
+
 const assert = require('assert');
-const sumAllNumbers = () => numbers.reduce((sum, current) => sum + current);
+// escreva a função findTheNeedle aqui
 
-const numbers = [9, 23, 10, 3, 8];
-const expected = 53;
-const output = sumAllNumbers(numbers);
+let words = ['house', 'train', 'slide', 'needle', 'book'];
+let expected = 3;
+let output = findTheNeedle(words, 'needle');
+assert.strictEqual(output, expected);
 
-assert.strictEqual(typeof sumAllNumbers, 'function');
+words = ['plant', 'shelf', 'arrow', 'bird'];
+expected = 0;
+output = findTheNeedle(words, 'plant');
+assert.strictEqual(output, expected);
+
+words = ['plant', 'shelf', 'arrow', 'bird'];
+expected = -1;
+output = findTheNeedle(words, 'plat');
 assert.strictEqual(output, expected);
