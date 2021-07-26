@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { type } = require('os');
 
 // const greetPeople = (people) => parameter.map((person) => 'Hello ' + person);
 
@@ -47,3 +48,4 @@ const parameter = [4, 10, 32, 9, 21];
 const result = [32, 21];
 
 assert.strictEqual(typeof(greaterThanTen), 'function');
+assert.strictEqual(typeof(greaterThanTen(parameter)), 'object');
