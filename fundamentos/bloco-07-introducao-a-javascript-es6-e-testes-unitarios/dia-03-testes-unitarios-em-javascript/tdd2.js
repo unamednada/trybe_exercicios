@@ -9,6 +9,7 @@ const result = ['Hello Irina', 'Hello Ashleigh', 'Hello Elsa'];
 
 assert.strictEqual(typeof(greetPeople), 'function');
 assert.strictEqual(typeof(greetPeople(parameter)), 'object');
+assert.deepStrictEqual(greetPeople(parameter), result);
 
 // console.log(typeof(result));
 
