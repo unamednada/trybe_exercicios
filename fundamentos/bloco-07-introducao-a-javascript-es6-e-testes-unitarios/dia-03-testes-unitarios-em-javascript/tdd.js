@@ -13,7 +13,8 @@
 // assert.deepStrictEqual(myArray, unchanged);
 
 const assert = require('assert');
-// escreva a função wordLengths aqui
+
+const wordLengths = wordArray => wordArray.map((word) => word.length);
 
 const words = ['sun', 'potato', 'roundabout', 'pizza'];
 const expected = [3, 6, 10, 5];
