@@ -1,4 +1,4 @@
-// const assert = require('assert');
+const assert = require('assert');
 
 // const greetPeople = (people) => parameter.map((person) => 'Hello ' + person);
 
@@ -32,6 +32,7 @@ const removeVowels = (word) => {
   }
   return results;
 };
+
 
 
 const parameter = 'Dayane';
