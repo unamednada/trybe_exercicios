@@ -1,13 +1,6 @@
 const assert = require('assert');
 
-const greetPeople = (people) => {
-  let greeting = 'Hello ';
-
-  for (const person in people) {
-    greeting += people[person];
-  }
-  return greeting;
-};
+const greetPeople = (people) => parameter.map((person) => 'Hello ' + person);
 
 const parameter = ['Irina', 'Ashleigh', 'Elsa'];
 const result = ['Hello Irina', 'Hello Ashleigh', 'Hello Elsa'];
@@ -15,4 +8,7 @@ const result = ['Hello Irina', 'Hello Ashleigh', 'Hello Elsa'];
 // console.log(greetPeople(parameter));
 
 assert.strictEqual(typeof(greetPeople), 'function');
-assert.strictEqual(typeof(greetPeople(parameter)), 'string');
+assert.strictEqual(typeof(greetPeople(parameter)), 'object');
+
+// console.log(typeof(result));
+
