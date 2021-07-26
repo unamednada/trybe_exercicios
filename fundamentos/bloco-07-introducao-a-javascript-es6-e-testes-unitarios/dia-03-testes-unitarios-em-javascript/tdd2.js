@@ -37,3 +37,4 @@ const parameter = 'Dayane';
 const result = 'D1y2n3';
 
 assert.strictEqual(typeof(removeVowels), 'function');
+assert.strictEqual(typeof(removeVowels(parameter)), 'string');
