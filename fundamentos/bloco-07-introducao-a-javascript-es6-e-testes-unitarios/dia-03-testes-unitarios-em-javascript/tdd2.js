@@ -41,3 +41,4 @@ const result = [32, 21];
 
 assert.strictEqual(typeof(greaterThanTen), 'function');
 assert.strictEqual(typeof(greaterThanTen(parameter)), 'object');
+assert.deepStrictEqual(greaterThanTen(parameter), result);
