@@ -34,7 +34,7 @@
 // assert.strictEqual(output, expected);
 
 const assert = require('assert');
-// escreva a função findTheNeedle aqui
+const findTheNeedle = (words, needle) => words.indexOf(needle);
 
 let words = ['house', 'train', 'slide', 'needle', 'book'];
 let expected = 3;
