@@ -15,3 +15,4 @@ const result = ['Hello Irina', 'Hello Ashleigh', 'Hello Elsa'];
 // console.log(greetPeople(parameter));
 
 assert.strictEqual(typeof(greetPeople), 'function');
+assert.strictEqual(typeof(greetPeople(parameter)), 'string');
