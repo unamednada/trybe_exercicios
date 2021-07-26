@@ -14,25 +14,15 @@ const assert = require('assert');
 // // console.log(typeof(result));
 
 const removeVowels = (word) => {
-  const characters = word.split('');
-  const results = [];
-
-  for (let index = 0; index < characters.length; index += 1) {
-    if (
-      characters[index] === 'a' ||
-      characters[index] === 'o' ||
-      characters[index] === 'i' ||
-      characters[index] === 'e' ||
-      characters[index] === 'u'
-    ) {
-      results.push(characters[index]);
-    } else {
-      results.push('_');
+  let vowelCount = 1;
+  for (let i = 0; i < word.length; i += 1) {
+    if (['a', 'e', 'i', 'o', 'u'].includes(word[i])) {
+      word[i] = vowelCount;
+      vowelCount += 1;
     }
   }
-  return results;
-};
-
+  return word;
+}
 const parameter = 'Dayane';
 const result = 'D1y2n3';
 
