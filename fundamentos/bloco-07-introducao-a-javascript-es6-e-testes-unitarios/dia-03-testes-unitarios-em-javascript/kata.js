@@ -13,4 +13,4 @@ const verify = new PasswordVerifier();
 assert.strictEqual(typeof PasswordVerifier, 'function');
 assert.strictEqual(typeof verify, 'object');
 assert.strictEqual(verify.Verify(), false);
-assert.strictEqual(verify.Verify('123'), true);
+assert.strictEqual(verify.Verify('123'), false);
