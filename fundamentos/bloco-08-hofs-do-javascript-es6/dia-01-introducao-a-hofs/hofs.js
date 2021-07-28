@@ -26,3 +26,5 @@ assert.deepStrictEqual(createEmployee('Gustavo Dias'), { fullName: 'Gustavo Dias
 for (let key in myCompanyStaff) {
   assert.notStrictEqual(myCompanyStaff[key], '');
 };
+
+console.table(myCompanyStaff);
