@@ -2,11 +2,11 @@ const assert = require('assert');
 
 class PasswordVerifier {
 
-  Verify(password) {
+  Verify (password) {
     if (!password) return false;
     if (password.length <= 8) return false;
-    // const upperCase = password.split('').filter((letter) => letter.toUpperCase() === letter);
-    // if (upperCase.length === 0) return false;
+    const upperCase = password.split('').filter((letter) => letter.toUpperCase() === letter);
+    if (upperCase.length === 0) return false;
     return true;
   }
 
