@@ -71,6 +71,8 @@
 const assert = require('assert');
 // escreva a função removeMiddle aqui
 
+const removeMiddle = array => array.splice(Math.floor(array.length / 2), 1);
+
 const words = ['mouse', 'giraffe', 'queen', 'window', 'bottle'];
 const expectedWords = ['mouse', 'giraffe', 'window', 'bottle'];
 const expectedOutput = ['queen'];
