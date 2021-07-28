@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-const createEmployee = () => {};
+const createEmployee = () => ({});
 
 const newEmployees = () => {
   const employees = {
