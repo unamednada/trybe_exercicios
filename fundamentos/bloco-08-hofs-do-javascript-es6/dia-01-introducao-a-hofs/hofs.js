@@ -11,3 +11,4 @@ const newEmployees = () => {
 
 assert.strictEqual(typeof newEmployees, 'function');
 assert.strictEqual(typeof newEmployees(), 'object');
+assert.strictEqual(typeof createEmployee, 'function');
