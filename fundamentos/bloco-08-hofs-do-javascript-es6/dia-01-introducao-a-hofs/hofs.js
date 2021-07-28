@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-const createEmployee = (fullName) => {};
+const createEmployee = () => {};
 
 const newEmployees = () => {
   const employees = {
@@ -14,3 +14,4 @@ const newEmployees = () => {
 assert.strictEqual(typeof newEmployees, 'function');
 assert.strictEqual(typeof newEmployees(), 'object');
 assert.strictEqual(typeof createEmployee, 'function');
+assert.strictEqual(typeof createEmployee(), 'object');
