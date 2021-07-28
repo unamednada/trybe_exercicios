@@ -19,3 +19,4 @@ assert.strictEqual(typeof verify, 'object');
 assert.strictEqual(verify.Verify(), false);
 assert.strictEqual(verify.Verify('123'), false);
 assert.strictEqual(verify.Verify('aaaaaaaaa'), false);
+assert.strictEqual(verify.Verify('Aaaaaaaaa'), true);
