@@ -9,3 +9,4 @@ const newEmployees = () => {
   return employees;
 };
 
+assert.strictEqual(typeof newEmployees, 'function');
