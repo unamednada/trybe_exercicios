@@ -68,15 +68,28 @@
 // assert.strictEqual(out4, exp4);
 // assert.strictEqual(out5, exp5);
 
-const assert = require('assert');
-// escreva a função removeMiddle aqui
+// const assert = require('assert');
+// // escreva a função removeMiddle aqui
 
-const removeMiddle = array => array.splice(Math.floor(array.length / 2), 1);
+// const removeMiddle = array => array.splice(Math.floor(array.length / 2), 1);
 
-const words = ['mouse', 'giraffe', 'queen', 'window', 'bottle'];
-const expectedWords = ['mouse', 'giraffe', 'window', 'bottle'];
-const expectedOutput = ['queen'];
-const output = removeMiddle(words);
+// const words = ['mouse', 'giraffe', 'queen', 'window', 'bottle'];
+// const expectedWords = ['mouse', 'giraffe', 'window', 'bottle'];
+// const expectedOutput = ['queen'];
+// const output = removeMiddle(words);
 
-assert.deepStrictEqual(output, expectedOutput);
-assert.deepStrictEqual(words, expectedWords);
+// assert.deepStrictEqual(output, expectedOutput);
+// assert.deepStrictEqual(words, expectedWords);
+
+const getLargestNumber = (array) => {
+  let largestNumber;
+  for (let index = 0; index < array.length - 1; index += 1) {
+      if (array[index] > array[index + 1]) {
+          largestNumber = [array[index]];
+      }
+  }
+  return largestNumber;
+}
+
+const parameter = [45, 8, 2, 50, 1, 7, 99];
+const result = 99;
