@@ -8,3 +8,5 @@ const casino = (number, game) => game(number) ? 'Parabéns, você ganhou!' : 'Te
 assert.strictEqual(typeof casino, 'function');
 assert.strictEqual(typeof casino(3, (n) => n < 0 ), 'string');
 assert.strictEqual(typeof casino(3, oneToTen), 'string');
+
+console.log(casino(3, oneToTen));
