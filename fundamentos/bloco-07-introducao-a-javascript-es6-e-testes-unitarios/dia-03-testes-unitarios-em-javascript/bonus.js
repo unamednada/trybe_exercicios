@@ -97,3 +97,4 @@ const parameter = [45, 8, 2, 50, 1, 7, 99];
 const result = 99;
 
 assert.strictEqual(typeof getLargestNumber, 'function');
+assert.strictEqual(typeof getLargestNumber(parameter), 'number');
