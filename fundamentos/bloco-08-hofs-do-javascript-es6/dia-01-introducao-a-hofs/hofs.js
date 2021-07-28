@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { create } = require('domain');
 
 const createEmployee = (fullName) => {
   const nameArray = fullName.split(' ');
@@ -18,3 +19,4 @@ assert.strictEqual(typeof newEmployees, 'function');
 assert.strictEqual(typeof newEmployees(), 'object');
 assert.strictEqual(typeof createEmployee, 'function');
 assert.strictEqual(typeof createEmployee('Gustavo Dias'), 'object');
+assert.deepStrictEqual(createEmployee('Gustavo Dias'), { fullName: 'Gustavo Dias', email: 'gustavo_dias@trybe.com'});
