@@ -38,6 +38,8 @@
 
 const assert = require('assert');
 // escreva a função factorial aqui
+// Solução para erro callstack maximum size: https://stackoverflow.com/questions/25126141/factorial-function-running-error-maximum-call-stack-size-exceeded
+const factorial = n => n === 0 ? 1 : n * factorial(n - 1);
 
 const in1 = 5;
 const exp1 = 120;
