@@ -1,3 +1,5 @@
+const assert = require('assert');
+
 const mage = {
   healthPoints: 130,
   intelligence: 45,
@@ -15,7 +17,10 @@ const warrior = {
 const dragon = {
   healthPoints: 350,
   strength: 50,
-  damage: undefined,
+  // inspiração para damage: https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
+  damage: () => Math.floor(Math.random() * (dragon.strength - 15 + 1) + 15),
 };
 
 const battleMembers = { mage, warrior, dragon };
+
+assert.strictEqual(typeof dragon.damage(), 'number');
