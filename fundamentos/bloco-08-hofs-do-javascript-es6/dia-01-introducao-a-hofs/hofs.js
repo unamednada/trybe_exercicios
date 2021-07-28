@@ -24,3 +24,6 @@ assert.strictEqual(typeof newEmployees(createEmployee), 'object');
 assert.strictEqual(typeof createEmployee, 'function');
 assert.strictEqual(typeof createEmployee('Gustavo Dias'), 'object');
 assert.deepStrictEqual(createEmployee('Gustavo Dias'), { fullName: 'Gustavo Dias', email: 'gustavo_dias@trybe.com'});
+for (let key in myCompanyStaff) {
+  assert.notStrictEqual(myCompanyStaff[key], '');
+};
