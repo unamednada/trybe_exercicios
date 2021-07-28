@@ -3,7 +3,9 @@ const assert = require('assert');
 class PasswordVerifier {
 
   Verify(password) {
-    return password ? password.length > 8 : false;
+    if (!password) return false;
+    if (password.length <= 8) return false;
+    return true;
   }
 
 };
