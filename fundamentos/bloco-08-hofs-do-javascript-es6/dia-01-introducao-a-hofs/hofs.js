@@ -1,3 +1,5 @@
+const assert = require('assert');
+
 const newEmployees = () => {
   const employees = {
     id1: '', // Nome: Pedro Guerra -> Chame sua função passando o nome Pedro Guerra como parâmetro, substituindo as aspas
@@ -6,3 +8,4 @@ const newEmployees = () => {
   }
   return employees;
 };
+
