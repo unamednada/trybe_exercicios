@@ -7,6 +7,8 @@ class PasswordVerifier {
     if (password.length <= 8) return false;
     const upperCase = password.split('').filter((letter) => letter.toUpperCase() === letter);
     if (upperCase.length === 0) return false;
+    const lowerCase = password.split('').filter((letter) => letter.toLowerCase() === letter);
+    if (lowerCase.length === 0) return false;
     return true;
   }
 
