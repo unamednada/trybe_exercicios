@@ -36,34 +36,45 @@
 
 // assert.throws(() => { getChange(100, 10); }, /^Error: paid value is not enough$/);
 
+// const assert = require('assert');
+// // escreva a função factorial aqui
+// // Solução para erro callstack maximum size: https://stackoverflow.com/questions/25126141/factorial-function-running-error-maximum-call-stack-size-exceeded
+// const factorial = n => n === 0 ? 1 : n * factorial(n - 1);
+
+// const in1 = 5;
+// const exp1 = 120;
+
+// const in2 = 9;
+// const exp2 = 362880;
+
+// const in3 = 1;
+// const exp3 = 1;
+
+// const in4 = 0;
+// const exp4 = 1;
+
+// const in5 = 3;
+// const exp5 = 6;
+
+// const out1 = factorial(in1);
+// const out2 = factorial(in2);
+// const out3 = factorial(in3);
+// const out4 = factorial(in4);
+// const out5 = factorial(in5);
+
+// assert.strictEqual(out1, exp1);
+// assert.strictEqual(out2, exp2);
+// assert.strictEqual(out3, exp3);
+// assert.strictEqual(out4, exp4);
+// assert.strictEqual(out5, exp5);
+
 const assert = require('assert');
-// escreva a função factorial aqui
-// Solução para erro callstack maximum size: https://stackoverflow.com/questions/25126141/factorial-function-running-error-maximum-call-stack-size-exceeded
-const factorial = n => n === 0 ? 1 : n * factorial(n - 1);
+// escreva a função removeMiddle aqui
 
-const in1 = 5;
-const exp1 = 120;
+const words = ['mouse', 'giraffe', 'queen', 'window', 'bottle'];
+const expectedWords = ['mouse', 'giraffe', 'window', 'bottle'];
+const expectedOutput = ['queen'];
+const output = removeMiddle(words);
 
-const in2 = 9;
-const exp2 = 362880;
-
-const in3 = 1;
-const exp3 = 1;
-
-const in4 = 0;
-const exp4 = 1;
-
-const in5 = 3;
-const exp5 = 6;
-
-const out1 = factorial(in1);
-const out2 = factorial(in2);
-const out3 = factorial(in3);
-const out4 = factorial(in4);
-const out5 = factorial(in5);
-
-assert.strictEqual(out1, exp1);
-assert.strictEqual(out2, exp2);
-assert.strictEqual(out3, exp3);
-assert.strictEqual(out4, exp4);
-assert.strictEqual(out5, exp5);
+assert.deepStrictEqual(output, expectedOutput);
+assert.deepStrictEqual(words, expectedWords);
