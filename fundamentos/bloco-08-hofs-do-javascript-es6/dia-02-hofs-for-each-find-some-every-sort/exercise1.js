@@ -149,6 +149,13 @@ const books = [
 
 const expectedResult = false;
 
-const authorUnique = () => books.forEach((book, index, books) => books.splice(index + 1).includes(book) ? false : true);
+const authorUnique = () => {
+  for (let i = 0; i < books.length; i += 1) {
+    for (let j = books.length -1; j > i; j -= 1) {
+      if (books[i].author.birthYear === books[j].author.birthYear) return false;
+    }
+  }
+  return true;
+}
 
 assert.strictEqual(authorUnique(), expectedResult);
