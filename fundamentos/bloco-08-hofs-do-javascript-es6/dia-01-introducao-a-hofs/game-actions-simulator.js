@@ -5,16 +5,14 @@ const mage = {
   healthPoints: 130,
   intelligence: 45,
   mana: 125,
-  damage: () => ({
-
-  }),
+  damage: undefined,
 };
 
 const warrior = {
   healthPoints: 200,
   strength: 30,
   weaponDmg: 2,
-  damage: () => Math.floor(Math.random() * ((warrior.weaponDmg * warrior.strength) - warrior.strength + 1) + warrior.strength),
+  damage: () => undefined,
 };
 
 const dragon = {
@@ -39,6 +37,12 @@ const gameActions = {
     const damage = warriorAtk();
     dragon.healthPoints -= damage;
     warrior.damage = damage;
+  },
+  mageTurn: (mageAtk) => {
+    const { dmg, manaCost } = mageSpell();
+    dragon.healthPoints -= dmg;
+    mage.mana -= manaCost;
+    mage.damage = dmg;
   }
 
 };
