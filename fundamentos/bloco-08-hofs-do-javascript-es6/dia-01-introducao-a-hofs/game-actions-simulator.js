@@ -28,15 +28,14 @@ const battleMembers = { mage, warrior, dragon };
 
 const dragonDmg = () => Math.floor(Math.random() * (dragon.strength - 15 + 1) + 15);
 const warriorDmg = () => Math.floor(Math.random() * ((warrior.weaponDmg * warrior.strength) - warrior.strength + 1) + warrior.strength);
-const mageAtk = () => mage.mana < 15 ? 'No mana left' : ({
+const mageSpell = () => mage.mana < 15 ? 'No mana left' : ({
   dmg: Math.floor(Math.random() * (mage.intelligence + 1) + mage.intelligence),
   manaCost: 15,
 });
 
 assert.strictEqual(typeof dragonDmg(), 'number');
 assert.strictEqual(typeof warriorDmg(), 'number');
-assert.strictEqual(typeof mageAtk, 'function');
-assert.strictEqual(typeof mageAtk(), 'object');
-assert.strictEqual(Object.keys(mageAtk()).length, 2);
-
-// console.log(warrior.damage());
+assert.strictEqual(typeof mageSpell, 'function');
+assert.strictEqual(typeof mageSpell(), 'object');
+assert.strictEqual(Object.keys(mageSpell()).length, 2);
+assert.strictEqual(typeof gameActions, 'function');
