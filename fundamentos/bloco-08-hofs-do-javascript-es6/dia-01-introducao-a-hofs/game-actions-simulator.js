@@ -5,7 +5,9 @@ const mage = {
   healthPoints: 130,
   intelligence: 45,
   mana: 125,
-  damage: () => ({}),
+  damage: () => ({
+
+  }),
 };
 
 const warrior = {
@@ -19,14 +21,22 @@ const dragon = {
   healthPoints: 350,
   strength: 50,
   // inspiração para damage: https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
-  damage: () => Math.floor(Math.random() * (dragon.strength - 15 + 1) + 15),
+  damage: undefined,
 };
 
 const battleMembers = { mage, warrior, dragon };
 
-assert.strictEqual(typeof dragon.damage(), 'number');
-assert.strictEqual(typeof warrior.damage(), 'number');
-assert.strictEqual(typeof mage.damage, 'function');
-assert.strictEqual(typeof mage.damage(), 'object');
+const dragonDmg = () => Math.floor(Math.random() * (dragon.strength - 15 + 1) + 15);
+const warriorDmg = () => Math.floor(Math.random() * ((warrior.weaponDmg * warrior.strength) - warrior.strength + 1) + warrior.strength);
+const mageAtk = () => mage.mana < 15 ? 'No mana left' : ({
+  dmg: Math.floor(Math.random() * (mage.intelligence + 1) + mage.intelligence),
+  manaCost: 15,
+});
+
+assert.strictEqual(typeof dragonDmg(), 'number');
+assert.strictEqual(typeof warriorDmg(), 'number');
+assert.strictEqual(typeof mageAtk, 'function');
+assert.strictEqual(typeof mageAtk(), 'object');
+assert.strictEqual(Object.keys(mageAtk()).length, 2);
 
 // console.log(warrior.damage());
