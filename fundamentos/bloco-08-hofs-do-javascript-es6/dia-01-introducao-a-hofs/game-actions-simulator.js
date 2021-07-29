@@ -34,17 +34,28 @@ const mageSpell = () => mage.mana < 15 ? 'No mana left' : ({
 const gameActions = {
 
   warriorTurn: (warriorAtk) => {
-    const damage = warriorAtk();
-    dragon.healthPoints -= damage;
-    warrior.damage = damage;
+    const dmg = warriorAtk();
+    dragon.healthPoints -= dmg;
+    warrior.damage = dmg;
   },
   mageTurn: (mageAtk) => {
     const { dmg, manaCost } = mageSpell();
     dragon.healthPoints -= dmg;
     mage.mana -= manaCost;
     mage.damage = dmg;
+  },
+  dragonTurn: (dragonAtk) => {
+    const dmg = dragonDmg();
+    warrior.healthPoints -= dmg;
+    mage.healthPoints -= dmg;
+    dragon.damage = dmg;
+  },
+  turn: () => {
+    gameActions.warriorTurn(warriorDmg);
+    gameActions.mageTurn(mageSpell);
+    gameActions.dragonTurn(dragonDmg);
+    console.table(battleMembers);
   }
-
 };
 
 assert.strictEqual(typeof dragonDmg(), 'number');
@@ -53,3 +64,5 @@ assert.strictEqual(typeof mageSpell, 'function');
 assert.strictEqual(typeof mageSpell(), 'object');
 assert.strictEqual(Object.keys(mageSpell()).length, 2);
 assert.strictEqual(typeof gameActions, 'object');
+
+gameActions.turn();
