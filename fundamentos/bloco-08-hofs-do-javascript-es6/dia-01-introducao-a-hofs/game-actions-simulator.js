@@ -11,7 +11,7 @@ const warrior = {
   healthPoints: 200,
   strength: 30,
   weaponDmg: 2,
-  damage: () => Math.floor(Math.random() * (warrior.weaponDmg - warrior.strength + 1) + warrior.strength),
+  damage: () => Math.floor(Math.random() * ((warrior.weaponDmg * warrior.strength) - warrior.strength + 1) + warrior.strength),
 };
 
 const dragon = {
@@ -25,3 +25,6 @@ const battleMembers = { mage, warrior, dragon };
 
 assert.strictEqual(typeof dragon.damage(), 'number');
 assert.strictEqual(typeof warrior.damage(), 'number');
+assert.strictEqual(typeof mage.damage, 'function');
+
+// console.log(warrior.damage());
