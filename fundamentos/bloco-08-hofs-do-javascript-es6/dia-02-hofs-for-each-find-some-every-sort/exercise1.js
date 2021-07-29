@@ -63,11 +63,11 @@ const books = [
   },
 ];
 
-// const authorBornIn1947 = () => books.find((book, index, books) => book.author.birthYear === 1947).author.name;
+const authorBornIn1947 = () => books.find((book, index, books) => book.author.birthYear === 1947).author.name;
 
 // assert.strictEqual(authorBornIn1947(), 'Stephen King');
 
-// const smallerName = () => books.sort((a, b) => a.name.length - b.name.length)[0].name;
+const smallerName = () => books.sort((a, b) => a.name.length - b.name.length)[0].name;
 
 // assert.strictEqual(smallerName(), 'Duna');
 
@@ -82,7 +82,7 @@ const books = [
 //   releaseYear: 1991,
 // };
 
-// const getNamedBook = () => books.find((book) => book.name.length === 26);
+const getNamedBook = () => books.find((book) => book.name.length === 26);
   
 // assert.deepStrictEqual(getNamedBook(), expectedResult);
 
@@ -131,23 +131,23 @@ const books = [
 //   },
 // ];
 
-// const booksOrderedByReleaseYearDesc = () => books.sort((a, b) => b.releaseYear - a.releaseYear);
+const booksOrderedByReleaseYearDesc = () => books.sort((a, b) => b.releaseYear - a.releaseYear);
 
 // assert.deepStrictEqual(booksOrderedByReleaseYearDesc(), expectedResult);
 
 // const expectedResult = false;
 
-// const everyoneWasBornOnSecXX = () => books.every((book) => book.author.birthYear >= 1901 && book.author.birthYear <= 2000);
+const everyoneWasBornOnSecXX = () => books.every((book) => book.author.birthYear >= 1901 && book.author.birthYear <= 2000);
 
 // assert.strictEqual(everyoneWasBornOnSecXX(), expectedResult);
 
 // const expectedResult = true;
 
-// const someBookWasReleaseOnThe80s = () => books.some((book) => book.releaseYear >= 1980 && book.releaseYear < 1990);
+const someBookWasReleaseOnThe80s = () => books.some((book) => book.releaseYear >= 1980 && book.releaseYear < 1990);
 
 // assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult);
 
-const expectedResult = false;
+// const expectedResult = false;
 
 // const authorUnique = () => books.every((book, index, array) => {
 //     for (let j = array.length -1; j > index; j -= 1) {
@@ -158,4 +158,4 @@ const expectedResult = false;
 
 const authorUnique = () => books.every((book, index, array) => !array.slice(index + 1).some((compareBook) => compareBook.author.birthYear === book.author.birthYear));
 
-assert.strictEqual(authorUnique(), expectedResult);
+// assert.strictEqual(authorUnique(), expectedResult);
