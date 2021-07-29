@@ -4,7 +4,7 @@ const mage = {
   healthPoints: 130,
   intelligence: 45,
   mana: 125,
-  damage: undefined,
+  damage: () => {},
 };
 
 const warrior = {
