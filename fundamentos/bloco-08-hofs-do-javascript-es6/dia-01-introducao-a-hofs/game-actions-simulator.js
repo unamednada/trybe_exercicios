@@ -11,7 +11,7 @@ const warrior = {
   healthPoints: 200,
   strength: 30,
   weaponDmg: 2,
-  damage: undefined,
+  damage: () => Math.floor(Math.random() * (warrior.weaponDmg - warrior.strength + 1) + warrior.strength),
 };
 
 const dragon = {
