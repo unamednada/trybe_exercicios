@@ -35,6 +35,12 @@ const mageSpell = () => mage.mana < 15 ? 'No mana left' : ({
 
 const gameActions = {
 
+  warriorTurn: (warriorAtk) => {
+    const damage = warriorAtk();
+    dragon.healthPoints -= damage;
+    warrior.damage = damage;
+  }
+
 };
 
 assert.strictEqual(typeof dragonDmg(), 'number');
