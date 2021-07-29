@@ -24,3 +24,4 @@ const dragon = {
 const battleMembers = { mage, warrior, dragon };
 
 assert.strictEqual(typeof dragon.damage(), 'number');
+assert.strictEqual(typeof warrior.damage(), 'number');
