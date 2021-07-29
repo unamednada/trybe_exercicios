@@ -33,9 +33,13 @@ const mageSpell = () => mage.mana < 15 ? 'No mana left' : ({
   manaCost: 15,
 });
 
+const gameActions = {
+
+};
+
 assert.strictEqual(typeof dragonDmg(), 'number');
 assert.strictEqual(typeof warriorDmg(), 'number');
 assert.strictEqual(typeof mageSpell, 'function');
 assert.strictEqual(typeof mageSpell(), 'object');
 assert.strictEqual(Object.keys(mageSpell()).length, 2);
-assert.strictEqual(typeof gameActions, 'function');
+assert.strictEqual(typeof gameActions, 'object');
