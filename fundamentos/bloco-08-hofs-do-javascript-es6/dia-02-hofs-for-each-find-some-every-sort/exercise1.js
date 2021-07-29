@@ -141,8 +141,14 @@ const books = [
 
 // assert.strictEqual(everyoneWasBornOnSecXX(), expectedResult);
 
-const expectedResult = true;
+// const expectedResult = true;
 
-const someBookWasReleaseOnThe80s = () => books.some((book) => book.releaseYear >= 1980 && book.releaseYear < 1990);
+// const someBookWasReleaseOnThe80s = () => books.some((book) => book.releaseYear >= 1980 && book.releaseYear < 1990);
 
-assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult);
+// assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult);
+
+const expectedResult = false;
+
+const authorUnique = () => books.forEach((book, index, books) => books.splice(index + 1).includes(book) ? false : true);
+
+assert.strictEqual(authorUnique(), expectedResult);
