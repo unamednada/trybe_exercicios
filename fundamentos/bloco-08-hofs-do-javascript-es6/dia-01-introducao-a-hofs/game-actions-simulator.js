@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { type } = require('os');
 
 const mage = {
   healthPoints: 130,
@@ -26,5 +27,6 @@ const battleMembers = { mage, warrior, dragon };
 assert.strictEqual(typeof dragon.damage(), 'number');
 assert.strictEqual(typeof warrior.damage(), 'number');
 assert.strictEqual(typeof mage.damage, 'function');
+assert.strictEqual(typeof mage.damage(), 'object');
 
 // console.log(warrior.damage());
