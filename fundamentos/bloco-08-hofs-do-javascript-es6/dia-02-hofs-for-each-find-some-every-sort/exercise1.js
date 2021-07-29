@@ -149,13 +149,11 @@ const books = [
 
 const expectedResult = false;
 
-const authorUnique = () => {
-  for (let i = 0; i < books.length; i += 1) {
-    for (let j = books.length -1; j > i; j -= 1) {
-      if (books[i].author.birthYear === books[j].author.birthYear) return false;
+const authorUnique = () => books.every((book, index, array) => {
+    for (let j = array.length -1; j > index; j -= 1) {
+      if (books[j].author.birthYear === book.author.birthYear) return false;
     }
-  }
-  return true;
-}
+    return true;
+  });
 
 assert.strictEqual(authorUnique(), expectedResult);
