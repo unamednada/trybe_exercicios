@@ -169,3 +169,14 @@ const expectedResult4 = [
 const oldBooksOrdered = () => books.filter((book) => 2020 - book.releaseYear > 60).sort((a, b) => a.releaseYear - b.releaseYear);
 
 assert.deepStrictEqual(oldBooksOrdered(), expectedResult4);
+
+const expectedResult5 = [
+  'Frank Herbert',
+  'George R. R. Martin',
+  'Isaac Asimov',
+  'J. R. R. Tolkien',
+];
+
+const fantasyOrScienceFictionAuthors = () => books.filter((book) => book.genre === 'Ficção Científica' || book.genre === 'Fantasia').map((work) => work.author.name).sort();
+
+assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult5);
