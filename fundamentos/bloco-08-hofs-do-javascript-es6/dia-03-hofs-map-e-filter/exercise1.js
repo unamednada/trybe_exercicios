@@ -180,3 +180,13 @@ const expectedResult5 = [
 const fantasyOrScienceFictionAuthors = () => books.filter((book) => book.genre === 'Ficção Científica' || book.genre === 'Fantasia').map((work) => work.author.name).sort();
 
 assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult5);
+
+const expectedResult6 = [
+  'O Senhor dos Anéis',
+  'Fundação',
+  'O Chamado de Cthulhu',
+];
+
+const oldBooks = () => books.filter((book) => 2020 - book.releaseYear > 60).map((work) => work.name); 
+
+assert.deepStrictEqual(oldBooks(), expectedResult6);
