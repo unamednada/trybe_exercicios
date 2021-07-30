@@ -190,3 +190,9 @@ const expectedResult6 = [
 const oldBooks = () => books.filter((book) => 2020 - book.releaseYear > 60).map((work) => work.name); 
 
 assert.deepStrictEqual(oldBooks(), expectedResult6);
+
+const expectedResult7 = 'O Senhor dos Anéis';
+
+const authorWith3DotsOnName = () => books.filter((book) => book.author.name[1] === '.' && book.author.name[4] === '.' && book.author.name[7] === '.').map((work) => work.name)[0];
+
+assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult7);
