@@ -64,3 +64,9 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+
+const expectedResult2 = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
+
+const reduceNames = () => books.reduce((names, book) => 0);
+
+assert.strictEqual(reduceNames(), expectedResult2);
