@@ -67,6 +67,6 @@ const books = [
 
 const expectedResult2 = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 
-const reduceNames = () => books.reduce((names, book) => 0);
+const reduceNames = () => books.reduce((names, book) => books.indexOf(book) > 0 ? names + ', ' + book.author.name : names, books[0].author.name) + '.';
 
 assert.strictEqual(reduceNames(), expectedResult2);
