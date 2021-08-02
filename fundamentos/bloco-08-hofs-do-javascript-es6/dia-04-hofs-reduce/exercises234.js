@@ -70,3 +70,11 @@ const expectedResult2 = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Fr
 const reduceNames = () => books.reduce((names, book) => books.indexOf(book) > 0 ? names + ', ' + book.author.name : names, books[0].author.name) + '.';
 
 assert.strictEqual(reduceNames(), expectedResult2);
+
+const expectedResult3 = 43;
+
+function averageAge() {
+  // escreva seu código aqui
+}
+
+assert.strictEqual(averageAge(), expectedResult3);
