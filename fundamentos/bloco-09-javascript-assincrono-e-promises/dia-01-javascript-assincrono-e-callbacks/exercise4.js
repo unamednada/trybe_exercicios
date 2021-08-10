@@ -23,7 +23,7 @@ const sendMarsTemperature = (onSuccess, onFail) => {
   const performance = Math.random() <= .6;
   setTimeout(() => {
     if (performance) onSuccess(temperature)
-    else onFail('Robot is busy');
+    else onFail('Humidity low');
   }, messageDelay());
 }
 
