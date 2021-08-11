@@ -6,11 +6,16 @@ const jokeRequestObj = {
 };
 
 const fetchJoke = async () => {
-    const response = await fetch(API_URL, jokeRequestObj);
     // Learned at codecademy JavaScript course:
-    if (response.ok) {
-      const jsonResponse = await response.json();
-      document.getElementById('jokeContainer').innerText = jsonResponse.joke;
+    try {
+      const response = await fetch(API_URL, jokeRequestObj);
+
+      if (response.ok) {
+        const jsonResponse = await response.json();
+        document.getElementById('jokeContainer').innerText = jsonResponse.joke;
+      }
+    } catch (error) {
+      console.log(error);
     }
 };
 
