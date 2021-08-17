@@ -75,8 +75,9 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### Bloco 9: Assincronicidade & Callbacks
 
 - [:white_check_mark:] 9-1: _JavaScript Assíncrono e Callbacks_
-- [ ] 9-2: _JavaScript Promises_
-- [ ] 9-3: _[Projeto - Carrinho de Compras]()_
+- [:white_check_mark:] 9-2: _JavaScript Promises_
+- [:white_check_mark:] 9-3: _[Projeto - Carrinho de Compras](https://github.com/tryber/sd-014-a-project-shopping-cart/pull/42)_
+- [:white_check_mark:] 9-3: _[Projeto - Casa de Cambio](https://github.com/tryber/sd-014-a-casa-de-cambio/pull/2)_
 
 ##### Bloco 10: Jest
 
