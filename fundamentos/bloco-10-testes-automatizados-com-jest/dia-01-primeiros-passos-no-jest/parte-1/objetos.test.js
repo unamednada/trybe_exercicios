@@ -7,10 +7,13 @@ describe('Compare 2 objetos para verificar se são idênticos ou não', () => {
     expect(obj2).not.toEqual(obj3);
   });
 
-  it('Comparar as chaves de 2 objetos para verificar se são idênticos', () => {
+  it('Comparar as propriedades de 2 objetos para verificar se são idênticos', () => {
     expect(obj1).toEqual(
       expect.objectContaining({...obj2})
     );
   });
 
+  it('Comparar o array de chaves de 2 objetos para verificar se são idênticos', () => {
+    expect(Object.keys(obj1)).toEqual(Object.keys(obj2));
+  })
 });
