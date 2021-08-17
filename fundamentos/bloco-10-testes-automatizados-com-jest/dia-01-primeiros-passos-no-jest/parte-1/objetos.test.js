@@ -1,0 +1,2 @@
+const objetos = require('./objetos');
+

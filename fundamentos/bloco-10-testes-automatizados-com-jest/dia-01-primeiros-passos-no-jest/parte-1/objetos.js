@@ -1,16 +1,18 @@
-const obj1 = {
-  title: 'My Title',
-  description: 'My Description',
-};
+const objetos = [
+  {
+    title: "My Title",
+    description: "My Description",
+  },
 
-const obj2 = {
-  description: 'My Description',
-  title: 'My Title',
-};
+  {
+    description: "My Description",
+    title: "My Title",
+  },
 
-const obj3 = {
-  title: 'My Different Title',
-  description: 'My Description',
-};
+  {
+    title: "My Different Title",
+    description: "My Description",
+  },
+];
 
-module.exports = [obj1, obj2, obj3];
+module.exports = objetos;
