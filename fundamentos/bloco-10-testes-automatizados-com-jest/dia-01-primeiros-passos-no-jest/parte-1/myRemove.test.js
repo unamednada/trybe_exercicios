@@ -16,4 +16,8 @@ describe('A função myRemove(arr, item) recebe um array e retorna uma cópia de
     const newArr = myRemove(arr, 3);
     expect([...arr, ...newArr]).toEqual([1, 2, 3, 4, 1, 2, 4]);
   });
+
+  it('A chamada myRemove([1, 2, 3, 4], 5) retorna o array esperado', () => {
+    expect([1, 2, 3, 4]).toEqual(myRemove([1, 2, 3, 4], 5));
+  });
 });
