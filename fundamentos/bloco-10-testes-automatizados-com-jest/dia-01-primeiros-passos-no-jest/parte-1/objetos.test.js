@@ -8,7 +8,9 @@ describe('Compare 2 objetos para verificar se são idênticos ou não', () => {
   });
 
   it('Comparar as chaves de 2 objetos para verificar se são idênticos', () => {
-    expect(obj1).objectContaining({...obj2});
-  })
+    expect(obj1).toEqual(
+      expect.objectContaining({...obj2})
+    );
+  });
 
 });
