@@ -4,6 +4,10 @@ describe('A função myFizzBuzz(num) retorna \"fizzbuzz\" se o número for divis
 
   it('myFizzBuzz() tem o retorno esperado quando passamos um número divisível por 3 e 5', () => {
     expect('fizzbuzz').toBe(myFizzBuzz(15));
-  })
+  });
 
-})
+  it('myFizzBuzz() tem o retorno esperado quando passamos um número divisível apenas por 3', () => {
+    expect('fizz').toBe(myFizzBuzz(9));
+  });
+  
+});
