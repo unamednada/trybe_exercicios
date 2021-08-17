@@ -13,7 +13,9 @@ describe('Compare 2 objetos para verificar se são idênticos ou não', () => {
     );
   });
 
-  it('Comparar o array de chaves de 2 objetos para verificar se são idênticos', () => {
-    expect(Object.keys(obj1).sort()).toEqual(Object.keys(obj2).sort());
-  })
+  it('Comparar o array de chaves e de valores de 2 objetos para verificar se são idênticos', () => {
+    expect([Object.keys(obj1).sort(), Object.values(obj1)]).toEqual([Object.keys(obj2).sort(), Object.values(obj2)]);
+  });
+
+
 });
