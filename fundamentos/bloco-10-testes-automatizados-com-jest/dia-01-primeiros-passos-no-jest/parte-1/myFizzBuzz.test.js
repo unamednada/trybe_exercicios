@@ -21,6 +21,6 @@ describe('A função myFizzBuzz(num) retorna \"fizzbuzz\" se o número for divis
 
   it('myFizzBuzz() tem o retorno esperado quando passamos um parâmetro que não é um número', () => {
     const notNumbers = ['Not a number', { myType: 'Not a number' }, [ 'Not', 'a', 'number'], true, undefined];
-    expect(notNumbers.reduce((finalResult, item) => !(finalResult && myFizzBuzz(item)), false)).toBe(true);
+    expect(notNumbers.reduce((finalResult, item) => (!finalResult && myFizzBuzz(item)), false)).toBe(false);
   });
 });
