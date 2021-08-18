@@ -1,17 +1,6 @@
-function encode(string) {
-  let code = '';
-  let vowels = ['a', 'e', 'i', 'o', 'u'];
+const vowels = ['a', 'e', 'i', 'o', 'u'];
 
-  for (let i = 0; i < string.length; i += 1) {
-    if (vowels.includes(string[i])) {
-      code += (vowels.indexOf(string[i]) + 1);
-    } else {
-      code += string[i];
-    }
-  }
-
-  return code;
-}
+const encode = (string) => string.split('').reduce((str, char) => vowels.includes(char) ? `${str}${vowels.indexOf(char) + 1}` : `${str}${char}`, '');
 
 function decode(code) {
   let string = '';
