@@ -7,7 +7,7 @@ describe('Test if upperCase works as expected', () => {
   });
 
   it('Test if upperCase returns a string', (done) => {
-    upperCase(undefined, (result) => {
+    upperCase('', (result) => {
       try {
         expect(typeof result).toBe('string');
         done();
