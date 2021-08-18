@@ -13,7 +13,12 @@ describe('Verifica se encode se comporta como esperado', () => {
       expect(encode(vogal)).toBe(numbers[index]);
     });
   });
-})
+
+  it('Verifica se as demais letras/números não são convertidos', () => {
+    const randomLetters = ['b', 'r', 'z', 'h', 'y'];
+    expect(randomLetters.map((letter) => !isNaN(encode(letter)))).toEqual(expect.arrayContaining([true]));
+  });
+});
 
 describe('Verifica se decode se comporta como esperado', () => {
 
