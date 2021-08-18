@@ -1,0 +1,12 @@
+{
+  "name": "dia-02-jest-testes-assincronos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercises.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
