@@ -44,4 +44,12 @@ describe('Test if getUserName works as expected', () => {
     });
   });
 
+  it('with an invalid id', () => {
+    expect.assertions(1);
+    return getUserName(3)
+    .catch((error) => {
+      expect(error.message).toBe('User with 3 not found.');
+    })
+  })
+
 });
