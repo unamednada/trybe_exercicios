@@ -49,7 +49,15 @@ describe('Test if getUserName works as expected', () => {
     return getUserName(3)
     .catch((error) => {
       expect(error.message).toBe('User with 3 not found.');
-    })
-  })
+    });
+  });
 
 });
+
+describe('Repeat userName tests using async/await', () => {
+
+  it('with a valid id', async () => {
+    const response = await getUserName(2);
+    expect(response).toBe('Mark');
+  })
+})
