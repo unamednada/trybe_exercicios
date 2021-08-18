@@ -1,0 +1,9 @@
+const searchEmployee = require('./bonus.js');
+
+describe('Verifica se a função searchEmployee se comporta como esperado', () => {
+
+  it('Verifica se searchEmployee é uma função', () => {
+    expect(typeof searchEmployee).toBe('function');
+  })
+
+})
