@@ -11,8 +11,8 @@ describe('Verifica se encode se comporta como esperado', () => {
     const numbers = ['1', '2', '3', '4', '5'];
     vogais.forEach((vogal, index) => {
       expect(encode(vogal)).toBe(numbers[index]);
-    })
-  })
+    });
+  });
 })
 
 describe('Verifica se decode se comporta como esperado', () => {
@@ -21,4 +21,11 @@ describe('Verifica se decode se comporta como esperado', () => {
     expect('function').toBe(typeof decode);
   });
 
+  it('Verifica se os números 1, 2, 3, 4, 5 são convertidos em a, e, i, o, u, respectivamente', () => {
+    const vogais = ['a', 'e', 'i', 'o', 'u'];
+    const numbers = ['1', '2', '3', '4', '5'];
+    numbers.forEach((number, index) => {
+      expect(decode(number)).toBe(vogais[index]);
+    });
+  });
 })
