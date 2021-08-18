@@ -6,7 +6,15 @@ describe('Test if upperCase works as expected', () => {
     expect(typeof upperCase).toBe('function');
   });
 
-  it('Test if upperCase returns a string', () => {
-    
-  })
-})
+  it('Test if upperCase returns a string', (done) => {
+    upperCase(undefined, (result) => {
+      try {
+        expect(typeof result).toBe('string');
+        done();
+      } catch (error) {
+        done(error);
+      };
+    });
+  });
+
+});
