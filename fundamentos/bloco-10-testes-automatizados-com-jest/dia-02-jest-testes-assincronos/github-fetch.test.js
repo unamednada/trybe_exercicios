@@ -11,6 +11,11 @@ describe('Test if getRepos returns desired list of repos', () => {
   });
 
   it('with an invalid URL', async () => {
-    const response = await getRepos('https://www.google.com');
+    try {
+      const response = await getRepos('https://www.google.com');
+    } catch (error) {
+      console.log(error);
+    }
+    
   })
 });
