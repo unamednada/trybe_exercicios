@@ -1,6 +1,10 @@
-const upperCase = require('./exercises.js');
+const {
+  uppercase: upperCase,
+  findUserById,
+  getUserName
+} = require('./exercises.js');
 
-describe('Test if upperCase works as expected', () => {
+describe('Test if uppercase works as expected', () => {
 
   it('shoulbe be a function', () => {
     expect(typeof upperCase).toBe('function');
@@ -24,7 +28,20 @@ describe('Test if upperCase works as expected', () => {
         done();
       } catch (error) {
         done(error);
-      }
-    })
-  })
+      };
+    });
+  });
+
+});
+
+describe('Test if getUserName works as expected', () => {
+  
+  it('with a valid id', () => {
+    expect.assertions(1);
+    return getUserName(1)
+    .then((response) => {
+      expect(response).toBe('Paul');
+    });
+  });
+  
 });
