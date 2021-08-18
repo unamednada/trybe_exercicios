@@ -14,7 +14,7 @@ describe('Verifica se encode se comporta como esperado', () => {
     });
   });
 
-  it('Verifica se as demais letras/números não são convertidos', () => {
+  it('Verifica se as demais letras não são convertidas', () => {
     const randomLetters = ['b', 'r', 'z', 'h', 'y'];
     expect(randomLetters.map((letter) => !isNaN(encode(letter)))).toEqual(expect.arrayContaining([false]));
   });
@@ -32,5 +32,10 @@ describe('Verifica se decode se comporta como esperado', () => {
     numbers.forEach((number, index) => {
       expect(decode(number)).toBe(vogais[index]);
     });
+  });
+
+  it('Verifica se os demais números não são convertidos', () => {
+    const randomNumbers = ['7', '1', '8', '9', '6'];
+    expect(randomNumbers.map((number) => (decode(number)))).toEqual(expect.arrayContaining([...randomNumbers]));
   });
 })
