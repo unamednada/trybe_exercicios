@@ -35,7 +35,7 @@ describe('Verifica se decode se comporta como esperado', () => {
   });
 
   it('Verifica se os demais números não são convertidos', () => {
-    const randomNumbers = ['7', '1', '8', '9', '6'];
+    const randomNumbers = ['7', '0', '8', '9', '6'];
     expect(randomNumbers.map((number) => (decode(number)))).toEqual(expect.arrayContaining([...randomNumbers]));
   });
 })
