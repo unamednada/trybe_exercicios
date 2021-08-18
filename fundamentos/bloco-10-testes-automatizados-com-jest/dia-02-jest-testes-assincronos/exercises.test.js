@@ -66,6 +66,7 @@ describe('Repeat userName tests using async/await', () => {
       const response = await getUserName(7);
     } catch (error) {
       expect(error.message).toBe('User with 7 not found.');
-    }
-  })
-})
+    };
+  });
+
+});
