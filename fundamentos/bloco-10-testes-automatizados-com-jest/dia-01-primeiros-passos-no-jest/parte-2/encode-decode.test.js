@@ -22,7 +22,8 @@ describe('Verifica se encode se comporta como esperado', () => {
   it('Verifica se a string passada como parâmetro tem o mesmo número de caracteres que a string retornada', () => {
     const myStr = 'this is a string of length 29';
     expect(encode(myStr).length).toBe(myStr.length);
-  })
+  });
+
 });
 
 describe('Verifica se decode se comporta como esperado', () => {
@@ -43,4 +44,10 @@ describe('Verifica se decode se comporta como esperado', () => {
     const randomNumbers = ['7', '0', '8', '9', '6'];
     expect(randomNumbers.map((number) => (decode(number)))).toEqual(expect.arrayContaining([...randomNumbers]));
   });
+
+  it('Verifica se a string passada como parâmetro tem o mesmo número de caracteres que a string retornada', () => {
+    const myStr = 'this is a string of length 29';
+    expect(decode(myStr).length).toBe(myStr.length);
+  });
+
 })
