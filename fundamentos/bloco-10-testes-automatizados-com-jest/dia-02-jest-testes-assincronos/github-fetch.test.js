@@ -20,7 +20,7 @@ describe('Test if getRepos returns desired list of repos', () => {
 
   it('with the correct URL', async () => {
     const response = await getRepos('https://api.github.com/orgs/tryber/repos');
-    expect(response).toEqual(expect.arrayContaining(['sd-01-week4-5-project-todo-list']));
+    expect(response).toEqual(expect.arrayContaining(['sd--week4-5-project-todo-list']));
   });
 
 });
