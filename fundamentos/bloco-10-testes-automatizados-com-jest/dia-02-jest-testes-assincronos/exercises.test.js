@@ -58,6 +58,6 @@ describe('Repeat userName tests using async/await', () => {
 
   it('with a valid id', async () => {
     const response = await getUserName(2);
-    expect(response).toBe('Mark');
+    expect(response).toBe('Paul');
   })
 })
