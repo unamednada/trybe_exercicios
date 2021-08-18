@@ -40,7 +40,11 @@ const professionalBoard = [
 
 // Pesquisa
 const searchEmployee = (id, detail) => {
-  // Implemente seu código aqui
+  const ids = professionalBoard.map((employee) => employee.id);
+  if (!id || !ids.includes(id)) return 'ID não identificada';
 };
 
-module.exports = searchEmployee;
+module.exports = {
+  professionalBoard,
+  searchEmployee
+}

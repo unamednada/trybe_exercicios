@@ -1,4 +1,4 @@
-const searchEmployee = require('./bonus.js');
+const { professionalBoard, searchEmployee } = require('./bonus.js');
 
 describe('Verifica se a função searchEmployee se comporta como esperado', () => {
 
