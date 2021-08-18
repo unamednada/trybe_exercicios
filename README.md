@@ -8,7 +8,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ## Fundamentos do Desenvolvimento Web :white_check_mark:
 
-##### Bloco 1: IntroduÃ§Ã£o - Unix & Shell
+##### Bloco 1: Introdução - Unix & Shell
 
 - [:white_check_mark:] 1-3: _Unix & Shell- Part 1_
 - [:white_check_mark:] 1-4: _Unix & Shell- Part 2_
@@ -27,15 +27,15 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [:white_check_mark:] 3-4: _HTML Semântico_
 - [:white_check_mark:] 3-5: _[Projeto - HTML & CSS](https://unamednada.github.io/projects/lessons-learned/index.html)_
 
-##### Bloco 4: IntroduÃ§Ã£o - JavaScript
+##### Bloco 4: Introdução - JavaScript
 
 - [:white_check_mark:] 4-1: _JavaScript - Primeiros passos_
 - [:white_check_mark:] 4-2: _JavaScript - Array e loop For_
-- [:white_check_mark:] 4-3: _JavaScript - LÃ³gica de ProgramaÃ§Ã£o e Algoritmos_
+- [:white_check_mark:] 4-3: _JavaScript - Lóica de Programação e Algoritmos_
 - [:white_check_mark:] 4-4: _JavaScript - Objetos e funções_
 - [:white_check_mark:] 4-5: _[Projeto - Playground Functions](https://github.com/tryber/sd-014-a-project-playground-functions/pull/35)_
 
-##### Bloco 5: IntroduÃ§Ã£o - JavaScript - Projetos
+##### Bloco 5: Introdução - JavaScript - Projetos
 
 - [:white_check_mark:] 5-1: _JavaScript - DOM e seletores_
 - [:white_check_mark:] 5-2: _JavaScript - Trabalhando com elementos_
@@ -47,7 +47,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [:white_check_mark:] 5-7: _[Projeto - Adivinhe a Cor](https://github.com/tryber/sd-014-a-project-color-guess/pull/36)_
 - [:white_check_mark:] 5-7: _[Projeto - Carta Misteriosa](https://github.com/tryber/sd-014-a-project-mistery-letter/pull/16)_
 
-##### Bloco 6: HTML & CSS avanÃ§ado
+##### Bloco 6: HTML & CSS avançado
 
 - [:white_check_mark:] 6-1: _HTML & CSS - Forms_
 - [:white_check_mark:] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
@@ -56,7 +56,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [:white_check_mark:] 6-5: _CSS Responsivo - Mobile First_
 - [:white_check_mark:] 6-6: _[Projeto - Trybewarts](https://unamednada.github.io/projects/trybewarts/index.html)_
 
-##### Bloco 7: JavaScript ES6 & Testes UnitÃ¡rios
+##### Bloco 7: JavaScript ES6 & Testes Unitários
 
 - [:white_check_mark:] 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
 - [:white_check_mark:] 7-2: _JavaScript ES6 - Objects_
@@ -81,7 +81,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 10: Jest
 
-- [ ] 10-1: _Primeiros passos no Jest_
+- [:white_check_mark:] 10-1: _Primeiros passos no Jest_
 - [ ] 10-2: _Jest - Testes AssÃ­ncronos_
 - [ ] 10-3: _Jest - Simulando comportamentos_
 - [ ] 10-4: _[Projeto - Jest AssÃ­ncrono e Mocking]()_
