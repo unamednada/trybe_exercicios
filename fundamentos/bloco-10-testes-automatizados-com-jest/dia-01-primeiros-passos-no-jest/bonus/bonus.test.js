@@ -26,6 +26,6 @@ describe('Verifica se a função searchEmployee se comporta como esperado', () =
 
   it('Verifica se searchEmployee se comporta como o esperado com ID e detalhe válidos', () => {
     expect(searchEmployee('4456-4', 'firstName')).toBe('Leila');
-    expect(searchEmployee('4456-4', 'specialities')).toBe('');
+    expect(searchEmployee('4456-4', 'specialities')).toBe('Context API,RTL,Bootstrap');
   })
 })
