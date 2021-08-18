@@ -42,6 +42,7 @@ const professionalBoard = [
 const searchEmployee = (id, detail) => {
   const ids = professionalBoard.map((employee) => employee.id);
   if (!id || !ids.includes(id)) return 'ID não identificada';
+  return professionalBoard.find((employee) => employee.id === id)[detail];
 };
 
 module.exports = {
