@@ -20,7 +20,7 @@ describe('Test if upperCase works as expected', () => {
   it('returns an uppercase string', (done) => {
     upperCase('hello, world', (result) => {
       try {
-        expect(result).toBe(undefined);
+        expect(result).toBe('HELLO, WORLD');
         done();
       } catch (error) {
         done(error);
