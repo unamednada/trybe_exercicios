@@ -23,4 +23,9 @@ describe('Verifica se a função searchEmployee se comporta como esperado', () =
     expect(searchEmployee('8579-6')).toBe('Informação indisponível');
     expect(searchEmployee('9852-2-2', 'unavailable')).toBe('Informação indisponível');
   });
+
+  it('Verifica se searchEmployee se comporta como o esperado com ID e detalhe válidos', () => {
+    expect(searchEmployee('4456-4', 'firstName')).toBe('Leila');
+    expect(searchEmployee('4456-4', 'specialities')).toBe('');
+  })
 })
