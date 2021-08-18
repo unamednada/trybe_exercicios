@@ -16,6 +16,11 @@ describe('Verifica se a função searchEmployee se comporta como esperado', () =
 
   it('Verifica se searchEmployee retorna as strings corretas para parâmetros inválidos', () => {
     expect(searchEmployee('0000-0')).toBe('ID não identificada');
+    expect(searchEmployee()).toBe('ID não identificada');
   });
 
+  it('Verifica se searchEmployee tem o retorno esperado com ID válido e informação inválida', () => {
+    expect(searchEmployee('8579-6')).toBe('Informação indisponível');
+    expect(searchEmployee('9852-2-2', 'unavailable')).toBe('Informação indisponível');
+  });
 })
