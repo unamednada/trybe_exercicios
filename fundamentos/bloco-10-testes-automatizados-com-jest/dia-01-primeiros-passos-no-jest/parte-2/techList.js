@@ -1,3 +1,3 @@
-const techList = (techs) => techs.map((tech) => ({ tech, name: 'Lucas'}));
+const techList = (techs) => techs.sort().map((tech) => ({ tech, name: 'Lucas'}));
 
 module.exports = techList;
