@@ -59,5 +59,13 @@ describe('Repeat userName tests using async/await', () => {
   it('with a valid id', async () => {
     const response = await getUserName(2);
     expect(response).toBe('Paul');
+  });
+
+  it('with an invalid id', async () => {
+    try {
+      const response = await getUserName(7);
+    } catch (error) {
+      expect(error.message).toBe('User with 7 not found.');
+    }
   })
 })
