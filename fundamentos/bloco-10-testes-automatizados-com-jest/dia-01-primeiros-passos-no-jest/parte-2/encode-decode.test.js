@@ -18,6 +18,11 @@ describe('Verifica se encode se comporta como esperado', () => {
     const randomLetters = ['b', 'r', 'z', 'h', 'y'];
     expect(randomLetters.map((letter) => !isNaN(encode(letter)))).toEqual(expect.arrayContaining([false]));
   });
+
+  it('Verifica se a string passada como parâmetro tem o mesmo número de caracteres que a string retornada', () => {
+    const myStr = 'this is a string of length 29';
+    expect(encode(myStr).length).toBe(myStr.length);
+  })
 });
 
 describe('Verifica se decode se comporta como esperado', () => {
