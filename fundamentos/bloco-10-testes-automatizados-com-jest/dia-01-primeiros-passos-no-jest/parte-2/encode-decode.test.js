@@ -16,7 +16,7 @@ describe('Verifica se encode se comporta como esperado', () => {
 
   it('Verifica se as demais letras não são convertidas', () => {
     const randomLetters = ['b', 'r', 'z', 'h', 'y'];
-    expect(randomLetters.map((letter) => !isNaN(encode(letter)))).toEqual(expect.arrayContaining([false]));
+    expect(randomLetters.map((letter) => !isNaN(encode(letter)))).not.toEqual(expect.arrayContaining([true]));
   });
 
   it('Verifica se a string passada como parâmetro tem o mesmo número de caracteres que a string retornada', () => {
