@@ -40,8 +40,8 @@ describe('Test if getUserName works as expected', () => {
     expect.assertions(1);
     return getUserName(1)
     .then((response) => {
-      expect(response).toBe('Paul');
+      expect(response).toBe('Mark');
     });
   });
-  
+
 });
