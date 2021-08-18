@@ -2,11 +2,11 @@ const upperCase = require('./exercises.js');
 
 describe('Test if upperCase works as expected', () => {
 
-  it('Test if upperCase is a function', () => {
+  it('shoulbe be a function', () => {
     expect(typeof upperCase).toBe('function');
   });
 
-  it('Test if upperCase returns a string', (done) => {
+  it('returns a string', (done) => {
     upperCase('', (result) => {
       try {
         expect(typeof result).toBe('string');
@@ -17,4 +17,14 @@ describe('Test if upperCase works as expected', () => {
     });
   });
 
+  it('returns an uppercase string', (done) => {
+    upperCase('hello, world', (result) => {
+      try {
+        expect(result).toBe(undefined);
+        done();
+      } catch (error) {
+        done(error);
+      }
+    })
+  })
 });
