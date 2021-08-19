@@ -2,7 +2,9 @@ const {
   findAnimalsByType,
   findAnimalByName,
   getListAnimals,
-  getAnimal
+  getAnimal,
+  findAnimalsByAge,
+  getAgeListAnimals
 } = require('./animals.js');
 
 describe('Testando promise - findAnimalByName', () => {
@@ -23,4 +25,21 @@ describe('Testando promise - findAnimalByName', () => {
       );
     });
   });
+});
+
+describe('Testando promise = findAnimalsByAge', () => {
+  it('Quando existem animais com a idade procurada', () => {
+    expect.assertions(1);
+    return getAgeListAnimals(1).then(animalArray => {
+      expect(animalArray).toEqual([{ name: 'Dorminhoco', age: 1, type: 'Dog' }])
+    });
+  });
+
+  it('Quando não existem animais com a idade procurada', () => {
+    expect.assertions(1);
+    return getAgeListAnimals(3).then(error => {
+      expect(error).toEqual('Nenhum animal com essa idade!');
+    });
+  });
+
 });

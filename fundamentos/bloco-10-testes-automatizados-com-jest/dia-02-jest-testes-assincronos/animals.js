@@ -38,10 +38,32 @@ const getAnimal = (name) => {
   return findAnimalByName(name);
 };
 
+const findAnimalsByAge = (age) => (
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const animalAgeFilter = Animals.filter((animal) => animal.age === age);
+      if (animalAgeFilter.length !== 0) {
+        return resolve(animalAgeFilter);
+      };
+      return reject('Nenhum animal com essa idade!');
+    }, 150);
+  })
+);
+
+const getAgeListAnimals = async (age) => {
+  try {
+    return await findAnimalsByAge(age);
+  } catch (error) {
+    return error;
+  } 
+}
+
 
 module.exports = {
   findAnimalsByType,
   findAnimalByName,
   getListAnimals,
-  getAnimal
+  getAnimal,
+  findAnimalsByAge,
+  getAgeListAnimals
 }
