@@ -47,15 +47,15 @@ describe('Testa se a função fetchDogPic', () => {
     expect(successResponse).toEqual({ status: 'success' });
   })
 
-//   it('retorna \'request failed\' quando não resolve', async () => {
+  it('retorna \'request failed\' quando não resolve', async () => {
 
-//     fetch.mockImplementation(async () => {
-//       throw new Error('request failed');
-//     })
+    fetch.mockImplementation(async () => {
+      throw new Error('request failed');
+    })
 
-//     const error = await dog.fetchDogPic();
+    const error = await dog.fetchDogPic();
 
-//     expect(error).rejects.toBe('request failed');
-//   })
+    expect(error).toEqual(Error ('request failed'));
+  })
 })
 
