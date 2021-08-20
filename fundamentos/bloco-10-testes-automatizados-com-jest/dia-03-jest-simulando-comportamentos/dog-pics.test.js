@@ -22,3 +22,19 @@ describe('Tesa se a função fetch', () => {
     expect(jsonResponse).toEqual(expect.objectContaining({ 'name': 'Gustavo Dias Guimarães Barbosa'}));
   })
 })
+
+describe('Testa se a função fetchDogPic', () => {
+  const endpoint = 'https://dog.ceo/api/breeds/image/random';
+
+  dog.fetch = jest.fn().mockImplementation(async (endpoint) => {
+    const response = {
+      json: async () => {}
+    }
+    return response;
+  })
+
+  it('retorna uma propriedade json em sua resposta', async () => {
+
+  })
+})
+
