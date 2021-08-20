@@ -24,5 +24,21 @@ describe('Testa se a função randomToTest', () => {
     expect(random.randomToTest).toHaveBeenCalledTimes(4);
   })
 
+  it('retorna a multiplicação de 3 parâmetros', () => {
+    random.randomToTest.mockImplementation((a, b, c) => a * b * c);
+    expect(random.randomToTest(1, 2, 3)).toBe(6);
+    expect(random.randomToTest).toHaveBeenCalledTimes(5);
+    expect(random.randomToTest).toHaveBeenLastCalledWith(1, 2, 3);
+    random.randomToTest.mockReset();
+  })
+
+  it('após resetada, retorna o dobro de um único parâmetro', () => {
+    expect(random.randomToTest()).toBe(undefined);
+    random.randomToTest.mockImplementation((par) => par * 2);
+    expect(random.randomToTest(2)).toBe(4);
+    expect(random.randomToTest).toHaveBeenLastCalledWith(2);
+    expect(random.randomToTest).toHaveBeenCalledTimes(2);
+  })
+
 })
 
