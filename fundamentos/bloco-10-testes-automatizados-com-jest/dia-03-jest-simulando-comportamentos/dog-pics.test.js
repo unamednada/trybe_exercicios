@@ -25,18 +25,15 @@ describe('Tesa se a função fetch', () => {
 
 describe('Testa se a função fetchDogPic', () => {
 
-  dog.fetch = jest.fn().mockImplementation(async (endpoint) => {
-    const response = {
-      json: async () => {}
-    }
-    return response;
-  })
-
   it('retorna uma propriedade json em sua resposta', async () => {
-    const response = await dog.fetchDogPic();
-    const jsonResponse = await response.json();
 
-    expect(jsonResponse).toEqual(expect.objectContaining({}));
+    dog.fetch = jest.fn(async (endpoint) => ({
+        json: async () => ({})
+    }));
+  
+    const response = await dog.fetchDogPic();
+
+    expect(response).toEqual(expect.objectContaining({}));
   })
 })
 
