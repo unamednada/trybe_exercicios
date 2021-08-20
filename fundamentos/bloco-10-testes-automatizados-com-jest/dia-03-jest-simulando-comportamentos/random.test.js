@@ -11,4 +11,8 @@ describe('Testa se a função randomToTest', () => {
     expect(random.randomToTest).toHaveBeenCalled();
   })
 
+  it('retorna 10 por padrão', () => {
+    expect(random.randomToTest()).toBe(10);
+  })
+
 })
