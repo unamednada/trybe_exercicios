@@ -6,8 +6,10 @@ describe('Tesa se a função fetch', () => {
     expect(typeof dog.fetch).toBe('function');
   })
 
-  it('retorna uma promise', () => {
+  it('retorna uma promise', async () => {
     const url = 'https://api.github.com';
-    expect(dog.fetch(url)).toBe('');
+    const response = await dog.fetch(url);
+
+    expect(typeof response).toBe('object');
   })
 })
