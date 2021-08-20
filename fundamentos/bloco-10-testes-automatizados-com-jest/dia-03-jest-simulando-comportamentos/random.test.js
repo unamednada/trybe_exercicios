@@ -21,6 +21,7 @@ describe('Testa se a função randomToTest', () => {
     expect(random.randomToTest(4, 2)).toBe(2);
     expect(random.randomToTest).toHaveBeenCalledWith(4, 2);
     expect(random.randomToTest(4, 2)).toBe(10);
+    expect(random.randomToTest).toHaveBeenCalledTimes(4);
   })
 
 })
