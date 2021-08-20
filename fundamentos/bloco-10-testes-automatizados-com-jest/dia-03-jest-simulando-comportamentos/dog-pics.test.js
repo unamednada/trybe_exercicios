@@ -30,7 +30,7 @@ jest.mock('node-fetch');
 describe('Testa se a função fetchDogPic', () => {
 
   it('retorna uma propriedade json em sua resposta contendo status', async () => {
-    // expect.assertions(1);
+    expect.assertions(1);
     
     fetch.mockImplementation(async () => {
       return {
@@ -48,7 +48,8 @@ describe('Testa se a função fetchDogPic', () => {
   })
 
   it('retorna \'request failed\' quando não resolve', async () => {
-
+    expect.assertions(1);
+    
     fetch.mockImplementation(async () => {
       throw new Error('request failed');
     })
