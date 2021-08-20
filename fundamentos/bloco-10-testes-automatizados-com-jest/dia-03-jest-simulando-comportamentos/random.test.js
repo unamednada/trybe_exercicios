@@ -51,3 +51,12 @@ describe('Testa se a função toUpper', () => {
   })
 
 })
+
+describe('Testa se a função firstChar', () => {
+
+  random.firstChar.mockImplementation((str) => str[str.length - 1]);
+
+  it('tem o retorno esperado da nova implementação', () => {
+    expect(random.firstChar('hellow, world')).toBe('d');
+  })
+})
