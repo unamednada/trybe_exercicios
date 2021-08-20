@@ -60,3 +60,12 @@ describe('Testa se a função firstChar', () => {
     expect(random.firstChar('hellow, world')).toBe('d');
   })
 })
+
+describe('Testa se a função concat', () => {
+
+  random.concat.mockImplementation((str1, str2, str3) => str1 + str2 + str3);
+
+  it('tem o retorno esperado da nova implementação', () => {
+    expect(random.concat('hello, ', 'world', '!')).toBe('hello, world!');
+  })
+})
