@@ -1,0 +1,16 @@
+{
+  "name": "dia-02-jest-testes-assincronos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercises.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "node-fetch": "^2.6.1"
+  }
+}
