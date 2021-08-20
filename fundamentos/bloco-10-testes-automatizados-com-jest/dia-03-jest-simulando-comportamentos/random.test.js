@@ -16,4 +16,11 @@ describe('Testa se a função randomToTest', () => {
     expect(random.randomToTest).toHaveBeenCalledTimes(2);
   })
 
+  it('retorna a divisão do primeiro pelo segundo parâmetro', () => {
+    random.randomToTest.mockImplementationOnce((a, b) => a / b);
+    expect(random.randomToTest(4, 2)).toBe(2);
+    expect(random.randomToTest).toHaveBeenCalledWith(4, 2);
+  })
+
 })
+
