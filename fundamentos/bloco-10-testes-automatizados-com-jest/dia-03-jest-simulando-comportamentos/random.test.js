@@ -42,3 +42,12 @@ describe('Testa se a função randomToTest', () => {
 
 })
 
+describe('Testa se a função toUpper', () => {
+
+  random.toUpper.mockImplementation((str) => str.toLowerCase());
+
+  it('tem o retorno esperado da nova implementação', () => {
+    expect(random.toUpper('HELLO, WORLD')).toBe('hello, world');
+  })
+
+})
