@@ -6,4 +6,10 @@
   flex-flow: row nowrap;
   max-width: 50%;
   justify-content: space-around;
+  align-items: center;
+  padding-left: 5%;
+}
+
+.poke-img {
+  width: 50%;
 }
