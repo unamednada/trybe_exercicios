@@ -4,11 +4,9 @@ import { Pokemon } from './components/Pokemon';
 
 function App() {
 
-  const { name, type, averageWeight, image } = pokemons[0];
-
   return (
-    <Pokemon name={name} type={type} averageWeight={averageWeight} image={image} />
-  );
+    pokemons.map(({ name, type, averageWeight, image }) => <Pokemon name={name} type={type} averageWeight={averageWeight} image={image} />
+  ));
 }
 
 export default App;
