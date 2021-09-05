@@ -1,6 +1,7 @@
 import React from "react";
 
-class SampleComponent extends React.Component {
+class SampleInput extends React.Component {
+
   render() {
     const { name, type, value, charLimit, handleChange } = this.props;
     return (
@@ -19,4 +20,4 @@ class SampleComponent extends React.Component {
   }
 }
 
-export default SampleComponent;
+export default SampleInput;

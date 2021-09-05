@@ -1,6 +1,7 @@
 import React from "react";
-import SampleComponent from "./SampleComponent";
-import personalInfo from "../public/data";
+import { personalInfo, states } from "../public/data";
+import SampleInput from "./SampleInput";
+import SampleSelect from "./SampleSelect";
 
 class PersonalInfo extends React.Component {
   constructor(props) {
@@ -29,7 +30,9 @@ class PersonalInfo extends React.Component {
 
   createComponents() {
     return personalInfo.map(({ name, type, charLimit }) => {
-      return <SampleComponent
+
+      if (type !== 'select') {
+        return <SampleInput
       key={name}
       name={name}
       type={type}
@@ -37,6 +40,12 @@ class PersonalInfo extends React.Component {
       value={this.state[name]}
       handleChange={this.handleChange}
       />
+      } else {
+        return <SampleSelect
+        name={name}
+        options={states}
+        />
+      }
     })
   }
 
