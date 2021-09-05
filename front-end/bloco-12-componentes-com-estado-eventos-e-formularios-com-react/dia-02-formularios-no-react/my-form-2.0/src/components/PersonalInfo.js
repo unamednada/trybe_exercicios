@@ -1,5 +1,6 @@
 import React from "react";
 import SampleComponent from "./SampleComponent";
+import personalInfo from "../public/data";
 
 class PersonalInfo extends React.Component {
   constructor(props) {
@@ -25,14 +26,26 @@ class PersonalInfo extends React.Component {
       [name]: value,
     });
   }
-  render() {
 
-    const { name } = this.state;
+  createComponents() {
+    return personalInfo.map(({ name, type, charLimit }) => {
+      return <SampleComponent
+      key={name}
+      name={name}
+      type={type}
+      charLimit={charLimit}
+      value={this.state[name]}
+      handleChange={this.handleChange}
+      />
+    })
+  }
+
+  render() {
 
     return (
       <fieldset>
         <legend>Personal Info</legend>
-        <SampleComponent type="text" name="name" charLimit="40" value={name} handleChange={this.handleChange} />
+        {this.createComponents()}
       </fieldset>
     );
   }
