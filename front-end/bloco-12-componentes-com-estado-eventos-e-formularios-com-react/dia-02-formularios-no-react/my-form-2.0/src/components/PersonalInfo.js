@@ -23,7 +23,7 @@ class PersonalInfo extends React.Component {
 
   handleChange({ target }) {
     const { name, value } = target;
-
+    
     this.setState({
       [name]: value,
     });
@@ -32,17 +32,24 @@ class PersonalInfo extends React.Component {
   createComponents() {
     return personalInfo.map(({ name, type, charLimit, options }) => {
       if (type === "select") {
-        return <SampleSelect key={name} name={name} options={states} />;
+        return (
+          <SampleSelect
+            key={name}
+            name={name}
+            options={states}
+            handleChange={this.handleChange}
+          />
+        );
       } else if (type === "radio") {
         return (
           <SampleRadio
-          key={name}
-          name={name}
-          type={type}
-          options={options}
-          handleChange={this.handleChange}
+            key={name}
+            name={name}
+            type={type}
+            options={options}
+            handleChange={this.handleChange}
           />
-        )
+        );
       } else {
         return (
           <SampleInput

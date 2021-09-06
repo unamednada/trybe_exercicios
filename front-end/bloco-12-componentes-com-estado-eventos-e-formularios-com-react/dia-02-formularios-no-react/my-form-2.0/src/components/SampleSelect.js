@@ -1,19 +1,19 @@
 import React from 'react';
 
 class SampleSelect extends React.Component {
-  createOptions(options) {
+  createOptions(options, name) {
     return options.map((option) => {
-      return <option key={option} value={option}>{option}</option>
+      return <option key={option} value={option} name={name}>{option}</option>
     })
   }
   
   render() {
-    const { name, options } = this.props;
+    const { name, options, handleChange } = this.props;
 
     return (
       <label htmlFor={name}>{name}
-        <select name={name}>
-          {this.createOptions(options)}
+        <select name={name} id={name} onChange={handleChange}>
+          {this.createOptions(options, name)}
         </select>
       </label>
     )
