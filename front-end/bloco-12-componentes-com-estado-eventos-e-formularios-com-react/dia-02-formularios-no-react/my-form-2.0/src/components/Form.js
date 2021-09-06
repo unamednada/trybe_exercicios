@@ -1,6 +1,7 @@
-import React from 'react';
-import PersonalInfo from './PersonalInfo';
-import WorkInfo from './WorkInfo';
+import React from "react";
+import PersonalInfo from "./PersonalInfo";
+import WorkInfo from "./WorkInfo";
+import SampleSubmit from './SampleSubmit';
 
 class Form extends React.Component {
   constructor(props) {
@@ -14,53 +15,56 @@ class Form extends React.Component {
       city: "",
       state: "",
       typeOfHousing: "",
-      resume: '',
-      position: '',
-      description: '',
+      resume: "",
+      position: "",
+      description: "",
       positionTimes: 0,
+      submit: false,
     };
 
     this.handlePersonalChange = this.handlePersonalChange.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.handleWorkChange = this.handleWorkChange.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleWorkChange({ target }) {
     const { name, value } = target;
     this.setState({
-      [name]: value
-    })
+      [name]: value,
+    });
   }
 
   handleMouseEnter() {
-    if (this.state.positionTimes === 0) window.alert('Fill out this field thoroughly!');
+    if (this.state.positionTimes === 0)
+      window.alert("Fill out this field thoroughly!");
     this.setState({
       positionTimes: 1,
-    })
+    });
   }
 
   handlePersonalChange({ target }) {
     const { name, type, checked } = target;
     this.setState(() => {
-      if (type === 'radio' && checked) {
+      if (type === "radio" && checked) {
         return {
-          [name]: target.value
-        }
-      } else if (name === 'name') {
+          [name]: target.value,
+        };
+      } else if (name === "name") {
         return {
-          [name]: target.value.toUpperCase()
-        }
-      } else if (name === 'address') {
+          [name]: target.value.toUpperCase(),
+        };
+      } else if (name === "address") {
         return {
-        // Source: https://stackoverflow.com/questions/6555182/remove-all-special-characters-except-space-from-a-string-using-javascript
-          [name]: target.value.replace(/[^a-zA-Z0-9 ãáóôõúéêç]/g, "")
-        }
+          // Source: https://stackoverflow.com/questions/6555182/remove-all-special-characters-except-space-from-a-string-using-javascript
+          [name]: target.value.replace(/[^a-zA-Z0-9 ãáóôõúéêç]/g, ""),
+        };
       } else if (!checked) {
         return {
-          [name]: target.value
-        }
-      } 
+          [name]: target.value,
+        };
+      }
     });
   }
 
@@ -68,27 +72,51 @@ class Form extends React.Component {
     const { name, value } = target;
     if (!isNaN(value[0])) {
       this.setState({
-        [name]: '',
-      })
+        [name]: "",
+      });
     }
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    this.setState({
+      submit: true,
+    })
+  }
+
   render() {
+    if (!this.state.submit) {
+      return (
+        <form>
+          <h1>My Form 2.0</h1>
+          <section>
+            <PersonalInfo
+              handleBlur={this.handleBlur}
+              handlePersonalChange={this.handlePersonalChange}
+              values={this.state}
+            />
+            <WorkInfo
+              handleWorkChange={this.handleWorkChange}
+              handleMouseEnter={this.handleMouseEnter}
+              values={this.state}
+            />
+          </section>
+          <section>
+            <button type="submit" onClick={this.handleSubmit}>
+              Submit
+            </button>
+          </section>
+        </form>
+      );
+    }
+    const values = this.state;
     return (
-      <form>
-        <h1>My Form 2.0</h1>
-        <section>
-          <PersonalInfo
-          handleBlur={this.handleBlur}
-          handlePersonalChange={this.handlePersonalChange}
-          values={this.state}/>
-          <WorkInfo
-          handleWorkChange={this.handleWorkChange}
-          handleMouseEnter={this.handleMouseEnter}
-          values={this.state}
-          />
-        </section>
-      </form>
+      <section>
+        <h1>Your Info</h1>
+        <SampleSubmit
+        values={values}
+        />
+      </section>
     )
   }
 }
