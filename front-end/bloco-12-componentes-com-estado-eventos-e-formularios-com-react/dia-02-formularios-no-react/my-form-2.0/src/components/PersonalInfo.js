@@ -34,6 +34,7 @@ class PersonalInfo extends React.Component {
         }
       } else if (name === 'address') {
         return {
+        // Source: https://stackoverflow.com/questions/6555182/remove-all-special-characters-except-space-from-a-string-using-javascript
           [name]: target.value.replace(/[^a-zA-Z ]/g, "")
         }
       } else if (!checked) {
