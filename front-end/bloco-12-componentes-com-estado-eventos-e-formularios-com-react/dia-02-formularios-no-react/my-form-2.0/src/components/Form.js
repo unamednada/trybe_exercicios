@@ -14,10 +14,30 @@ class Form extends React.Component {
       city: "",
       state: "",
       typeOfHousing: "",
+      resume: '',
+      position: '',
+      description: '',
+      positionTimes: 0,
     };
 
     this.handlePersonalChange = this.handlePersonalChange.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.handleWorkChange = this.handleWorkChange.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+  }
+
+  handleWorkChange({ target }) {
+    const { name, value } = target;
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleMouseEnter() {
+    if (this.state.positionTimes === 0) window.alert('Fill out this field thoroughly!');
+    this.setState({
+      positionTimes: 1,
+    })
   }
 
   handlePersonalChange({ target }) {
@@ -62,7 +82,11 @@ class Form extends React.Component {
           handleBlur={this.handleBlur}
           handlePersonalChange={this.handlePersonalChange}
           values={this.state}/>
-          <WorkInfo />
+          <WorkInfo
+          handleWorkChange={this.handleWorkChange}
+          handleMouseEnter={this.handleMouseEnter}
+          values={this.state}
+          />
         </section>
       </form>
     )
