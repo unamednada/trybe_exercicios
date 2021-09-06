@@ -14,7 +14,6 @@ class SampleRadio extends React.Component {
           type={type}
           value={option}
           onChange={handleChange}
-          checked
         />
       </label>
       )

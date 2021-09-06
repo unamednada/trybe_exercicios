@@ -22,10 +22,17 @@ class PersonalInfo extends React.Component {
   }
 
   handleChange({ target }) {
-    const { name, value } = target;
-    
-    this.setState({
-      [name]: value,
+    const { name, type, checked } = target;
+    this.setState(() => {
+      if (type === 'radio' && checked) {
+        return {
+          [name]: target.value
+        }
+      } else if (!checked) {
+        return {
+          [name]: target.value
+        }
+      } 
     });
   }
 
