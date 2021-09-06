@@ -19,6 +19,7 @@ class PersonalInfo extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   handleChange({ target }) {
@@ -35,7 +36,7 @@ class PersonalInfo extends React.Component {
       } else if (name === 'address') {
         return {
         // Source: https://stackoverflow.com/questions/6555182/remove-all-special-characters-except-space-from-a-string-using-javascript
-          [name]: target.value.replace(/[^a-zA-Z ]/g, "")
+          [name]: target.value.replace(/[^a-zA-Z0-9]/g, "")
         }
       } else if (!checked) {
         return {
@@ -44,6 +45,16 @@ class PersonalInfo extends React.Component {
       } 
     });
   }
+
+  handleBlur({ target }) {
+    const { name, value } = target;
+    if (!isNaN(value[0])) {
+      this.setState({
+        [name]: '',
+      })
+    }
+  }
+
 
   createComponents() {
     return personalInfo.map(({ name, type, charLimit, options }) => {
@@ -75,6 +86,7 @@ class PersonalInfo extends React.Component {
             charLimit={charLimit}
             value={this.state[name]}
             handleChange={this.handleChange}
+            handleBlur={this.handleBlur}
           />
         );
       }
