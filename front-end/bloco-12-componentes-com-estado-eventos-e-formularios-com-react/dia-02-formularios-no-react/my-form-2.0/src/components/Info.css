@@ -1,0 +1,47 @@
+.field-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgb(122, 68, 200);
+}
+
+fieldset label {
+  font-size: 1.4rem;
+  color: rgb(122, 68, 200);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+fieldset input,
+fieldset textarea,
+fieldset select {
+  border-radius: 12px;
+  border: 1.5px solid rgb(122, 68, 200);
+  background-color: white;
+  width: 50%;
+  font-weight: 600;
+}
+
+fieldset select {
+  width: 50px;
+}
+
+.Radio-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.Radio-container label {
+  align-items: center;
+}
+
+.Radio-container h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-right: 35%;
+}
+
+.Radio-container input {
+  margin-right: 10%;
+}

@@ -6,7 +6,7 @@ class SampleInput extends React.Component {
     const { name, type, value, charLimit, handleChange, handleBlur } = this.props;
     return (
       <label htmlFor={name}>
-        {name}
+        {name.toUpperCase()}
         <input
           name={name}
           type={type}

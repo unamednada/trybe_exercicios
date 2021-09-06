@@ -11,7 +11,7 @@ class SampleSelect extends React.Component {
     const { name, options, handleChange } = this.props;
 
     return (
-      <label htmlFor={name}>{name}
+      <label htmlFor={name}>{name.toUpperCase()}
         <select name={name} id={name} onChange={handleChange}>
           {this.createOptions(options, name)}
         </select>

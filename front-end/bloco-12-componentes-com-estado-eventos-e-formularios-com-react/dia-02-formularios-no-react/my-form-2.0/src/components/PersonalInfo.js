@@ -3,9 +3,9 @@ import { personalInfo, states } from "../public/data";
 import SampleInput from "./SampleInput";
 import SampleSelect from "./SampleSelect";
 import SampleRadio from "./SampleRadio";
+import "./Info.css";
 
 class PersonalInfo extends React.Component {
-
   createComponents() {
     const { handlePersonalChange, handleBlur, values } = this.props;
 
@@ -21,13 +21,18 @@ class PersonalInfo extends React.Component {
         );
       } else if (type === "radio") {
         return (
-          <SampleRadio
-            key={name}
-            name={name}
-            type={type}
-            options={options}
-            handleChange={handlePersonalChange}
-          />
+          <article class="Radio-container">
+            <label htmlFor={name}>
+              <h2>House</h2>
+              <SampleRadio
+                key={name}
+                name={name}
+                type={type}
+                options={options}
+                handleChange={handlePersonalChange}
+              />
+            </label>
+          </article>
         );
       } else {
         return (
@@ -48,7 +53,7 @@ class PersonalInfo extends React.Component {
   render() {
     return (
       <fieldset>
-        <legend>Personal Info</legend>
+        <legend class="field-title">* Personal Info *</legend>
         {this.createComponents()}
       </fieldset>
     );

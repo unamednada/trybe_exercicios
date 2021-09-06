@@ -9,6 +9,20 @@
 .Info-container {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.Info-container fieldset {
+  width: 45%;
+  border-radius: 12px;
+  border: 2px solid rgb(122, 68, 200);
+  background-color: rgb(250, 250, 7);
+  padding: 2%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  height: 450px;
 }
 
 .Btn-container {
@@ -24,3 +38,4 @@
   background-color: rgb(122, 68, 200);
   color: white;
 }
+

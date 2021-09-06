@@ -31,7 +31,7 @@ const personalInfo = [
   {
     name: 'typeOfHousing',
     type: 'radio',
-    options: ['Casa', 'Apartamento'],
+    options: ['Casa', 'Apto'],
   }
 ];
 

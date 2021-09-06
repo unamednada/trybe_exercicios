@@ -1,6 +1,7 @@
 import React from "react";
 import SampleTextArea from "./SampleTextArea";
 import SampleInput from "./SampleInput";
+import './Info.css';
 
 class WorkInfo extends React.Component {
 
@@ -10,7 +11,7 @@ class WorkInfo extends React.Component {
 
     return (
       <fieldset>
-        <legend>Work Info</legend>
+        <legend class="field-title">*   Work Info   *</legend>
         <SampleTextArea
         name='resume'
         value={values.resume}
