@@ -2,6 +2,7 @@ import React from "react";
 import PersonalInfo from "./PersonalInfo";
 import WorkInfo from "./WorkInfo";
 import SampleSubmit from './SampleSubmit';
+import './Form.css';
 
 class Form extends React.Component {
   constructor(props) {
@@ -107,8 +108,8 @@ class Form extends React.Component {
     if (!this.state.submit) {
       return (
         <form>
-          <h1>My Form 2.0</h1>
-          <section>
+          <h1 class="title">My Form 2.0</h1>
+          <section class="Info-container">
             <PersonalInfo
               handleBlur={this.handleBlur}
               handlePersonalChange={this.handlePersonalChange}
@@ -120,7 +121,7 @@ class Form extends React.Component {
               values={this.state}
             />
           </section>
-          <section>
+          <section class="Btn-container">
             <button type="submit" onClick={this.handleSubmit}>
               Submit
             </button>
