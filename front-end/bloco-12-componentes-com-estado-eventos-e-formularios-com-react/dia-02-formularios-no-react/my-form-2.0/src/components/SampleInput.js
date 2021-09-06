@@ -12,7 +12,7 @@ class SampleInput extends React.Component {
           type={type}
           value={value}
           required
-          maxLength={charLimit ? charLimit : "200"}
+          maxLength={charLimit ? charLimit : "1000"}
           onChange={handleChange}
           onBlur={name === 'city' ? handleBlur : () => {}}
         />
