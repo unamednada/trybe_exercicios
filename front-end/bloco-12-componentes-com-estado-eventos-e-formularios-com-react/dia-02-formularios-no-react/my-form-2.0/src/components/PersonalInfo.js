@@ -32,6 +32,10 @@ class PersonalInfo extends React.Component {
         return {
           [name]: target.value.toUpperCase()
         }
+      } else if (name === 'address') {
+        return {
+          [name]: target.value.replace(/[^a-zA-Z ]/g, "")
+        }
       } else if (!checked) {
         return {
           [name]: target.value
