@@ -27,6 +27,7 @@ class Form extends React.Component {
     this.handleWorkChange = this.handleWorkChange.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClear = this.handleClear.bind(this);
   }
 
   handleWorkChange({ target }) {
@@ -84,6 +85,24 @@ class Form extends React.Component {
     })
   }
 
+  handleClear(event) {
+    event.preventDefault();
+    this.setState({
+      name: "",
+      email: "",
+      id: "",
+      address: "",
+      city: "",
+      state: "",
+      typeOfHousing: "",
+      resume: "",
+      position: "",
+      description: "",
+      positionTimes: 0,
+      submit: false,
+    })
+  }
+
   render() {
     if (!this.state.submit) {
       return (
@@ -104,6 +123,9 @@ class Form extends React.Component {
           <section>
             <button type="submit" onClick={this.handleSubmit}>
               Submit
+            </button>
+            <button type="button" onClick={this.handleClear}>
+              Clear
             </button>
           </section>
         </form>
