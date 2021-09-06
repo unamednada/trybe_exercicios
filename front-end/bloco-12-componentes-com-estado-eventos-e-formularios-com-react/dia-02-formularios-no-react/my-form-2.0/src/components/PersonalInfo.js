@@ -28,6 +28,10 @@ class PersonalInfo extends React.Component {
         return {
           [name]: target.value
         }
+      } else if (name === 'name') {
+        return {
+          [name]: target.value.toUpperCase()
+        }
       } else if (!checked) {
         return {
           [name]: target.value
