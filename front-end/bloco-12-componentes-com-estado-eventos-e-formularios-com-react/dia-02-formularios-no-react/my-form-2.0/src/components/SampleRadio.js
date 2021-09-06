@@ -7,9 +7,8 @@ class SampleRadio extends React.Component {
     
     return options.map((option) => {
       return (
-      <label htmlFor={option}>{option}
+      <label key={option} htmlFor={option}>{option}
         <input
-          key={option}
           name={name}
           type={type}
           value={option}

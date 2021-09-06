@@ -1,5 +1,6 @@
 import React from "react";
 import SampleTextArea from "./SampleTextArea";
+import SampleInput from "./SampleInput";
 
 class WorkInfo extends React.Component {
   constructor(props) {
@@ -39,6 +40,14 @@ class WorkInfo extends React.Component {
         value={this.state.position}
         handleChange={this.handleChange}
         handleMouseEnter={this.handleMouseEnter}
+        charLimit='40'
+        />
+        <SampleInput
+        name='description'
+        type='text'
+        value={this.state.description}
+        handleChange={this.handleChange}
+        charLimit='500'
         />
       </fieldset>
     )
