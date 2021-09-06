@@ -2,6 +2,7 @@ import React from "react";
 import { personalInfo, states } from "../public/data";
 import SampleInput from "./SampleInput";
 import SampleSelect from "./SampleSelect";
+import SampleRadio from "./SampleRadio";
 
 class PersonalInfo extends React.Component {
   constructor(props) {
@@ -29,28 +30,35 @@ class PersonalInfo extends React.Component {
   }
 
   createComponents() {
-    return personalInfo.map(({ name, type, charLimit }) => {
-
-      if (type !== 'select') {
-        return <SampleInput
-      key={name}
-      name={name}
-      type={type}
-      charLimit={charLimit}
-      value={this.state[name]}
-      handleChange={this.handleChange}
-      />
+    return personalInfo.map(({ name, type, charLimit, options }) => {
+      if (type === "select") {
+        return <SampleSelect key={name} name={name} options={states} />;
+      } else if (type === "radio") {
+        return (
+          <SampleRadio
+          key={name}
+          name={name}
+          type={type}
+          options={options}
+          handleChange={this.handleChange}
+          />
+        )
       } else {
-        return <SampleSelect
-        name={name}
-        options={states}
-        />
+        return (
+          <SampleInput
+            key={name}
+            name={name}
+            type={type}
+            charLimit={charLimit}
+            value={this.state[name]}
+            handleChange={this.handleChange}
+          />
+        );
       }
-    })
+    });
   }
 
   render() {
-
     return (
       <fieldset>
         <legend>Personal Info</legend>
