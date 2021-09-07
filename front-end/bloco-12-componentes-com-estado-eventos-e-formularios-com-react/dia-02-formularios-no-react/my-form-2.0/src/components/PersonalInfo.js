@@ -21,9 +21,9 @@ class PersonalInfo extends React.Component {
         );
       } else if (type === "radio") {
         return (
-          <article class="Radio-container">
+          <article className="Radio-container">
             <label htmlFor={name}>
-              <h2>House</h2>
+              <h2>HOUSE</h2>
               <SampleRadio
                 key={name}
                 name={name}
@@ -53,7 +53,7 @@ class PersonalInfo extends React.Component {
   render() {
     return (
       <fieldset>
-        <legend class="field-title">* Personal Info *</legend>
+        <legend className="field-title">* Personal Info *</legend>
         {this.createComponents()}
       </fieldset>
     );
