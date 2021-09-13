@@ -92,20 +92,19 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [:white_check_mark:] 11-1: _'Hello, world!' no React!_
 - [:white_check_mark:] 11-2: _Componentes React_
-- [:white_check_mark:] 11-3: _[Projeto - Movie Cards Library]()_
+- [:white_check_mark:] 11-3: _[Projeto - Movie Cards Library](https://github.com/tryber/sd-014-a-project-movie-cards-library/pull/30)_
 
 ##### Bloco 12: React
 
-- [ ] 12-1: _Components com estado_
-- [ ] 12-2: _Eventos e formulÃ¡rios no React_
-- [ ] 12-3: _[Projeto - Movie Cards Library Stateful]()_
+- [:white_check_mark:] 12-1: _Components com estado_
+- [:white_check_mark:] 12-2: _Eventos e formulários no React_
+- [:white_check_mark:] 12-3: _[Projeto - Movie Cards Library Stateful](https://github.com/tryber/sd-014-a-project-movie-cards-library-stateful/pull/113)_
 
 ##### Bloco 13: React
 
-- [ ] 13-1: _Melhorando o reuso de componentes: props.children e PropTypes_
-- [ ] 13-2: _Ciclo de vida de componentes em React_
-- [ ] 13-3: _React Router_
-- [ ] 13-4: _[Projeto - Movie Cards Library CRUD]()_
+- [:white_check_mark:] 13-1: _Ciclo de vida de componentes em React_
+- [ ] 13-2: _React Router_
+- [ ] 13-3: _[Projeto - Movie Cards Library CRUD]()_
 
 ##### Bloco 14: Metodologias Ãgeis
 
