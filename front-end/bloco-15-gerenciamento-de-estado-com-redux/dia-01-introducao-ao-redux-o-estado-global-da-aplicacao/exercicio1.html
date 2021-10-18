@@ -39,23 +39,31 @@
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
+      const previousBtn = document.getElementById('previous');
+      const nextBtn = document.getElementById('next');
       const reducer = (state = ESTADO_INICIAL, action) => {
         switch(action.type) {
-          case 'NEXT_COLOR':
+          case NEXT_COLOR:
             return {
               ...state,
-              index: (state.index + 1) % 6,
+              index: state.index < 5 ? state.index + 1 : 5,
             }
-            case 'PREVIOUS_COLOR':
+            case PREVIOUS_COLOR:
               return {
                 ...state,
-                index: (state.index - 1) % -6,
+                index: state.index > 0 ? state.index - 1 : 0,
               }
           default:
             return state;
         }
       }
       const store = Redux.createStore(reducer);
+      previousBtn.addEventListener('click', () => {
+        store.dispatch({ type: PREVIOUS_COLOR });
+      });
+      nextBtn.addEventListener('click', () => {
+        store.dispatch({ type: NEXT_COLOR });
+      })
     </script>
   </body>
 </html>
