@@ -58,7 +58,7 @@
           case NEXT_COLOR:
             return {
               ...state,
-              index: state.index < 5 ? state.index + 1 : 5,
+              index: state.index < state.colors.length - 1 ? state.index + 1 : state.colors.length - 1,
             };
           case PREVIOUS_COLOR:
             return {
