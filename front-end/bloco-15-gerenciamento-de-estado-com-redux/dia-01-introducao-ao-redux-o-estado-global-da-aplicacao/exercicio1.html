@@ -33,12 +33,24 @@
       <button id="next">Next color</button>
     </div>
     <script>
+      const NEXT_COLOR = 'NEXT_COLOR';
+      const PREVIOUS_COLOR = 'PREVIOUS_COLOR';
       const ESTADO_INICIAL = {
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
-      const reducer = (state = ESTADO_INICIAL) => {
-        switch(true) {
+      const reducer = (state = ESTADO_INICIAL, action) => {
+        switch(action.type) {
+          case 'NEXT_COLOR':
+            return {
+              ...state,
+              index: (state.index + 1) % 6,
+            }
+            case 'PREVIOUS_COLOR':
+              return {
+                ...state,
+                index: (state.index - 1) % -6,
+              }
           default:
             return state;
         }
