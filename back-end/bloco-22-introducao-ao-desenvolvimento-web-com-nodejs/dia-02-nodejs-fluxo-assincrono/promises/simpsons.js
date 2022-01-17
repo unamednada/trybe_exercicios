@@ -55,9 +55,17 @@ async function createMySimpsonFamily(...simpsonIDs) {
 async function addToMyFamily(simpsonID) {
   const myFamily = JSON.parse(await fs.readFile('./simpsonFamily.json', 'utf-8'));
   const myFamilyArray = Object.values(myFamily);
-  const mySimpson = (await readSimpsonID(`${simpsonID}`));
-  myFamilyArray.push(mySimpson[0]);
+  const mySimpson = (await readSimpsonID(`${simpsonID}`))[0];
+  myFamilyArray.push(mySimpson);
   await fs.writeFile('./simpsonFamily.json', JSON.stringify(myFamilyArray));
+}
+
+async function substituteSimpson(oldSimID, newSimID) {
+  const myFamily = JSON.parse(await fs.readFile('./simpsonFamily.json', 'utf-8'));
+  const myFamilyArray = Object.values(myFamily);
+  const mySimpson = (await readSimpsonID(`${newSimID}`))[0];
+  const myNewFamily = myFamilyArray.map(oldSim => +oldSim.id === oldSimID ? mySimpson : oldSim);
+  await fs.writeFile('./simpsonFamily.json', JSON.stringify(myNewFamily));
 }
 
 module.exports = {
@@ -67,4 +75,5 @@ module.exports = {
   deleteSimpsonID,
   createMySimpsonFamily,
   addToMyFamily,
+  substituteSimpson,
 };

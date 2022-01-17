@@ -4,11 +4,12 @@ const {
   deleteSimpsonID,
   createMySimpsonFamily,
   addToMyFamily,
+  substituteSimpson,
 } = require('./simpsons');
 
 async function main() {
   try {
-    await addToMyFamily(2);
+    await substituteSimpson(2, 4);
   } catch (err) {
     console.error(err);
   }
