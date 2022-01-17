@@ -42,9 +42,29 @@ async function deleteSimpsonID(simpsonID) {
   };
 }
 
+async function createMySimpsonFamily(...simpsonIDs) {
+  try {
+    const simpsonsArray = await readSimpsonsIntoArray();
+    const mySimpsons = simpsonsArray.filter(({ id }) => simpsonIDs.includes(+id));
+    await fs.writeFile('./simpsonFamily.json', JSON.stringify(mySimpsons));
+  } catch(err) {
+    console.error(err);
+  }
+}
+
+async function addToMyFamily(simpsonID) {
+  const myFamily = JSON.parse(await fs.readFile('./simpsonFamily.json', 'utf-8'));
+  const myFamilyArray = Object.values(myFamily);
+  const mySimpson = (await readSimpsonID(`${simpsonID}`));
+  myFamilyArray.push(mySimpson[0]);
+  await fs.writeFile('./simpsonFamily.json', JSON.stringify(myFamilyArray));
+}
+
 module.exports = {
   readSimpsonsIntoArray,
   readSimpsons,
   readSimpsonID,
   deleteSimpsonID,
+  createMySimpsonFamily,
+  addToMyFamily,
 };
