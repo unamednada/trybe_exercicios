@@ -17,9 +17,9 @@ async function readFile() {
   try {
     const content = await fs.readFile(file, 'utf-8');
     if (content.length === 0) throw new Error(`Path to an empty file. Read ${file}`);
-    console.log(`File content:\n${content}\n`);
+    return content;
   } catch (err) {
-    console.error(err);
+    return err;
   };
 };
 
