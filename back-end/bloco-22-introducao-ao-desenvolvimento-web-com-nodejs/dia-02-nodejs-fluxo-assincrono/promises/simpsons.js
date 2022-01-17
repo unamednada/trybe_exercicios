@@ -32,8 +32,19 @@ async function readSimpsonID(simpsonID) {
   return promise;
 }
 
+async function deleteSimpsonID(simpsonID) {
+  try {
+    const simpsons = JSON.parse(await fs.readFile('./simpsons.json', 'utf-8'));
+    delete simpsons[simpsonID - 1];
+    await fs.writeFile('./simpsons.json', JSON.stringify(simpsons));
+  } catch(err) {
+    console.error(err);
+  };
+}
+
 module.exports = {
   readSimpsonsIntoArray,
   readSimpsons,
   readSimpsonID,
+  deleteSimpsonID,
 };

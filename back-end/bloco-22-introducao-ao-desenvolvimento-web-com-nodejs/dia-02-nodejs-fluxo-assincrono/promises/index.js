@@ -1,12 +1,12 @@
 const {
   readSimpsons,
-  readSimpsonID
+  readSimpsonID,
+  deleteSimpsonID,
 } = require('./simpsons');
 
 async function main() {
   try {
-      const mySimpson = await readSimpsonID('10');
-    console.log(mySimpson);
+    deleteSimpsonID('3');
   } catch (err) {
     console.error(err);
   }
