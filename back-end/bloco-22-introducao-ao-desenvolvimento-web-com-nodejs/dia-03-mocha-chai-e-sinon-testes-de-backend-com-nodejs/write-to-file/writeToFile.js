@@ -1,7 +1,6 @@
 const fs = require('fs').promises;
 
-module.exports = function writeToFile(output, input) {
-  return fs.writeFile(output, input, { flag: 'w' })
-    .then(() => 'ok')
-    .catch(err => err.message);
+module.exports = async function writeToFile(output, input) {
+  await fs.writeFile(output, input, { flag: 'w' });
+  return 'ok';
 };
