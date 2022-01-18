@@ -5,7 +5,7 @@ const FUNC = 'function';
 const STRING = 'string';
 const NEG_NUM = Math.floor(Math.random() * -10);
 const ZERO = 0;
-const POS_NUM = Math.floor(Math.random() * 10);
+const POS_NUM = Math.ceil(Math.random() * 10);
 const NEGATIVE = 'negative';
 const NEUTRAL = 'neutral';
 const POSITIVE = 'positive';
@@ -34,4 +34,18 @@ describe('checkNumSign', () => {
       expect(checkNumSign(ZERO)).to.be.equals(NEUTRAL);
     });
   });
+
+  describe('when parameter is not a number', () => {
+    it('returns an error', () => {
+      expect(() => { checkNumSign(STRING); }).to.throw();
+    });
+
+    it('returns a type error', () => {
+      expect(() => { checkNumSign(STRING); }).to.throw(TypeError);
+    });
+
+    it('returns the message \'parameter must be a number\'', () => {
+      expect(() => { checkNumSign(STRING); }).to.throw('parameter must be a number');
+    });
+  })
 });
