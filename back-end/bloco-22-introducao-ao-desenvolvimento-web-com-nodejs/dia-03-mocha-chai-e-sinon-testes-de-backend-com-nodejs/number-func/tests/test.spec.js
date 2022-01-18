@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 
 const checkNumSign = require('../checkNumSign');
-const FUNC = 'func';
+const FUNC = 'function';
 const STRING = 'string';
 const NEG_NUM = Math.floor(Math.random() * -10);
 const ZERO = 0;
