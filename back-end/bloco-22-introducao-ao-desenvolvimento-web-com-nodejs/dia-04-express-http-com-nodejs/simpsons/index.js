@@ -5,19 +5,13 @@ const fs = require('fs').promises;
 const app = express();
 app.use(bodyParser.json());
 app.use(authMiddleware);
+const generateToken = require('./generateToken');
 
 let simpsons;
 fs.readFile('./simpsons.json', 'utf-8')
   .then(simpsonsJson => {
     simpsons = JSON.parse(simpsonsJson);
   });
-
-app.get('/validateToken', function (req, res) {
-  const token = req.headers.authorization;
-  if (token.length !== 16) return res.status(401).json({message: 'Invalid Token!'});
-
-  res.status(200).json({message: 'Valid Token!'});
-});
 
 app.get('/simpsons', (req, res) => {
   res.json(simpsons);
@@ -43,6 +37,18 @@ app.post('/simpsons', (req, res) => {
 
 app.use((err, req, res, next) => {
   res.status(500).send(err);
+});
+
+app.post('/signup', (req, res) => {
+  const { email, password, firstName, phone } = req.body;
+
+  if ([email, password, firstName, phone].includes(undefined)) {
+    return res.status(401).json({ message: 'missing fields' });
+  };
+
+  const token = generateToken();
+
+  res.status(200).json({ token });
 });
 
 app.listen(3001, () => {
