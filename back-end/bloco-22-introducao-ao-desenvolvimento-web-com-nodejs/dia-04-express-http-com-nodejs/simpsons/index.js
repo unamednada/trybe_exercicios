@@ -1,8 +1,10 @@
 const express = require('express');
+const authMiddleware = require('./authMiddleware');
 const bodyParser = require('body-parser');
 const fs = require('fs').promises;
 const app = express();
 app.use(bodyParser.json());
+app.use(authMiddleware);
 
 let simpsons;
 fs.readFile('./simpsons.json', 'utf-8')
@@ -37,6 +39,10 @@ app.post('/simpsons', (req, res) => {
     .then(() => {
       res.status(204).end();
     });
+});
+
+app.use((err, req, res, next) => {
+  res.status(500).send(err);
 });
 
 app.listen(3001, () => {
