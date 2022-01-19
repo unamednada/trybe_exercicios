@@ -19,6 +19,11 @@ app.post('/greetings', (req, res) => {
   res.json({ message: greetings });
 });
 
+app.put('/users/:name/:age', (req, res) => {
+  const { name, age } = req.params;
+  res.json({ message: `Seu nome é ${name} e você tem ${age} anos de idade`});
+});
+
 app.listen(3001, () => {
   console.log('App listening on PORT 3001');
 });
