@@ -5,12 +5,18 @@ app.use(bodyParser.json());
 
 const pong = { message: 'pong '};
 
-app.get('/ping', (req, res) => res.json(pong));
+app.get('/ping', (req, res) => res.status(200).json(pong));
 
 app.post('/hello', (req, res) => {
   const { name } = req.body;
   const hello = { message: `Hello, ${name}` };
-  res.json(hello);
+  res.status(200).json(hello);
+});
+
+app.post('/greetings', (req, res) => {
+  const { name, age } = req.body;
+  const greetings = parseInt(age) > 17 ? `Hello, ${name}` : 'Unauthorized';
+  res.json({ message: greetings });
 });
 
 app.listen(3001, () => {
