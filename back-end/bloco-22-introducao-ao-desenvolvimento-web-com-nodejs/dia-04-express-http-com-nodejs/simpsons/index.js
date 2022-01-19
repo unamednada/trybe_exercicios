@@ -4,8 +4,21 @@ const bodyParser = require('body-parser');
 const fs = require('fs').promises;
 const app = express();
 app.use(bodyParser.json());
-app.use(authMiddleware);
 const generateToken = require('./generateToken');
+
+app.post('/signup', (req, res) => {
+  const { email, password, firstName, phone } = req.body;
+
+  if ([email, password, firstName, phone].includes(undefined)) {
+    return res.status(401).json({ message: 'missing fields' });
+  };
+
+  const token = generateToken();
+
+  res.status(200).json({ token });
+});
+
+app.use(authMiddleware);
 
 let simpsons;
 fs.readFile('./simpsons.json', 'utf-8')
@@ -37,18 +50,6 @@ app.post('/simpsons', (req, res) => {
 
 app.use((err, req, res, next) => {
   res.status(500).send(err);
-});
-
-app.post('/signup', (req, res) => {
-  const { email, password, firstName, phone } = req.body;
-
-  if ([email, password, firstName, phone].includes(undefined)) {
-    return res.status(401).json({ message: 'missing fields' });
-  };
-
-  const token = generateToken();
-
-  res.status(200).json({ token });
 });
 
 app.listen(3001, () => {
