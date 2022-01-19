@@ -1,10 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
-const app = express();
-app.use(bodyParser.json());
+const cors = require('cors');
 
 const userRouter = require('./userRouter');
+const PORT = 3001;
+
+
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
 app.use('/user', userRouter);
 
-app.listen(3001, () => { console.log('App listening on PORT 3001'); });
+app.listen(PORT, () => { console.log('App listening on PORT 3001'); });
