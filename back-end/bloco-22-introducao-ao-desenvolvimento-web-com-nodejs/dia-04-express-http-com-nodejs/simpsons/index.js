@@ -5,11 +5,7 @@ app.use(bodyParser.json());
 const simpsons = require('./simpsons.json');
 
 app.get('/simpsons', (req, res) => {
-  try {
-    res.json(simpsons);
-  } catch (error) {
-    res.status(500);
-  };
+  res.json(simpsons);
 });
 
 app.listen(3001, () => {
