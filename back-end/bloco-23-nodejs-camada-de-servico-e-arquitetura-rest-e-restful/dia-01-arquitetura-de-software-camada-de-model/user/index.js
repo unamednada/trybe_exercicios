@@ -46,6 +46,7 @@ app.get('/user/:id', async (req, res) => {
 app.put('/user/:id', async (req, res) => {
   const { id } = req.params;
   const newUser = req.body;
+  const { first_name, last_name, email, password } = newUser;
 
   if ([first_name, last_name, email, password].includes(undefined)) {
     return res.status(400).json({
@@ -59,10 +60,9 @@ app.put('/user/:id', async (req, res) => {
       message: 'Password must have at least 6 characters',
     });
   }
-
-  // CONTINUE FROM HERE, UPDATE USER
-
-})
+  const returnUser = await User.update(id, newUser);
+  res.status(200).json(returnUser);
+});
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
