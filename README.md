@@ -1,4 +1,6 @@
-# Trybe
+# Trybe]
+
+# em construção... #
 
 Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Gustavo Dias](https://www.linkedin.com/in/unamednada/)_ na [Trybe](https://www.betrybe.com/) :rocket:
 
