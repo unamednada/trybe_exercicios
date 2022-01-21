@@ -41,6 +41,27 @@ app.get('/user/:id', async (req, res) => {
     });
   }
   res.status(200).json(user);
+});
+
+app.put('/user/:id', async (req, res) => {
+  const { id } = req.params;
+  const newUser = req.body;
+
+  if ([first_name, last_name, email, password].includes(undefined)) {
+    return res.status(400).json({
+      error: true,
+      message: 'All fields are required',
+    });
+  }
+  if (!User.validatePassword(password)) {
+    return res.status(400).json({
+      error: true,
+      message: 'Password must have at least 6 characters',
+    });
+  }
+
+  // CONTINUE FROM HERE, UPDATE USER
+
 })
 
 app.listen(PORT, () => {

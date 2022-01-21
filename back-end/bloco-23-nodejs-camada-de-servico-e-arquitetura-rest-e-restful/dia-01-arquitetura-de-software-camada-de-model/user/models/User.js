@@ -35,9 +35,14 @@ const findById = async (id) => {
   return foundUser;
 }
 
+const update = async (id, newData) => {
+    // CONTINUE FROM HERE UPDATE USER!!!
+};
+
 module.exports = {
   validatePassword,
   create,
   getAll,
   findById,
+  update,
 };
