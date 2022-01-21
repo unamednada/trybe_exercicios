@@ -61,6 +61,13 @@ app.put('/user/:id', async (req, res) => {
     });
   }
   const returnUser = await User.update(id, newUser);
+
+  if (!returnUser) {
+    return res.status(404).json({
+      error: true,
+      message: 'User not found',
+    });
+  }
   res.status(200).json(returnUser);
 });
 
