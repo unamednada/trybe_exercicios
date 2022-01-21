@@ -7,13 +7,6 @@ const validatePassword = (pass) => {
   return true;
 };
 
-const serialize = (userData) => ({
-  id: userData.id,
-  firstName: userData.first_name,
-  lastName: userData.last_name,
-  email: userData.middle_name,
-});
-
 const create = async (firstName, lastName, email, password) => {
   const users = await getAll() || [];
   const id = users.length + 1;
@@ -30,11 +23,21 @@ const getAll = async () => {
     `SELECT id, first_name, last_name, email
     FROM users`
   );
-  return users.map(serialize);
+  return users;
+}
+
+const findById = async (id) => {
+  const users = await getAll();
+  const foundUser = users.find(user => user.id === id);
+  if (!foundUser) {
+    return null;
+  }
+  return foundUser;
 }
 
 module.exports = {
   validatePassword,
   create,
   getAll,
+  findById,
 };
