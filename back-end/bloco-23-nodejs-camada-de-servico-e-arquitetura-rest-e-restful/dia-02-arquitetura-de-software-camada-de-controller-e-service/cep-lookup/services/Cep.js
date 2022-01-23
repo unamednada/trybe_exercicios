@@ -1,4 +1,5 @@
 const CEP = require('../models/Cep');
+const { lookUp } = require('../models/Lookup');
 
 const findByCep = async (cep) => {
   if (!CEP.CEP_REGEX.test(cep)) {
@@ -9,10 +10,14 @@ const findByCep = async (cep) => {
       },
     };
   }
+
   
   const returnCep = await CEP.findByCep(cep);
+  if (returnCep) return returnCep;
 
-  if (!returnCep) {
+  const address = await lookUp(cep);
+
+  if (!address) {
     return {
       error: {
         code: 'notFound',
@@ -21,7 +26,7 @@ const findByCep = async (cep) => {
     };
   }
 
-  return returnCep;
+  return CEP.create(address);
 };
 
 const create = async ({ cep, logradouro, bairro, cidade, localidade, uf }) => {
