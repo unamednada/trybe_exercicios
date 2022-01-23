@@ -9,7 +9,7 @@ const findByCep = async (cep) => {
       },
     };
   }
-
+  
   const returnCep = await CEP.findByCep(cep);
 
   if (!returnCep) {

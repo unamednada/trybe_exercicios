@@ -9,7 +9,7 @@ const { CEP_REGEX } = require('../models/Cep');
 
 router.get('/:cep', rescue(async (req, res, next) => {
   const { cep } = req.params;
-
+  
   const address = await CEP.findByCep(cep);
 
   if (address.error) {

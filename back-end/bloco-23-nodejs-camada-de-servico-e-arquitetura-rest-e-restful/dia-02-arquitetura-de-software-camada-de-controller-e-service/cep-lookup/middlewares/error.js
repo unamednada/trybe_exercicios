@@ -12,7 +12,7 @@ module.exports = (err, req, res, next) => {
     
     const status = statusByErrorCode[err.code] || 500;
 
-    res.status(status).json(err);
+    return res.status(status).json(err);
   }
 
   console.error(err);

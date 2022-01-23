@@ -11,7 +11,7 @@ const formatCep = (cep) => {
   return cep.replace(CEP_FORMAT, '$1-$2');
 };
 
-const getNewCep = ({ cep, logradouro, bairro, localidade, uf }) => ({
+const getNewCep = ({ cep: rawCep, logradouro, bairro, localidade, uf }) => ({
   cep: formatCep(rawCep),
   logradouro,
   bairro,
@@ -21,7 +21,7 @@ const getNewCep = ({ cep, logradouro, bairro, localidade, uf }) => ({
 
 const findByCep = async (cep) => {
   const treatedCep = treatCep(cep);
-
+  
   const query = `SELECT cep, logradouro, bairro, localidade, uf
   FROM ceps WHERE cep = ?`;
 
@@ -30,7 +30,7 @@ const findByCep = async (cep) => {
   
   if (!result) return null;
 
-  return getNewCep(cep);
+  return getNewCep(result);
 };
 
 const create = async ({ cep: rawCep, logradouro, bairro, localidade, uf }) => {
