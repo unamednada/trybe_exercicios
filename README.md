@@ -1,4 +1,4 @@
-# Trybe]
+# Trybe
 
 # em construção... #
 
