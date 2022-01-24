@@ -1,9 +1,7 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
 
-const MovieModel = {
-  findById: (id) => ({}),
-};
+const MovieModel = require('../../models/movieModel');
 
 describe('Find movie by id in DB', () => {
   describe('when the id exists in DB', () => {
@@ -11,7 +9,7 @@ describe('Find movie by id in DB', () => {
     const returnMovie = {
       title: 'Avatar',
       directedBy: 'James Cameron',
-      releaseYear: '2009'
+      releaseYear: 2009,
     };
 
     it('returns an object', async () => {
