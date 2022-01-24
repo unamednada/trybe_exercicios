@@ -8,10 +8,10 @@ const {
 const mysql = require('mysql2/promise');
 
 const connection = mysql.createPool({
-    host: 'localhost',
-    user: 'unamednada',
-    password: '36856914',
-    database: 'trybe_exercises_user'
+    host: MYSQL_HOST,
+    user: MYSQL_USER,
+    password: MYSQL_PASSWORD,
+    database: MYSQL_DB_NAME
 });
 
 module.exports = connection;
