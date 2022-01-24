@@ -1,4 +1,5 @@
 require('dotenv').config();
+const { PORT } = process.env; 
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -9,6 +10,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/products', require('./controllers/productController'));
 
-app.listen(3000, () => {
-  console.log("App listening on port 3000!");
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
 });
