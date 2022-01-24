@@ -43,13 +43,13 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [:white_check_mark:] 5-2: _JavaScript - Trabalhando com elementos_
 - [:white_check_mark:] 5-3: _JavaScript - Eventos_
 - [:white_check_mark:] 5-4: _JavaScript - Web Storage_
-- [:white_check_mark:] 5-5: _[Projeto - Meme Generator](https://github.com/tryber/sd-014-a-project-meme-generator/pull/26)_
-- [:white_check_mark:] 5-6: _[Projeto - Arte com Pixels](https://github.com/tryber/sd-014-a-project-pixels-art/pull/126)_
-- [:white_check_mark:] 5-7: _[Projeto - Lista de tarefas](https://unamednada.github.io/projects/todo-list/index.html)_
+- [:white_check_mark:] 5-5: _[Projeto - Arte com Pixels](https://github.com/tryber/sd-014-a-project-pixels-art/pull/126)_
+- [:white_check_mark:] 5-6: _[Projeto - Lista de tarefas](https://unamednada.github.io/projects/todo-list/index.html)_
+- [:white_check_mark:] 5-7: _[Projeto - Meme Generator](https://github.com/tryber/sd-014-a-project-meme-generator/pull/26)_
 - [:white_check_mark:] 5-7: _[Projeto - Adivinhe a Cor](https://github.com/tryber/sd-014-a-project-color-guess/pull/36)_
 - [:white_check_mark:] 5-7: _[Projeto - Carta Misteriosa](https://github.com/tryber/sd-014-a-project-mistery-letter/pull/16)_
 
-##### Bloco 6: HTML & CSS avançado
+##### Bloco 6: HTML & CSS - Forms, Flexbox e Responsivo
 
 - [:white_check_mark:] 6-1: _HTML & CSS - Forms_
 - [:white_check_mark:] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
@@ -61,8 +61,8 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### Bloco 7: JavaScript ES6 & Testes Unitários
 
 - [:white_check_mark:] 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
-- [:white_check_mark:] 7-2: _JavaScript ES6 - Objects_
-- [:white_check_mark:] 7-3: _Testes unitários em JavaScript_
+- [:white_check_mark:] 7-2: _JavaScript ES6 - Fluxo de exceção e Objects_
+- [:white_check_mark:] 7-3: _Primeiros passos em Jest_
 - [:white_check_mark:] 7-4: _[Projeto - JavaScript Testes Unitários](https://github.com/tryber/sd-014-a-project-js-unit-tests/pull/24)_
 
 ##### Bloco 8: JavaScript ES6
@@ -74,14 +74,14 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [:white_check_mark:] 8-5: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
 - [:white_check_mark:] 8-5: _[Projeto - Zoo functions](https://github.com/tryber/sd-014-a-project-zoo-functions/pull/92)_
 
-##### Bloco 9: Assincronicidade & Callbacks
+##### Bloco 9: JavaScript e Testes Assíncronos
 
 - [:white_check_mark:] 9-1: _JavaScript Assíncrono e Callbacks_
 - [:white_check_mark:] 9-2: _JavaScript Promises_
 - [:white_check_mark:] 9-3: _[Projeto - Carrinho de Compras](https://github.com/tryber/sd-014-a-project-shopping-cart/pull/42)_
 - [:white_check_mark:] 9-3: _[Projeto - Casa de Cambio](https://github.com/tryber/sd-014-a-casa-de-cambio/pull/2)_
 
-##### Bloco 10: Jest
+##### Bloco 10: Jest (antigo)
 
 - [:white_check_mark:] 10-1: _Primeiros passos no Jest_
 - [:white_check_mark:] 10-2: _Jest - Testes Assíncronos_
@@ -90,58 +90,59 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ## Desenvolvimento Front-end :hourglass_flowing_sand:
 
-##### Bloco 11: IntroduÃ§Ã£o - React
+##### Bloco 10: Introdução - React
 
 - [:white_check_mark:] 11-1: _'Hello, world!' no React!_
 - [:white_check_mark:] 11-2: _Componentes React_
 - [:white_check_mark:] 11-3: _[Projeto - Movie Cards Library](https://github.com/tryber/sd-014-a-project-movie-cards-library/pull/30)_
 
-##### Bloco 12: React
+##### Bloco 11: Componentes com Estado, Eventos e Formulários no React
 
 - [:white_check_mark:] 12-1: _Components com estado_
 - [:white_check_mark:] 12-2: _Eventos e formulários no React_
 - [:white_check_mark:] 12-3: _[Projeto - Movie Cards Library Stateful](https://github.com/tryber/sd-014-a-project-movie-cards-library-stateful/pull/113)_
 
-##### Bloco 13: React
+##### Bloco 12: Ciclo de vida de Componenntes e React Router
 
 - [:white_check_mark:] 13-1: _Ciclo de vida de componentes em React_
 - [:white_check_mark:] 13-2: _React Router_
-- [:white_check_mark:] 13-3: _[Projeto - Movie Cards Library CRUD]()_
+- [:white_check_mark:] 13-3: _[Projeto - TrybeTunes](https://github.com/tryber/sd-014-a-project-trybetunes/pull/90)_
 
-##### Bloco 14: Metodologias Ágeis
+##### Bloco 13: Metodologias Ágeis
 
 - [:white_check_mark:] 14-1: _Metodologias Ágeis_
-- [:white_check_mark:] 14-2: _[Projeto - Frontend Online Store]()_
+- [:white_check_mark:] 14-2: _[Projeto - Frontend Online Store](https://github.com/tryber/sd-014-a-project-frontend-online-store/pull/489)_
 
-##### Bloco 15: Testes em React
+##### Bloco 14: Testes automatizados com React Testing Library
 
-- [:white_check_mark:] 15-1: _Testando React com a React Testing Library_
-- [:white_check_mark:] 15-2: _Testando React com a React Testing Library - Parte 2_
-- [:white_check_mark:] 15-3: _[Projeto - Testes em React]()_
+- [:white_check_mark:] 15-1: _RTL - Primeiros passos_
+- [:white_check_mark:] 15-2: _RTL - Mocks e Inputs_
+- [:white_check_mark:] 15-3: _Testando React Router_
+- [:white_check_mark:] 15-4: _[Projeto - Testes em React](https://github.com/tryber/sd-014-a-project-react-testing-library/pull/53)_
 
-##### Bloco 16: Introdução ao Redux
+##### Bloco 15: Gerenciamento de Estado com Redux
 
 - [:white_check_mark:] 16-1: _Introdução ao Redux_
-- [:white_check_mark:] 16-2: _React com Redux - Parte 1_
+- [:white_check_mark:] 16-2: _React com Redux_
 - [:white_check_mark:] 16-3: _React com Redux - Prática_
-- [:white_check_mark:] 16-4: _React com Redux - Parte 2_
-- [:white_check_mark:] 16-5: _Testes síncronos com React-Redux_
-- [:white_check_mark:] 16-6: _[Projeto - Tabela com filtros de dados]()_
+- [:white_check_mark:] 16-4: _React com Redux - Actions Assíncronas_
+- [:white_check_mark:] 16-5: _Testes com React-Redux_
+- [:white_check_mark:] 16-6: _[Projeto - TrybeWallet](https://github.com/tryber/sd-014-a-project-trybewallet/pull/80)_
 
-##### Bloco 17: Projeto React
+##### Bloco 16: Projeto Jogo de Trivia
 
-- [:white_check_mark:] 17-1: _[Projeto - Jogo de Trivia]()_
+- [:white_check_mark:] 17-1: _[Projeto - Jogo de Trivia](https://github.com/tryber/sd-014-a-project-trivia-react-redux/pull/86)_
 
-##### Bloco 18: React & Context API
+##### Bloco 17: Context API e React Hooks
 
 - [:white_check_mark:] 18-1: _Context API do React_
 - [:white_check_mark:] 18-2: _React Hooks - useState e useContext_
 - [:white_check_mark:] 18-3: _React Hooks - useEffect e Hooks customizados_
-- [:white_check_mark:] 18-4: _[Projeto - StarWars Datatable com Context API e Hooks]()_
+- [:white_check_mark:] 18-4: _[Projeto - StarWars Datatable com Context API e Hooks](https://github.com/tryber/sd-014-a-project-starwars-planets-search/pull/54)_
 
-##### Bloco 19: Projeto Final de Front-end
+##### Bloco 18: Projeto App de Receitas
 
-- [ ] 19-1: _[Projeto - App de Receitas]()_
+- [:white_check_mark:] 19-1: _[Projeto - App de Receitas](https://github.com/tryber/sd-014-a-project-recipes-app/pull/670)_
 
 ## Desenvolvimento Back-end :hourglass_flowing_sand:
 
