@@ -64,11 +64,11 @@ describe('Find movie by id in DB', () => {
     it('contains the correct data of inserted movie', async () => {
       const response = await MovieModel.findById(VALID_ID);
 
-      expect(response).to.include.all.keys('title', 'releaseYear', 'directedBy');
-      const { title, directedBy, releaseYear } = response;
+      expect(response).to.include.all.keys('title', 'release_year', 'directed_by');
+      const { title, directed_by, release_year } = response;
       expect(title).to.be.eq(returnMovie.title);
-      expect(directedBy).to.be.eq(returnMovie.directed_by);
-      expect(releaseYear).to.be.eq(returnMovie.release_year);
+      expect(directed_by).to.be.eq(returnMovie.directed_by);
+      expect(release_year).to.be.eq(returnMovie.release_year);
     });
   });
 });

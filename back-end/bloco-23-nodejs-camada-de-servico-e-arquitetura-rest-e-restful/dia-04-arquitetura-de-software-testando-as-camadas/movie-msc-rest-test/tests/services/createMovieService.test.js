@@ -4,7 +4,7 @@ const { expect } = require('chai');
 const MovieService = require('../../services/movieService');
 const MovieModel = require('../../models/movieModel');
 
-describe('Insert new movie in DB', () => {
+describe('Call movie service', () => {
   describe('when movie payload is not valid', () => {
     const payloadMovie = {};
 
