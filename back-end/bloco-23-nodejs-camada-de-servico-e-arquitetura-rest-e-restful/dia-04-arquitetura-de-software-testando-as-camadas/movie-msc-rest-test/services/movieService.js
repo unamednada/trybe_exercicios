@@ -19,7 +19,18 @@ const create = async ({ title, directedBy, releaseYear }) => {
   return { id };
 };
 
-const findById = async (id) => ({});
+const findById = async (id) => {
+  const movie = await MovieModel.findById(id);
+
+  if (!movie) return null;
+
+  const { title, releaseYear, directedBy } = movie;
+  return {
+    title,
+    releaseYear,
+    directedBy,
+  };
+};
 
 module.exports = {
   create,
