@@ -23,11 +23,13 @@ const findById = async (id) => {
     );
   
   if (!movie.length) return null;
+  
+  const { title, directed_by, release_year } = movie[0];
 
   return {
-    title: movie[0].title,
-    directedBy: movie[0].directed_by,
-    releaseYear: movie[0].release_year,
+    title,
+    directedBy: directed_by,
+    releaseYear: release_year,
   };
 };
 

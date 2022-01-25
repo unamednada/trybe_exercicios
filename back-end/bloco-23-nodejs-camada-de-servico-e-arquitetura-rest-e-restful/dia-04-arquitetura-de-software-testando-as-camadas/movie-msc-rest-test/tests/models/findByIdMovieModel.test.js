@@ -14,26 +14,15 @@ describe('Find movie by id in DB', () => {
     release_year: 2009,
   };
 
-  before(async () => {
-    const execute = [[]];
-
-    sinon.stub(connection, 'execute').resolves(execute);
-  });
-
-  after(async () => {
-    connection.execute.restore();
-  });
-
   describe('when the id doesn\'t exist in DB', () => {
-
     before(async () => {
-      const SELECT_FAIL = null;
+      const execute = [[]];
   
-      sinon.stub(MovieModel, 'findById').resolves(SELECT_FAIL);
+      sinon.stub(connection, 'execute').resolves(execute);
     });
   
     after(async () => {
-      MovieModel.findById.restore();
+      connection.execute.restore();
     });
 
     it('returns null', async () => {
@@ -46,14 +35,14 @@ describe('Find movie by id in DB', () => {
   describe('when the id exists in DB', () => {
 
     before(async () => {
-      const SELECT_SUCCESS = returnMovie;
-  
-      sinon.stub(MovieModel, 'findById').resolves(SELECT_SUCCESS);
-    });
-  
-    after(async () => {
-      MovieModel.findById.restore();
-    });
+    const execute = [[returnMovie]];
+
+    sinon.stub(connection, 'execute').resolves(execute);
+  });
+
+  after(async () => {
+    connection.execute.restore();
+  });
 
     it('returns an object', async () => {
       const response = await MovieModel.findById(VALID_ID);
@@ -61,14 +50,26 @@ describe('Find movie by id in DB', () => {
       expect(response).to.be.a('object');
     });
 
+    it('is not empty', async () => {
+      const response = await MovieModel.findById(VALID_ID);
+
+      expect(response).to.be.not.empty;
+    });
+
+    it('contains the keys title, releaseYear and directedBy', async () => {
+      const response = await MovieModel.findById(VALID_ID);
+
+      expect(response).to.include.all.keys('title', 'releaseYear', 'directedBy');
+    });
+
     it('contains the correct data of inserted movie', async () => {
       const response = await MovieModel.findById(VALID_ID);
 
-      expect(response).to.include.all.keys('title', 'release_year', 'directed_by');
-      const { title, directed_by, release_year } = response;
+      const { title, directedBy, releaseYear } = response;
+
       expect(title).to.be.eq(returnMovie.title);
-      expect(directed_by).to.be.eq(returnMovie.directed_by);
-      expect(release_year).to.be.eq(returnMovie.release_year);
+      expect(directedBy).to.be.eq(returnMovie.directed_by);
+      expect(releaseYear).to.be.eq(returnMovie.release_year);
     });
   });
 });

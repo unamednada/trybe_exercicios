@@ -19,6 +19,8 @@ describe('Call findById controller', () => {
         .returns(response);
       response.send = sinon.stub()
         .returns();
+      response.json = sinon.stub()
+        .returns(response);
 
       sinon.stub(MovieService, 'findById')
         .resolves(null);
