@@ -19,7 +19,7 @@ describe('Call create controller', () => {
 
       sinon.stub(MovieService, 'create')
         .resolves(false);
-    })
+    });
 
     after(() => { MovieService.create.restore(); });
 

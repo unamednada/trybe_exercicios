@@ -15,17 +15,19 @@ const create = async ({ title, directedBy, releaseYear }) => {
 };
 
 const findById = async (id) => {
-  const [result] = await connection
+  const [movie] = await connection
     .execute(
       `SELECT title, directed_by, release_year
       FROM model_example.movies
       WHERE id = ?`, [id]
     );
+  
+  if (!movie.length) return null;
 
   return {
-    title: result[0].title,
-    directedBy: result[0].directed_by,
-    releaseYear: result[0].release_year,
+    title: movie[0].title,
+    directedBy: movie[0].directed_by,
+    releaseYear: movie[0].release_year,
   };
 };
 
