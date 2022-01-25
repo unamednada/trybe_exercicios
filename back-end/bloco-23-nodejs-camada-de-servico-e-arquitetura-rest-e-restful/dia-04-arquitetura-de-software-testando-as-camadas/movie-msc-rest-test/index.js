@@ -10,5 +10,6 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post('/movies', MovieController.create);
+app.get('/movies/:id', MovieController.findById);
 
 app.listen(PORT, () => { console.log(`Listening on port ${PORT}`); });
