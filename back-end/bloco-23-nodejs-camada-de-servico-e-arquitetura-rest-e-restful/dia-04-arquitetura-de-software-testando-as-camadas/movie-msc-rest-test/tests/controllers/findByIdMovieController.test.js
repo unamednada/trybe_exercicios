@@ -1,9 +1,7 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
 
-const MovieController = {
-  findById: () => ({}),
-};
+const MovieController = require('../../controllers/movieController');
 const MovieService = require('../../services/movieService');
 
 const VALID_ID = 2;
@@ -31,7 +29,7 @@ describe('Call findById controller', () => {
     it('returns code 404', async () => {
       await MovieController.findById(request, response);
 
-      expect(response.status.calledWith(404).to.be.eq(true));
+      expect(response.status.calledWith(404).to.be.equals(true));
     });
 
     it('returns message \'Id not found\'', async () => {

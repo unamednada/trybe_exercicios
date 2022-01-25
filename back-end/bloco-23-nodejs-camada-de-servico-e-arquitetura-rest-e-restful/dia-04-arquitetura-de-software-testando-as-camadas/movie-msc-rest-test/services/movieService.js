@@ -19,6 +19,9 @@ const create = async ({ title, directedBy, releaseYear }) => {
   return { id };
 };
 
+const findById = async (id) => ({});
+
 module.exports = {
   create,
+  findById,
 };
