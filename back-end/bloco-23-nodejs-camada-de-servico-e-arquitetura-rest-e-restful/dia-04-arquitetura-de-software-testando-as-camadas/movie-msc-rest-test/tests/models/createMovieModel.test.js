@@ -12,9 +12,9 @@ describe('Insert new movie in DB', () => {
   }
 
   before(async () => {
-    const INSERT_SUCCESS = [{ insertId: 1}];
+    const execute = [{ insertId: 1}];
 
-    sinon.stub(connection, 'execute').resolves(INSERT_SUCCESS);
+    sinon.stub(connection, 'execute').resolves(execute);
   });
 
   after(async () => {

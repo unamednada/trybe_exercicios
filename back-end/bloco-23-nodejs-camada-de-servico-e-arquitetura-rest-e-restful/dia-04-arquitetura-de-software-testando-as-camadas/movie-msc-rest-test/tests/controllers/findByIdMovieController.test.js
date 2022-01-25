@@ -19,8 +19,6 @@ describe('Call findById controller', () => {
         .returns(response);
       response.send = sinon.stub()
         .returns();
-      response.json = sinon.stub()
-        .returns(response);
 
       sinon.stub(MovieService, 'findById')
         .resolves(null);
@@ -31,7 +29,7 @@ describe('Call findById controller', () => {
     it('returns code 404', async () => {
       await MovieController.findById(request, response);
 
-      expect(response.status.calledWith(404).to.be.equals(true));
+      expect(response.status.calledWith(404)).to.be.equals(true);
     });
 
     it('returns message \'Id not found\'', async () => {
@@ -50,7 +48,7 @@ describe('Call findById controller', () => {
 
       response.status = sinon.stub()
         .returns(response);
-      response.send = sinon.stub()
+      response.json = sinon.stub()
         .returns();
 
       sinon.stub(MovieService, 'findById')
@@ -66,7 +64,7 @@ describe('Call findById controller', () => {
     it('returns conde 200', async () => {
       await MovieController.findById(request, response);
 
-      expect(response.status.calledWith(200).to.be.eq(true));
+      expect(response.status.calledWith(200)).to.be.eq(true);
     });
 
     it('returns a json object', async () => {
