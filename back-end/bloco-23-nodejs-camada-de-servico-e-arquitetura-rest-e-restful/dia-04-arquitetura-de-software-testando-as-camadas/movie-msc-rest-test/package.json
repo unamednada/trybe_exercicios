@@ -1,0 +1,34 @@
+{
+  "name": "movie-msc-rest-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "mocha ./tests/**/*$NAME*.test.js --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unamednada/movie-msc-rest-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unamednada/movie-msc-rest-test/issues"
+  },
+  "homepage": "https://github.com/unamednada/movie-msc-rest-test#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.2.0",
+    "nodemon": "^2.0.15",
+    "sinon": "^12.0.1"
+  }
+}
