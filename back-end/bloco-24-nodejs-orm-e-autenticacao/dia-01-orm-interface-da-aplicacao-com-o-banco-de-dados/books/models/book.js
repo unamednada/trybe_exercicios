@@ -6,7 +6,7 @@ const Book = (sequelize, DataTypes) => {
   }, {
     underscored: true,
     tableName: 'Books',
-    timestamps: false,
+    updatedAt: false,
   });
 
   return Book;
