@@ -7,11 +7,13 @@ module.exports = {
         title: 'Journey to the centre of the Earth',
         author: 'Julio Verne',
         created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
       {
         title: 'What the bleep do we know?',
         author: 'Betsy',
         created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
     ], {});
   },

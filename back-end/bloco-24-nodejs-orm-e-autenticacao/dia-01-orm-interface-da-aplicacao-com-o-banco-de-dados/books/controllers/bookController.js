@@ -32,10 +32,12 @@ router.get('/:id', async (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
-    const Books = await Book.findAll();
-    Books.sort((a, b) => a.title - b.title);
-    Books.sort((a, b) => a.createdAt - b.createdAt);
-
+    const Books = await Book.findAll({
+      order: [
+        ['title', 'ASC'],
+        ['createdAt', 'ASC'],
+      ]
+    });
 
     return res.status(200).json(Books);
   } catch (e) {
