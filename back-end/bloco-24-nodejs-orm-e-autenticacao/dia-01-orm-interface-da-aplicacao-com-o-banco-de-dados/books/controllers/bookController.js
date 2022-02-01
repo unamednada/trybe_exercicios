@@ -2,6 +2,20 @@ const express = require('express');
 const { Book } = require('../models');
 const router = express.Router();
 
+router.get('/author', async (req, res) => {
+  try {
+    const { author } = req.body;
+    const returnBook = await Book.findOne({ where: { author } });
+
+    if (!returnBook) return res.status(404).json({ message: 'Livro não encontrado' });
+
+    return res.status(200).json(returnBook);
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+});
+
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
