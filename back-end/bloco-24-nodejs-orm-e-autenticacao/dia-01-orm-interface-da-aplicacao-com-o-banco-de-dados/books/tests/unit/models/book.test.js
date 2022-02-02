@@ -5,7 +5,7 @@ const {
   checkPropertyExists,
 } = require('sequelize-test-helpers');
 
-const BookModel = require('../../models/book');
+const BookModel = require('../../../models/book');
 
 describe('O model de Book', () => {
   const Book = BookModel(sequelize, dataTypes);
