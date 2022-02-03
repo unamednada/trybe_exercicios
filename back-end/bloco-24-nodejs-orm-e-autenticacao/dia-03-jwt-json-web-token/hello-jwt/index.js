@@ -9,6 +9,7 @@ const controllers = require('./controllers');
 const middlewares = require('./middlewares');
 const loginAuthMiddleware = require('./auth/loginAuthMiddleware');
 const userAuthMiddleware = require('./auth/userAuthMiddleware');
+const topSecretMiddleware = require('./auth/topSecretMiddleware');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.get('/ping', controllers.ping);
 
 app.get('/users/me', userAuthMiddleware, controllers.user);
 app.post('/login', loginAuthMiddleware, controllers.login);
+app.get('/top-secret', topSecretMiddleware, controllers.topSecret);
 
 app.use(middlewares.error);
 
