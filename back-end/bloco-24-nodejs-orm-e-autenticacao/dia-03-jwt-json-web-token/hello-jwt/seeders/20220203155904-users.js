@@ -5,11 +5,13 @@ module.exports = {
       password: 'pass1234',
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+      admin: false,
     }, {
       username: 'ohmygus',
       password: 'pass1234',
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+      admin: false,
     }], {});
   },
 
