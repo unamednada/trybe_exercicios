@@ -11,7 +11,9 @@ module.exports = (req, res) => {
     algorithm: 'HS256',
   };
 
-  const token = jwt.sign({ data: { username, admin: false } }, SECRET, jwtConfig);
+  const admin = username === 'admin' && password === 's3nh4S3gur4???';
+
+  const token = jwt.sign({ data: { username, admin } }, SECRET, jwtConfig);
 
   res.status(200).json({ token });
 };
