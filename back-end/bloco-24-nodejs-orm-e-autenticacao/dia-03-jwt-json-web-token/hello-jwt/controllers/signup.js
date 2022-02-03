@@ -12,14 +12,14 @@ module.exports = async (req, res, next) => {
     return next({ statusCode: 409, message: 'user already exists' });
   }
 
-  await User.create({ username: newUser, password });
+  const admin = Math.floor(Math.random() * 100) > 50;
+
+  await User.create({ username: newUser, password, admin });
 
   const jwtConfig = {
     expiresIn: '1h',
     algorithm: 'HS256',
   };
-
-  const admin = false;
 
   const token = jwt.sign({ data: { username: newUser, admin } }, SECRET, jwtConfig);
 

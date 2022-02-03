@@ -3,6 +3,7 @@ const User = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     username: DataTypes.STRING,
     password: DataTypes.STRING,
+    admin: DataTypes.BOOLEAN,
   }, {
     tableName: 'users',
   });
