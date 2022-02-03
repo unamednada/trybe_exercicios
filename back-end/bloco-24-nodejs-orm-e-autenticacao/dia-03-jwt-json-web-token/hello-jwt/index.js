@@ -30,6 +30,7 @@ app.get('/users/me', userAuthMiddleware, controllers.user);
 app.post('/login', loginAuthMiddleware, controllers.login);
 app.get('/top-secret', topSecretMiddleware, controllers.topSecret);
 
+app.post('/signup', loginAuthMiddleware, controllers.signup);
 app.use(middlewares.error);
 
 app.listen(PORT, () => {
