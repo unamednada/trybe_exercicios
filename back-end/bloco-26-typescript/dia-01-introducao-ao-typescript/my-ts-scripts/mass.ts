@@ -1,4 +1,4 @@
-const unidades: string[] = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
+const unidades: string[] = ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'];
 const valores: number[] = [1000, 100, 10, 1, .1, .01, .001];
 
 export function convert(valor: number, unidadeBase: string, unidadeDestino: string): number {

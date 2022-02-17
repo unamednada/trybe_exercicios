@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.convert = void 0;
-const unidades = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
+const unidades = ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'];
 const valores = [1000, 100, 10, 1, .1, .01, .001];
 function convert(valor, unidadeBase, unidadeDestino) {
     const valorBase = valores[unidades.indexOf(unidadeBase)];
