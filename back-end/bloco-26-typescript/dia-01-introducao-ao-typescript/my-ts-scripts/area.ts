@@ -1,9 +1,9 @@
 import readline from 'readline-sync';
 
 const unidades: string[] = ['km2', 'hm2', 'dam2', 'm2', 'dm2', 'cm2', 'mm2'];
-const valores: number[] = [1000000, 10000, 100, 1, .01, .001, .00001];
+const valores: number[] = [1000000, 10000, 100, 1, .01, .0001, .000001];
 
-export function exec(): void {
+function exec(): void {
   const valor: number = readline.questionFloat('Valor: ');
   const unidadeBase: string = readline.question( 'Unidade base: ');
   const unidadeDestino: string = readline.question('Unidade destino: ');
@@ -16,3 +16,5 @@ function convert(valor: number, unidadeBase: string, unidadeDestino: string): nu
   const valorDestino: number = valores[unidades.indexOf(unidadeDestino)];
   return (valor * valorBase) / valorDestino;
 }
+
+exec();

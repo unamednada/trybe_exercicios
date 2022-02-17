@@ -1,27 +1,23 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+// ./index.ts
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Mass = __importStar(require("./mass"));
-// Area.exec();
-// Volume.exec();
-// Capacity.exec();
-// Length.exec();
-Mass.exec();
+const readline_sync_1 = __importDefault(require("readline-sync")); // importamos o pacote readline-sync
+// criamos um array de objetos com o nome do script e o caminho do script a ser executado
+const scripts = [
+    { name: "Converter comprimento", script: "./length" },
+    { name: "Converter massa", script: "./mass" },
+    { name: "Converter capacidade", script: "./capacity" },
+    { name: "Converter área", script: "./area" },
+    { name: "Converter volume", script: "./volume" }
+];
+// criamos um novo array somente com os nomes dos scripts
+const scriptNames = scripts.map(item => item.name);
+// pedimos à pessoa usuária para escolher um dos scripts de conversão
+const choice = readline_sync_1.default.keyInSelect(scriptNames, "Escolha um número para executar o script de conversão de unidade", { cancel: "SAIR" });
+if (choice === -1)
+    console.log("Saindo!"); // caso a pessoa usuária escolha sair, printamos "Saindo!" no terminal
+else
+    require(scripts[choice].script); // caso escolha um script executamos o script escolido usando o require
