@@ -21,5 +21,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Length = __importStar(require("./length"));
 const Mass = __importStar(require("./mass"));
+const Capacity = __importStar(require("./capacity"));
 console.log('50 centímetros em metros são:', Length.convert(50, 'cm', 'm'), 'metros.');
 console.log('100 kilogramas em miligramas são:', Mass.convert(100, 'kg', 'mg'), 'miligramas.');
+console.log('14 litros em mililitros são:', Capacity.convert(14, 'l', 'ml'), 'mililitros.');
