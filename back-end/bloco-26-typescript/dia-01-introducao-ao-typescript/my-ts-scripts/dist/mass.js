@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const readline_sync_1 = __importDefault(require("readline-sync"));
+const unidades = ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'];
+const valores = [1000, 100, 10, 1, .1, .01, .001];
+function exec() {
+    const valor = readline_sync_1.default.questionFloat('Valor: ');
+    const unidadeBase = readline_sync_1.default.question('Unidade base: ');
+    const unidadeDestino = readline_sync_1.default.question('Unidade destino: ');
+    const valorFinal = convert(valor, unidadeBase, unidadeDestino);
+    console.log(`${valor} ${unidadeBase} equivale a ${valorFinal} ${unidadeDestino}`);
+}
+function convert(valor, unidadeBase, unidadeDestino) {
+    const valorBase = valores[unidades.indexOf(unidadeBase)];
+    const valorDestino = valores[unidades.indexOf(unidadeDestino)];
+    return (valor * valorBase) / valorDestino;
+}
+exec();
