@@ -1,23 +1,21 @@
-enum Months {
-  JANUARY = 1,
-  FEBRUARY,
-  MARCH,
-  APRIL,
-  MAY,
-  JUNE,
-  JULY,
-  AUGUST,
-  SEPTEMBER,
-  OCTOBER,
-  NOVEMBER,
-  DECEMBER,
-};
-
-enum Seasons {
-  SPRING = 'Spring',
-  SUMMER = 'Summer',
-  AUTUMN = 'Autumn',
-  WINTER = 'Winter',
+export enum Months {
+  JANEIRO = "Janeiro",
+  FEVEREIRO = "Fevereiro",
+  MARCO = "Março",
+  ABRIL = "Abril",
+  MAIO = "Maio",
+  JUNHO = "Junho",
+  JULHO = "Julho",
+  AGOSTO = "Agosto",
+  SETEMBRO = "Setembro",
+  OUTUBRO = "Outubro",
+  NOVEMBRO = "Novembro",
+  DEZEMBRO = "Dezembro",
 }
 
-console.log(Seasons);
+export enum Seasons {
+  OUTONO = "Outono",
+  INVERNO = "Inverno",
+  PRIMAVERA = "Primavera",
+  VERAO = "Verão",
+}
