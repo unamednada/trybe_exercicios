@@ -1,6 +1,8 @@
 import { Router, Request, Response } from 'express';
-import { readUsers } from '../utils/functions';
-import StatusCode from '../utils/StatusCode';
+import User from '../interfaces/User';
+import validateUser from '../middlewares/validateUser';
+import { readUsers, writeUsers } from '../utils/functions';
+import StatusCode from '../utils/Status';
 
 const router = Router();
 
@@ -18,6 +20,19 @@ router.get('/users/:id', async (req: Request, res: Response) => {
   if (!user) return res.status(StatusCode.NOT_FOUND).send('User not found');
 
   return res.status(StatusCode.OK).json(user);
-})
+});
+
+router.post('/users', validateUser, async (req: Request, res: Response) => {
+  const user: User = req.body;
+
+  const users = await readUsers();
+  const id = users.length;
+
+  users.push({ ...user, id });
+
+  await writeUsers(users);
+
+  return res.status(StatusCode.CREATED).json({ ...user, id });
+});
 
 export default router;

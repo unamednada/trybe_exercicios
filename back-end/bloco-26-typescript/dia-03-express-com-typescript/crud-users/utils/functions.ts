@@ -9,6 +9,11 @@ async function readUsers(): Promise<User[]> {
   return users;
 };
 
+async function writeUsers(data: User[]): Promise<void> {
+  await fs.writeFile('./data/users.json', JSON.stringify(data));
+}
+
 export {
   readUsers,
+  writeUsers,
 };
