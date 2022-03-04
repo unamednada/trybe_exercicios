@@ -1,10 +1,10 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 
 const app = express();
 
 const PORT = 8080;
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('Express + TypeScript');
 });
 
