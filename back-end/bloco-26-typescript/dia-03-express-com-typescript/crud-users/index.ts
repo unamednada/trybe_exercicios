@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express';
 import UsersRoutes from './routes/users';
 
 const app: Application = express();
+app.use(express.json());
 
 const PORT = 8080;
 

@@ -26,7 +26,7 @@ router.post('/users', validateUser, async (req: Request, res: Response) => {
   const user: User = req.body;
 
   const users = await readUsers();
-  const id = users.length;
+  const id = users.length + 1;
 
   users.push({ ...user, id });
 
