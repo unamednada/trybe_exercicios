@@ -31,14 +31,17 @@ function validateName(name: string): boolean {
   return (name.length >= 3);
 };
 
-async function validateEmail(email: string): Promise<boolean> {
+async function validateEmail(email: string, method: string): Promise<boolean> {
   const re: RegExp = /\S+@\S+\.\S+/;
 
   const users = await readUsers();
   
-  for (let user of users) {
-    if (user.email === email) return false;
+  if (method === 'POST') {
+    for (let user of users) {
+      if (user.email === email) return false;
+    }
   }
+  
   return re.test(email);
 };
 
@@ -54,7 +57,7 @@ async function validateUser(req: Request, res: Response, next: NextFunction) {
   valid = validatePassword(user.password);
   if (!valid) return res.status(StatusCode.BAD_REQUEST).send(`Password must contain between 6 and 12 characters`);
 
-  valid = await validateEmail(user.email);
+  valid = await validateEmail(user.email, req.method);
   if (!valid) return res.status(StatusCode.BAD_REQUEST).send(`Email not valid or it already exists`);
 
   valid = validateName(user.name);

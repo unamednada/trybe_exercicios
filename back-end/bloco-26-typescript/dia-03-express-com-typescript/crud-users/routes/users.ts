@@ -35,4 +35,20 @@ router.post('/users', validateUser, async (req: Request, res: Response) => {
   return res.status(StatusCode.CREATED).json({ ...user, id });
 });
 
+router.put('/users/:id', validateUser, async (req: Request, res: Response) => {
+  const id = +req.params.id;
+  const editedUser: User = { ...req.body, id };
+
+  const users = await readUsers();
+
+  const userIndex = users.findIndex(user => user.id === id);
+  if (userIndex === -1) return res.status(StatusCode.NOT_FOUND).send('User not found');
+
+  users.splice(userIndex, 1, editedUser);
+
+  await writeUsers(users);
+
+  return res.status(StatusCode.OK).json(editedUser);
+});
+
 export default router;
