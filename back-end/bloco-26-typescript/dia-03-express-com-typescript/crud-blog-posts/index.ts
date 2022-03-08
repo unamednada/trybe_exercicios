@@ -2,6 +2,7 @@ import express, { Request, Response, Application } from 'express';
 import blogPostRouter from './routes/blogPosts';
 
 const app: Application = express();
+app.use(express.json());
 
 const PORT = 8080;
 
