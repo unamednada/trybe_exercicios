@@ -1,12 +1,12 @@
 // ./index.ts
 
-import express from 'express';
+import express, { Request, Response, Application } from 'express';
 
-const app = express();
+const app: Application = express();
 
 const PORT = 8080;
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
     res.send('Express + TypeScript')
 });
 
