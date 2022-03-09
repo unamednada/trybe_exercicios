@@ -20,4 +20,18 @@ router.get('/blogposts/:id', async (req: Request, res: Response) => {
   return res.status(StatusCode.OK).json(blogPost);
 });
 
+router.post('/blogposts', async (req: Request, res: Response) => {
+  const blogPost: BlogPost = req.body;
+
+  const blogPosts = await readBlogPosts();
+
+  let id = blogPosts[blogPosts.length -1].id;
+  if (typeof id === 'number') id += 1;
+
+  blogPosts.push({ ...blogPost, id });
+
+  await writeBlogPosts(blogPosts);
+  return res.status(StatusCode.CREATED).json({ ...blogPost, id });
+});
+
 export default router;
