@@ -28,10 +28,12 @@ router.post('/blogposts', async (req: Request, res: Response) => {
   let id = blogPosts[blogPosts.length -1].id;
   if (typeof id === 'number') id += 1;
 
-  blogPosts.push({ ...blogPost, id });
+  const createdAt = new Date().toISOString().slice(0, 10);
+
+  blogPosts.push({ ...blogPost, id, createdAt });
 
   await writeBlogPosts(blogPosts);
-  return res.status(StatusCode.CREATED).json({ ...blogPost, id });
+  return res.status(StatusCode.CREATED).json({ ...blogPost, id, createdAt });
 });
 
 export default router;

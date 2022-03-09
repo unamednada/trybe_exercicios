@@ -3,5 +3,5 @@ export default interface BlogPost {
   title: string;
   author: string;
   category: string;
-  createdAt: Date;
+  createdAt?: string;
 }
