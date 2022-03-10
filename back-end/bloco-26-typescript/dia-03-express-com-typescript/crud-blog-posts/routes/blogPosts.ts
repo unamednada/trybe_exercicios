@@ -74,4 +74,19 @@ router.delete('/blogposts/:id', async (req: Request, res: Response) => {
   return res.status(StatusCode.NO_CONTENT).end();
 });
 
+router.get('/blogposts/search', async (req: Request, res: Response) => {
+  const searchTerm = req.query.term;
+
+  const blogPosts = await readBlogPosts();
+  let returnBlogPosts: BlogPost[] = [];
+
+  if (typeof searchTerm === 'string') {
+    returnBlogPosts = blogPosts.filter(({ author, category, createdAt}) => author.toLowerCase().includes(searchTerm)
+    || category.toLowerCase().includes(searchTerm)
+    || createdAt?.includes(searchTerm))
+  }
+  if (returnBlogPosts.length === 0) return res.status(StatusCode.NOT_FOUND).send('No posts found');
+  return res.status(StatusCode.OK).json(returnBlogPosts);
+});
+
 export default router;
