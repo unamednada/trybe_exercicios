@@ -58,6 +58,20 @@ router.put('/blogposts/:id', validateBlogPost, async (req: Request, res: Respons
 
   await writeBlogPosts(blogPosts);
   return res.status(StatusCode.OK).json(newBlogPost);
-})
+});
+
+router.delete('/blogposts/:id', async (req: Request, res: Response) => {
+  const id = +req.params.id;
+
+  const blogPosts = await readBlogPosts();
+
+  const blogPostIndex = blogPosts.findIndex(blogPost => blogPost.id === id);
+  if (!blogPostIndex) return res.status(StatusCode.NOT_FOUND).send('Blogpost not found');
+
+  blogPosts.splice(blogPostIndex, 1);
+
+  await writeBlogPosts(blogPosts);
+  return res.status(StatusCode.NO_CONTENT).end();
+});
 
 export default router;
