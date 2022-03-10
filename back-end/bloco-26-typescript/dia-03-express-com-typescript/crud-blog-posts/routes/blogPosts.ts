@@ -57,7 +57,7 @@ router.put('/blogposts/:id', validateBlogPost, async (req: Request, res: Respons
   blogPosts.splice(blogPostIndex, 1, newBlogPost);
 
   await writeBlogPosts(blogPosts);
-  return res.status(StatusCode.OK).json()
+  return res.status(StatusCode.OK).json(newBlogPost);
 })
 
 export default router;
