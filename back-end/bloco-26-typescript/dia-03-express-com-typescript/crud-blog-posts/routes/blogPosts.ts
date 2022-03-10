@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import BlogPost from '../interfaces/BlogPost';
+import validateBlogPost from '../middlewares/validateBlogPost';
 import { readBlogPosts, writeBlogPosts } from '../utils/functions';
 import StatusCode from '../utils/Status';
 
@@ -20,7 +21,7 @@ router.get('/blogposts/:id', async (req: Request, res: Response) => {
   return res.status(StatusCode.OK).json(blogPost);
 });
 
-router.post('/blogposts', async (req: Request, res: Response) => {
+router.post('/blogposts', validateBlogPost, async (req: Request, res: Response) => {
   const blogPost: BlogPost = req.body;
 
   const blogPosts = await readBlogPosts();
