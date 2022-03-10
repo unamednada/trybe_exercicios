@@ -66,7 +66,7 @@ router.delete('/blogposts/:id', async (req: Request, res: Response) => {
   const blogPosts = await readBlogPosts();
 
   const blogPostIndex = blogPosts.findIndex(blogPost => blogPost.id === id);
-  if (!blogPostIndex) return res.status(StatusCode.NOT_FOUND).send('Blogpost not found');
+  if (blogPostIndex === -1) return res.status(StatusCode.NOT_FOUND).send('Blogpost not found');
 
   blogPosts.splice(blogPostIndex, 1);
 
