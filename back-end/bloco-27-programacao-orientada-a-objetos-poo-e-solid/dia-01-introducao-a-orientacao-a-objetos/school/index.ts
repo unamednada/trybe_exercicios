@@ -8,3 +8,4 @@ studentOne.paperResults = [10, 8];
 
 console.log(studentOne);
 console.log(studentOne.totalResults());
+console.log(studentOne.average());

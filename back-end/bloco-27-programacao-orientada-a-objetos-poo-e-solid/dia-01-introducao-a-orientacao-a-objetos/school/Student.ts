@@ -57,6 +57,12 @@ class Student {
     const total = allResults.reduce((cur, acc) => cur += acc, 0);
     return total;
   }
+
+  average(): number {
+    const total = this.totalResults();
+    const weight = this._examResults.length + this._paperResults.length;
+    return Math.round(total/weight);
+  }
 }
 
 export default Student;
