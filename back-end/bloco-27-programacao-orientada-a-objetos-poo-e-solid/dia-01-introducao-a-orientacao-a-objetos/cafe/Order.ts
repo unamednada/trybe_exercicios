@@ -44,8 +44,20 @@ class Order {
   }
 
   set discount(value: number) {
-    if (value < 0) throw new Error('Discount can\t be negative')
+    if (value < 0) throw new Error('Discount can\'t be negative')
     this._discount = value;
+  }
+
+  rawTotal(): number {
+    const prices: number[] = this._items.map(({ price }) => price);
+    const total: number = prices.reduce((cur, acc) => cur += acc, 0);
+    return total;
+  }
+
+  totalWithDiscount(): number {
+    const rawTotal: number = this.rawTotal();
+    const total: number = rawTotal * this._discount;
+    return total;
   }
 }
 

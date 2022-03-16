@@ -8,3 +8,6 @@ const butterBread = new Product('Bread and butter', 2);
 
 const markOrder = new Order(customer, [soda, butterBread], 'cash', .1);
 console.log(markOrder);
+
+console.log(markOrder.rawTotal());
+console.log(markOrder.totalWithDiscount());
