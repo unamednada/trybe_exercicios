@@ -4,6 +4,7 @@ class MockDate {
   private _day: number;
   private _month: number;
   private _year: number;
+  private _stringDate: string;
 
   constructor(day: number, month: number, year: number) {
     const stringDate = `${year}-${month}-${day}`;
@@ -53,6 +54,15 @@ class MockDate {
     const secondCheck = this._year % 100 !== 0;
     const thirdCheck = this._year % 400 === 0;
     return (firstCheck && secondCheck) || thirdCheck;
+  }
+
+  compare(value: MockDate): number {
+    const compareDate = new Date(`${value.year}-${value.month}-${value.day}`);
+    const thisDate = new Date(`${this._year}-${this._month}-${this._day}`);
+
+    if (thisDate > compareDate) return 1;
+    if (thisDate < compareDate) return -1;
+    return 0;
   }
 }
 
