@@ -63,6 +63,29 @@ class MockDate {
     if (thisDate < compareDate) return -1;
     return 0;
   }
+
+  format(value: string): string {
+    const formatCheck: boolean[] = [
+      (!value.match(/a{2,4}/g)), 
+      (!value.match(/m{2}/g) && !value.match(/M{1}/g)), 
+      (!value.match(/d{2}/g)) 
+    ]
+
+    if (formatCheck.some(check => check)) throw new Error('Invalid format: ' + value);
+
+    const day = this._day > 9 ? this._day.toString() : `0${this._day}`;
+    const month = this._month > 9 ? this._month.toString() : `0${this._month}`;
+    const year = this._year.toString();
+
+    const formattedDate = value
+      .replace('dd', day)
+      .replace('mm', month)
+      .replace('M', this.getMonthName())
+      .replace('aaaa', year)
+      .replace('aa', year.substring(-2));
+    
+    return formattedDate;
+  }
 }
 
 export default MockDate;
