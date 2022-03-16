@@ -11,4 +11,4 @@ const tomorrow = new MockDate(17, 3, 2022);
 console.log('Tomorrow object: ' + JSON.stringify(tomorrow));
 console.log('Result -1 if ok: ' + today.compare(tomorrow));
 
-console.log('Today format dd/mm/aaaa: ' + today.format('dd de M de aaaa'));
+console.log('Today format dd/mm/aaaa: ' + today.format('dd/mm/aaaa'));
