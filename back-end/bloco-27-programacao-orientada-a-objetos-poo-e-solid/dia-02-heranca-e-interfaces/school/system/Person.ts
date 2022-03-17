@@ -3,8 +3,8 @@ export default class Person {
   private _birthDate: Date = new Date();
 
   constructor(name: string, birthDate: Date) {
-    this.validateName(name);
-    this.validateBirthDate(birthDate);
+    Person.validateName(name);
+    Person.validateBirthDate(birthDate);
     
     this._name = name;
     this._birthDate = birthDate;
@@ -15,7 +15,7 @@ export default class Person {
   }
 
   set name(value: string) {
-    this.validateName(value);
+    Person.validateName(value);
     this._name = value;
   }
 
@@ -24,7 +24,7 @@ export default class Person {
   }
 
   set birthDate(value: Date) {
-    this.validateBirthDate(value);
+    Person.validateBirthDate(value);
     this._birthDate = value;
   }
 
@@ -34,11 +34,11 @@ export default class Person {
     return Math.floor(diff / yearMs);
   }
 
-  private validateName(name: string): void {
+  static validateName(name: string): void {
     if (name.length < 3) throw new Error('Name must have at least 3 characters');
   }
 
-  private validateBirthDate(birthDate: Date): void {
+  static validateBirthDate(birthDate: Date): void {
     const today: number = (new Date()).getTime();
     if (birthDate.getTime() > today) throw new Error('Birth date can\'t be in the future')
     const age = Person.getAge(birthDate);

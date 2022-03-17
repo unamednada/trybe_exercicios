@@ -1,4 +1,4 @@
-import { Person, Student, Subject } from "./system";
+import { Person, Student, Subject, Teacher } from "./system";
 
 // const gustavo = new Person('Gustavo', new Date('1991-03-03'));
 // console.log(gustavo.birthDate);
@@ -24,3 +24,8 @@ import { Person, Student, Subject } from "./system";
 
 const maths = new Subject('Mathematics');
 console.log(maths.name);
+
+const thais = new Teacher('Thaís', new Date('1989-07-16'), 2500, maths);
+console.log(thais.admissionDate);
+console.log(thais.registration);
+console.log(thais.salary);
