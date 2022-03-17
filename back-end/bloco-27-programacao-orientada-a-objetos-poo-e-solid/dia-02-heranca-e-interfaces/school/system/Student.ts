@@ -7,7 +7,7 @@ export default class Student extends Person {
 
   constructor(name: string, birthDate: Date) {
     super(name, birthDate);
-    this._enrollment = Student.generateEnrollment(name, birthDate);
+    this._enrollment = this.generateEnrollment(name, birthDate);
   }
 
   get enrollment(): string {
@@ -38,16 +38,16 @@ export default class Student extends Person {
   }
 
   public getAverage(): number {
-    const examTotal: number = Student.getResultsTotal(this._examResults);
-    const paperTotal: number = Student.getResultsTotal(this._paperResults);
+    const examTotal: number = this.getResultsTotal(this._examResults);
+    const paperTotal: number = this.getResultsTotal(this._paperResults);
     return Math.round((examTotal + paperTotal) / 6);
   }
 
-  static getResultsTotal(results: number[]): number {
+  private getResultsTotal(results: number[]): number {
     return results.reduce((cur, acc) => cur += acc, 0);
   }
 
-  static generateEnrollment(name: string, birthDate: Date): string {
+  private generateEnrollment(name: string, birthDate: Date): string {
     let enrollment: string = String();
     const stringDate: string = birthDate.toString();
 
