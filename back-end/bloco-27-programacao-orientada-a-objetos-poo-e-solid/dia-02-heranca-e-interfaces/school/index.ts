@@ -16,3 +16,8 @@ console.log(Person.getAge(alice.birthDate));
 
 const peterson = new Student('Peterson', new Date('1990-12-01'));
 console.log(peterson.enrollment);
+
+alice.examResults = [3, 5, 7];
+alice.paperResults = [8];
+
+console.log(alice.getAverage());
