@@ -1,9 +1,9 @@
 import Enrollable from "../interfaces/Enrollable";
 import Person from "./Person";
+import EvaluationResult from './EvaluationResult';
 
 export default class Student extends Person implements Enrollable {
-  private _examResults: number[] = [];
-  private _paperResults: number[] = [];
+  private _evaluationResults: EvaluationResult[];
   private _enrollment: string = String();
 
   constructor(name: string, birthDate: Date) {
@@ -20,34 +20,26 @@ export default class Student extends Person implements Enrollable {
     this._enrollment = value;
   }
 
-  get examResults(): number[] {
-    return this._examResults;
+  get exvaluationResults(): EvaluationResult[] {
+    return this._evaluationResults;
   }
 
-  set examResults(value: number[]) {
-    this.validateResults(value, 4);
-    this._examResults = value;
-  }
-
-  get paperResults(): number[] {
-    return this._paperResults;
-  }
-
-  set paperResults(value: number[]) {
-    this.validateResults(value, 2);
-    this._paperResults = value;
+  set evaluationResults(value: EvaluationResult[]) {
+    this._evaluationResults = value;
   }
 
   private gradeTotal(): number {
-    const totalExam: number = this._examResults.reduce((cur, acc) => cur + acc, 0);
-    const totalPaper: number = this._paperResults.reduce((cur, acc) => cur + acc, 0);
-    return totalExam + totalPaper;
+    const totalResults: number = this._evaluationResults.map(({ score }) => score).reduce((cur, acc) => cur + acc, 0);
+    return totalResults;
   }
 
   private gradeAverage(): number {
-    const examN = this._examResults.length;
-    const paperN = this._paperResults.length;
-    return this.gradeTotal() / (examN + paperN);
+    const resultsLength = this._evaluationResults.length;
+    return this.gradeTotal() / resultsLength;
+  }
+
+  private addEvaluationResult(value: EvaluationResult): void {
+    this._evaluationResults.push(value);
   }
 
   public generateEnrollment(): string {
@@ -58,9 +50,5 @@ export default class Student extends Person implements Enrollable {
 
   private validateEnrollment(value: string): void {
     if (value.length < 16) throw new Error('Enrollment must have at least 16 characters');
-  }
-
-  private validateResults(value: number[], max: number): void {
-    if (value.length > max) throw new Error(`This results array can\'t have more than ${max} values`)
   }
 }
