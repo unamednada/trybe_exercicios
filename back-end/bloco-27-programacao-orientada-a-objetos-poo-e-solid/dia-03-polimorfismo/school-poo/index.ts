@@ -1,4 +1,6 @@
 import Exam from "./classes/Exam";
+import Order from "./classes/Order";
+import OrderItem from "./classes/OrderItem";
 import Student from "./classes/Student";
 import Subject from "./classes/Subject";
 import Teacher from "./classes/Teacher";
@@ -18,3 +20,8 @@ console.log(evaluation1);
 
 student1.addEvaluation(evaluation1);
 console.log(student1.evaluations);
+
+const item1 = new OrderItem('Soda pop', 7.00);
+const order1 = new Order(student1, [item1], 'cash', 0);
+
+console.log(order1);
