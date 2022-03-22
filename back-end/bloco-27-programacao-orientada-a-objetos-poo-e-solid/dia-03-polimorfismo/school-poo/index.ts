@@ -1,3 +1,4 @@
+import Exam from "./classes/Exam";
 import Student from "./classes/Student";
 import Subject from "./classes/Subject";
 import Teacher from "./classes/Teacher";
@@ -11,3 +12,9 @@ const teacher1 = new Teacher('Barbosa', new Date('1954-05-25'), 12000, biology);
 console.log(student1);
 console.log(student2);
 console.log(teacher1);
+
+const evaluation1 = new Exam(15, teacher1);
+console.log(evaluation1);
+
+student1.addEvaluation(evaluation1);
+console.log(student1.evaluations);

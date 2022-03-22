@@ -1,9 +1,9 @@
 import Enrollable from "../interfaces/Enrollable";
 import Person from "./Person";
-import EvaluationResult from './EvaluationResult';
+import Evaluation from './Evaluation';
 
 export default class Student extends Person implements Enrollable {
-  private _evaluationResults: EvaluationResult[];
+  private _evaluations: Evaluation[] = [];
   private _enrollment: string = String();
 
   constructor(name: string, birthDate: Date) {
@@ -20,26 +20,26 @@ export default class Student extends Person implements Enrollable {
     this._enrollment = value;
   }
 
-  get exvaluationResults(): EvaluationResult[] {
-    return this._evaluationResults;
+  get evaluations(): Evaluation[] {
+    return this._evaluations;
   }
 
-  set evaluationResults(value: EvaluationResult[]) {
-    this._evaluationResults = value;
+  set evaluations(value: Evaluation[]) {
+    this._evaluations = value;
   }
 
   private gradeTotal(): number {
-    const totalResults: number = this._evaluationResults.map(({ score }) => score).reduce((cur, acc) => cur + acc, 0);
+    const totalResults: number = this._evaluations.map(({ score }) => score).reduce((cur, acc) => cur + acc, 0);
     return totalResults;
   }
 
-  private gradeAverage(): number {
-    const resultsLength = this._evaluationResults.length;
+  public gradeAverage(): number {
+    const resultsLength = this._evaluations.length;
     return this.gradeTotal() / resultsLength;
   }
 
-  private addEvaluationResult(value: EvaluationResult): void {
-    this._evaluationResults.push(value);
+  public addEvaluation(value: Evaluation): void {
+    this._evaluations.push(value);
   }
 
   public generateEnrollment(): string {
