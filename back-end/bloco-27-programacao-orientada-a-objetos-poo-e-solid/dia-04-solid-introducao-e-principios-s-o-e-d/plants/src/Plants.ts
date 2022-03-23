@@ -1,6 +1,5 @@
 import fs from 'fs/promises';
-import IPlant from './interfaces/IPlant';
-import IOpsInfo from './interfaces/IOpsInfo';
+import { IPlant, IOpsInfo } from './interfaces';
 
 const plantsDB = '../plants.json';
 
