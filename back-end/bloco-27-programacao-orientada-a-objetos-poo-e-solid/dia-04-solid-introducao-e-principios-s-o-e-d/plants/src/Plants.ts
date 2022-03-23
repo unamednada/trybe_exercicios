@@ -1,17 +1,8 @@
 import fs from 'fs/promises';
+import IPlant from './interfaces/IPlant';
+import IOpsInfo from './interfaces/IOpsInfo';
 
 const plantsDB = '../plants.json';
-
-interface IPlant {
-  id: string,
-  breed: string,
-  needsSun: Boolean,
-  origin: string,
-  size: number,
-  specialCare?: { waterFrequency: number }
-}
-
-interface IOpsInfo { createdPlants: number }
 
 class Plants {
   initPlant(plant: IPlant) {
