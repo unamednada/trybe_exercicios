@@ -34,4 +34,9 @@ export default class PlantsController {
       return res.status(404).json({ error: plantNotFound });
     }
   }
+
+  static async addPlant(req: Request, res: Response) {
+    await PlantsModel.addPlant(req.body);
+    return res.status(201).end();
+  }
 }

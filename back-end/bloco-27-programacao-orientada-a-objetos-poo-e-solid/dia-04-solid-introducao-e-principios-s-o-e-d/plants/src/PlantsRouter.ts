@@ -3,9 +3,11 @@ import PlantsController from './PlantsController';
 
 const PlantsRouter = Router();
 
-PlantsRouter.get('/', PlantsController.getPlants);
-PlantsRouter.get('/:id', PlantsController.getPlant);
-PlantsRouter.delete('/:id', PlantsController.deletePlant);
-PlantsRouter.put('/:id', PlantsController.editPlant);
+PlantsRouter
+  .get('/', PlantsController.getPlants)
+  .get('/:id', PlantsController.getPlant)
+  .delete('/:id', PlantsController.deletePlant)
+  .put('/:id', PlantsController.editPlant)
+  .post('/', PlantsController.addPlant);
 
 export default PlantsRouter;
