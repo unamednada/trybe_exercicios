@@ -20,4 +20,15 @@ export default class PlantsModel {
     }
     await DBInstance.writeDBData(newPlants);
   }
+
+  static async editPlant(id: string, plant: IPlant): Promise<void> {
+    const plants: IPlant[] = await DBInstance.getDBData();
+    const newPlants = plants.map((p) => {
+      if (p.id === id) {
+        return plant;
+      }
+      return p;
+    });
+    await DBInstance.writeDBData(newPlants);
+  }
 }
