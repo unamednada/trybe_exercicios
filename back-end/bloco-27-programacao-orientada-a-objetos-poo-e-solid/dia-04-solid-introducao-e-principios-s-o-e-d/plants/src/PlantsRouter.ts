@@ -1,9 +1,8 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import PlantsController from './PlantsController';
 
 const PlantsRouter = Router();
 
-PlantsRouter.get('/', (req: Request, res: Response) => {
-    res.send('Hello from PlantsRouter');
-});
+PlantsRouter.get('/', PlantsController.getPlants);
 
 export default PlantsRouter;
