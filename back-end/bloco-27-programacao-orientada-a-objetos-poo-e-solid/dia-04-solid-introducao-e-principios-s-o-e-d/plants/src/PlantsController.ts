@@ -14,4 +14,13 @@ export default class PlantsController {
     }
     return res.status(404).json({ error: 'Plant not found' });
   }
+
+  static async deletePlant(req: Request, res: Response) {
+    try {
+      await PlantsModel.deletePlant(req.params.id);
+      return res.status(204).end();
+    } catch (error) {
+      return res.status(404).json({ error: 'Plant not found' });
+    }
+  }
 }

@@ -21,6 +21,10 @@ export default class Connection {
     this.connection = JSON.parse(data);
   }
 
+  public async write(path: string, data: any): Promise<void> {
+    await fs.writeFile(path, JSON.stringify(data));
+  }
+
   public getConnection(): any {
     return this.connection;
   }
