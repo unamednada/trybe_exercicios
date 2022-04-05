@@ -1,0 +1,9 @@
+use('test');
+
+db.books.countDocuments();
+
+db.books.countDocuments({ status: "PUBLISH" });
+
+db.books.find({}, { _id: 0, title: 1, isbn: 1, pageCount: 1}).limit(3);
+
+db.books.find({ status: "MEAP" }, { title: 1, authors: 1, status: 1 }).skip(5).limit(10);
