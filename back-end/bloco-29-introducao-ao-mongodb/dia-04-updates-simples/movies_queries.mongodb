@@ -78,5 +78,5 @@ db.movies.updateMany({}, {
 
 db.movies.updateMany(
   { title: { $in: ["Batman", "Home Alone"] } },
-  { $min: { imdbRating: 17 } }
+  { $max: { imdbRating: 17 } }
 );
