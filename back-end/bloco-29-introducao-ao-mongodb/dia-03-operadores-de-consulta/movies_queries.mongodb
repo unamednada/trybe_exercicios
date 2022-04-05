@@ -1,2 +1,49 @@
 use('cinema');
 db.movies.find();
+
+db.movies.find({
+  category: { $all: ["action", "adventure"] }
+});
+
+db.movies.find({
+  $and: [
+    { category: { $all: ["action"] } },
+    { imdbRating: { $gt: 7 } }
+  ]
+});
+
+db.movies.find({
+  ratings: { $elemMatch: { $gt: 103 } }
+},{
+  _id: 0,
+  title: 1,
+  ratings: 1
+});
+
+db.movies.find({
+  ratings: { $elemMatch: { $gte: 100, $lte: 105 } }
+},{
+  _id: 0,
+  title: 1,
+  ratings: 1
+});
+
+db.movies.find({
+  ratings: { $elemMatch: { $gte: 64, $lte: 105, $mod: [9, 0] } }
+},{
+  _id: 0,
+  title: 1,
+  ratings: 1
+});
+
+db.movies.find({
+  $and: [
+    { category: { $all: ["adventure"] } },
+    { ratings: { $elemMatch: { $gt: 103 } } }
+  ]
+},{
+  _id: 0,
+  title: 1,
+  ratings: 1,
+  category: 1
+});
