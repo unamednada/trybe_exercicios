@@ -17,4 +17,9 @@ export default class TournamentService {
     console.log(tournament);
     return tournament;
   }
+
+  public async createTournament(tournament: ITournament): Promise<ITournament> {
+    const newTournament = await this.tournamentModel.createTournament(tournament);
+    return newTournament;
+  }
 }

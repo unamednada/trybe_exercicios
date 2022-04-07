@@ -15,4 +15,9 @@ export default class TournamentModel {
     const tournament = await this.tournamentModel.findOne({ year });
     return tournament;
   }
+
+  public async createTournament(tournament: ITournament): Promise<ITournament> {
+    const newTournament = await this.tournamentModel.create(tournament);
+    return newTournament;
+  }
 }

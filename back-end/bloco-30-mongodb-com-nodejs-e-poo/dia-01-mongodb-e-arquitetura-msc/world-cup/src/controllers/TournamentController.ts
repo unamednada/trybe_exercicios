@@ -7,6 +7,7 @@ class TournamentController {
   ) {
     this.getTournaments = this.getTournaments.bind(this);
     this.getTournamentByYear = this.getTournamentByYear.bind(this);
+    this.createTournament = this.createTournament.bind(this);
   }
 
   public async getTournaments(req: Request, res: Response): Promise<Response> {
@@ -25,6 +26,17 @@ class TournamentController {
       const tournament = await this.tournamentService.getTournamentByYear(+req.params.year);
       if (tournament !== null) return res.status(200).json(tournament);
       return res.status(404).json({ message: 'Tournament not found.' });
+    } catch (err: unknown) {
+      return res.status(500).json({
+        message: 'Unexpected error.'
+      });
+    }
+  }
+
+  public async createTournament(req: Request, res: Response): Promise<Response> {
+    try {
+      const tournament = await this.tournamentService.createTournament(req.body);
+      return res.status(201).json(tournament);
     } catch (err: unknown) {
       return res.status(500).json({
         message: 'Unexpected error.'
