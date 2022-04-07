@@ -10,4 +10,9 @@ export default class TournamentModel {
     const tournaments = await this.tournamentModel.find();
     return tournaments;
   }
+
+  public async getTournamentByYear(year: number): Promise<ITournament | null> {
+    const tournament = await this.tournamentModel.findOne({ year });
+    return tournament;
+  }
 }
