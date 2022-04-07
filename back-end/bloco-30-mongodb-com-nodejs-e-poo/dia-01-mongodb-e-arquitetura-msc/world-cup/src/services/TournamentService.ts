@@ -12,9 +12,7 @@ export default class TournamentService {
   }
 
   public async getTournamentByYear(year: number): Promise<ITournament | null> {
-    console.log('SERVICE', year);
     const tournament = await this.tournamentModel.getTournamentByYear(year);
-    console.log(tournament);
     return tournament;
   }
 
