@@ -20,4 +20,9 @@ export default class TournamentModel {
     const newTournament = await this.tournamentModel.create(tournament);
     return newTournament;
   }
+
+  public async updateTournament(year: number, tournament: ITournament): Promise<ITournament | null> {
+    const updatedTournament = await this.tournamentModel.findOneAndUpdate({ year }, tournament, { new: true });
+    return updatedTournament;
+  }
 }

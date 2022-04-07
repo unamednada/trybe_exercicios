@@ -15,5 +15,6 @@ export default class TournamentRouter {
     this.router.get('/', this.tournamentController.getTournaments);
     this.router.get('/:year', this.tournamentController.getTournamentByYear);
     this.router.post('/', this.tournamentController.createTournament);
+    this.router.put('/:year', this.tournamentController.updateTournament);
   }
 }
