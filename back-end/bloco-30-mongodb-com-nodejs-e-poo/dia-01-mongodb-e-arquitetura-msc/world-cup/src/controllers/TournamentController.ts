@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import TournamentService from '../services/TournamentService';
 
-export default class TournamentController {
+class TournamentController {
   constructor(
     private tournamentService = new TournamentService()
   ) {}
@@ -11,3 +11,5 @@ export default class TournamentController {
     return res.status(200).json(tournaments);
   }
 }
+
+export default TournamentController;

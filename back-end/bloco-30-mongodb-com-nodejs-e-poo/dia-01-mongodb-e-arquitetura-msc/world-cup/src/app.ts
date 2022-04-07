@@ -1,5 +1,5 @@
 import express, { Router } from 'express';
-import TournamentRouter from './TournamentRouter';
+import TournamentRouter from './routes';
 import Connection from './models/Connection';
 
 class App {
@@ -12,9 +12,9 @@ class App {
   constructor() {
     this.express = express();
     this.middlewares();
-    this.connection = Connection.connect();
     this.router = new TournamentRouter().router;
     this.routes();
+    this.connection = new Connection().connect();
   }
 
   private middlewares(): void {
@@ -22,7 +22,7 @@ class App {
   }
 
   private routes() {
-    this.express.use(this.router);
+    this.express.use('/tournaments', this.router);
   }
 }
 
