@@ -25,4 +25,9 @@ export default class TournamentModel {
     const updatedTournament = await this.tournamentModel.findOneAndUpdate({ year }, tournament, { new: true });
     return updatedTournament;
   }
+
+  public async deleteTournament(year: number): Promise<ITournament | null> {
+    const deletedTournament = await this.tournamentModel.findOneAndDelete({ year });
+    return deletedTournament;
+  }
 }
