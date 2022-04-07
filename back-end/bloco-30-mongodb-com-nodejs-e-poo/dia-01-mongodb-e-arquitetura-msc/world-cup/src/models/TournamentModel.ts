@@ -7,7 +7,7 @@ export default class TournamentModel {
   ) {}
 
   public async getTournaments(): Promise<ITournament[]> {
-    const tournaments = this.tournamentModel.find();
+    const tournaments = await this.tournamentModel.find();
     return tournaments;
   }
 }

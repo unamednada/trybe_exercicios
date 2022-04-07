@@ -22,5 +22,7 @@ export const TournamentSchema = new Schema<ITournament>({
   editionStrikers: { type: [{ type: String }], required: true },
   bestPlayer: { type: String, required: false },
   bestGoalKeeper: { type: String, required: false },
-  bestYoungPlayer: { type: String, required: false },
+  bestYoungPlayer: { type: String, required: false }, 
+}, {
+  versionKey: false,
 });
