@@ -1,7 +1,7 @@
 import RecordStoreController from './Controllers/RecordStore';
 import RecordStore from './Interfaces/RecordStore';
 import CustomRouter from './Routes/Router';
-import App from './server';
+import App from './Server';
 
 const server = new App();
 

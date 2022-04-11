@@ -6,10 +6,8 @@ class Connection {
   protected mongoDBURI: string;
 
   constructor(
-    user = 'root',
-    password = 'example',
     mongoDBURI = 
-    `mongodb:${user}:${password}@localhost:27017/TrybeStore`,
+    'mongodb://localhost:27017/TrybeStore',
   ) { 
     this.mongoDBURI = mongoDBURI;
   }

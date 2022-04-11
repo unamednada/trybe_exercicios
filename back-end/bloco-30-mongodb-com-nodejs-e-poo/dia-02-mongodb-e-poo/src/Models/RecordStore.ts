@@ -5,11 +5,11 @@ import MongoModel from './MongoModel';
 interface RecordStoreDocument extends RecordStore, Document { }
 
 const recordStoreSchema = new Schema<RecordStoreDocument>({
-  artist: { type: String, required: true },
-  title: { type: String, required: true },
-  format: { type: String, required: true },
-  yearPublished: { type: Number, required: true },
-  new: { type: Boolean, required: true },
+  artist: String,
+  title: String,
+  format: String,
+  yearPublished: Number,
+  new: Boolean,
 });
 
 class RecordStoreModel extends MongoModel<RecordStore> {
