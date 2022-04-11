@@ -15,11 +15,6 @@ class RecordStoreService extends Service<RecordStore> {
     return this.model.create(data);
   };
 
-  read = async (): Promise<RecordStore[] | ServiceError> => this.model.read();
-
-  readOne = async (id: string): Promise<RecordStore | null | ServiceError> =>
-    this.model.readOne(id);
-
   update = async (
     id: string,
     data: RecordStore,
@@ -30,9 +25,6 @@ class RecordStoreService extends Service<RecordStore> {
     }
     return this.model.update(id, data);
   };
-
-  delete = async (id: string): Promise<RecordStore | null | ServiceError> =>
-    this.model.delete(id);
 }
 
 export default RecordStoreService;
