@@ -10,7 +10,7 @@ const recordStoreSchema = new Schema<RecordStoreDocument>({
   format: String,
   yearPublished: Number,
   new: Boolean,
-});
+}, { collection: 'RecordStore' });
 
 class RecordStoreModel extends MongoModel<RecordStore> {
   constructor(
