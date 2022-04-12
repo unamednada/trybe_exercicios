@@ -1,0 +1,2 @@
+use('TrybeStore');
+db.RecordStore.find();
