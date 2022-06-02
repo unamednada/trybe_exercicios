@@ -1,7 +1,7 @@
 import random
 
-def guess_scramble_game():
-    word_of_choice = random.choice(["python", "java", "kotlin", "javascript"])
+def guess_scramble_game(list_of_words):
+    word_of_choice = random.choice(list_of_words)
     scrambled_word = "".join(random.sample(word_of_choice, len(word_of_choice)))
     print(f"Guess the word: {scrambled_word}")
     while True:
@@ -11,5 +11,3 @@ def guess_scramble_game():
             break
         else:
             print("You're not quite right, try again!")
-
-guess_scramble_game()
