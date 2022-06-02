@@ -2,6 +2,7 @@ from ex_1 import maior_de_dois
 from ex_2 import media_da_lista
 from ex_3 import imprime_quadrado
 from ex_4 import nome_mais_longo
+from ex_5 import comprar_latas_de_tinta
 
 
 dois = [1, 1]
@@ -12,8 +13,10 @@ nomes = ["Ana", "Pedro", "Amélia Nora", "Maria", "João", "José", "Carluxo", "
 num_maior_de_dois = maior_de_dois(dois[0], dois[1])
 num_media_da_lista = media_da_lista([num * 2 for num in lista])
 str_nome_mais_longo = nome_mais_longo(nomes)
+num_latas_e_valor = comprar_latas_de_tinta(200)
 
 print(num_maior_de_dois)
 print(num_media_da_lista)
 imprime_quadrado(n)
 print(str_nome_mais_longo)
+print(num_latas_e_valor)
