@@ -11,6 +11,8 @@ def email_list_cleaner(email_list):
             validate_email(email)
         except:
             print('Invalid input: {}'.format(email))
+        else:
+            valid_emails.append(email)
 
         
     return valid_emails
