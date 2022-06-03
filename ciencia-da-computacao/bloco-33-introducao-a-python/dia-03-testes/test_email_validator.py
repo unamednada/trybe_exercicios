@@ -11,21 +11,30 @@ def test_validate_email_should_throw_exception_if_email_is_not_a_string():
         validate_email(1)
 
 
-def test_validate_email_should_return_true_if_email_is_valid():
-    assert validate_email('email@mail.com') == True
+def test_validate_email_should_throw_exception_if_email_is_missing_username():
+    with pytest.raises(Exception, match=r'Email is invalid'):
+        validate_email('@mail.com')
 
 
-def test_validate_email_should_return_false_if_email_is_missing_period():
-    assert validate_email('email@mail') == False
+def test_validate_email_should_throw_exception_if_email_is_missing_domain():
+    with pytest.raises(Exception, match=r'Email is invalid'):
+        validate_email('user@')
 
 
-def test_validate_email_should_return_false_if_email_is_missing_at_symbol():
-    assert validate_email('email.com') == False
+def test_validate_email_should_throw_exception_if_email_is_missing_tld():
+    with pytest.raises(Exception, match=r'Email is invalid'):
+        validate_email('user@mail')
 
 
-def test_validate_email_should_return_false_if_email_is_missing_username():
-    assert validate_email('@mail.com') == False
+def test_validate_email_should_throw_exception_if_email_is_missing_username_and_domain():
+    with pytest.raises(Exception, match=r'Email is invalid'):
+        validate_email('@')
 
 
-def test_validate_email_should_return_false_if_email_is_missing_domain():
-    assert validate_email('email@') == False
+def test_validate_email_should_throw_exception_if_email_is_missing_username_and_tld():
+    with pytest.raises(Exception, match=r'Email is invalid'):
+        validate_email('@mail')
+
+
+def test_validate_email_should_not_throw_exception_if_email_is_valid():
+    assert validate_email('valid@mail.com') == 0
