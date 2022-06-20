@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 from collections.abc import Iterator, Iterable
 
 class Carta:
@@ -12,7 +13,7 @@ class Carta:
 class IteradorDoBaralho(Iterator):
     def __init__(self, cartas, strategy):
         self._cartas = cartas
-        self._indice = strategy == 'reverso' and len(cartas) - 1 or 0
+        self._indice = 0
         self._strategy = strategy
     
     def __next__(self):
@@ -21,16 +22,33 @@ class IteradorDoBaralho(Iterator):
         except IndexError:
             raise StopIteration()
         else:
-            if self._strategy == 'reverso': self._indice -= 1
-            else: self._indice += 1
+            self._indice = self._strategy.next(self._indice)
             return carta
+
+
+class Strategy(ABC):
+    @abstractmethod
+    def next(self, indice):
+        raise NotImplementedError
+
+
+class RegularStrategy(Strategy):
+    @classmethod
+    def next(self, indice):
+        return indice + 1
+
+
+class InversoStrategy(Strategy):
+    @classmethod
+    def next(self, indice):
+        return indice - 1
 
 
 class Baralho(Iterable):
     naipes = 'copas ouros espadas paus'.split()
     valores = 'A 2 3 4 5 6 7 8 9 10 J Q K'.split()
 
-    def __init__(self, strategy='normal'):
+    def __init__(self, strategy=RegularStrategy):
         self._cartas = [
             Carta(valor, naipe)
             for naipe in self.naipes
@@ -53,5 +71,5 @@ if __name__ == '__main__':
         print(carta)
 
     print('\nBaralho inverso:\n')
-    for carta in Baralho('reverso'):
+    for carta in Baralho(strategy=InversoStrategy):
         print(carta)
