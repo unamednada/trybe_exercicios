@@ -17,13 +17,12 @@ class IteradorDoBaralhoInverso(Iterator):
             return carta
 
 
-
 class BaralhoInverso(Baralho):
     def __iter__(self):
         return IteradorDoBaralhoInverso(self._cartas)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     baralho = BaralhoInverso()
     for carta in baralho:
         print(carta)
