@@ -1,21 +1,20 @@
 import numpy as np
 
 class Estatistica:
-    def __init__(self, lista):
-        self.lista = np.array(lista)
+    @classmethod
+    def media(cls, lista):
+        return np.mean(np.array(lista))
     
-    def media(self):
-        return np.mean(self.lista)
+    @classmethod
+    def mediana(cls, lista):
+        return np.median(np.array(lista))
     
-    def mediana(self):
-        return np.median(self.lista)
-    
-    def moda(self):
-        return np.bincount(self.lista).argmax()
+    @classmethod
+    def moda(cls, lista):
+        return np.bincount(np.array(lista)).argmax()
 
 if __name__ == "__main__":
-    lista = [1, 1, 2, 2, 2, 6, 7, 8, 1, 1]
-    estatistica = Estatistica(lista)
-    print(estatistica.media())
-    print(estatistica.mediana())
-    print(estatistica.moda())
+    lista = [1, 3, 3, 3, 5, 12, 5, 5, 9, 5, 1, 1, 2, 2, 3, 5, 1, 1, 5, 5, 6, 12, 12, 1, 3, 12, 3, 3]
+    print(Estatistica.media(lista))
+    print(Estatistica.mediana(lista))
+    print(Estatistica.moda(lista))
