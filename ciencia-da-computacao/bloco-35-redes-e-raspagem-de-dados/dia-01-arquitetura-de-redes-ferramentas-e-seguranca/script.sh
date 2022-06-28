@@ -1,3 +1,4 @@
+#Exercício 1
 #1. Faça uma chamada GET, utilizando o cURL.
 curl -X GET http://127.0.0.1:5000
 
@@ -6,3 +7,7 @@ curl -X POST http://127.0.0.1:5000 -H "Content-Type: application/json" -d '{"use
 
 #3. Faça uma chamada qualquer, utilizando o cURL, passando um header na requisição.
 curl -X GET http://127.0.0.1:5000/headers -H "Authorization: token"
+
+#Exercício 2
+#1. Faça uma chamada GET, utilizando o cURL, para "google.com".
+curl -X GET google.com
