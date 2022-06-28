@@ -41,3 +41,8 @@ telnet localhost 8085
 #Reinicie o servidor TCP e agora faça uma requisição utilizando o cURL (HTTP).
 python3 socketserver_tcp/server.py
 curl -X GET http://localhost:8085
+
+#Exercício 7
+#Agora vamos explorar o outro protocolo de transporte que aprendemos. Crie um servidor UDP usando o mesmo módulo socketserver.
+python3 socketserver_udp/server.py
+nc -u 127.0.0.1 8084
