@@ -11,3 +11,6 @@ curl -X GET http://127.0.0.1:5000/headers -H "Authorization: token"
 #Exercício 2
 #1. Faça uma chamada GET, utilizando o cURL, para "google.com".
 curl -X GET google.com
+
+#2. Faça uma nova chamada a "google.com", porém agora utilizando o parâmetro -L ou --location, que serve para "seguir redirecionamentos".
+curl -L google.com
