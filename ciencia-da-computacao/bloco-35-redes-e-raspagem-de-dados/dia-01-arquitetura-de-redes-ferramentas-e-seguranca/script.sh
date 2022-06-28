@@ -45,4 +45,17 @@ curl -X GET http://localhost:8085
 #Exercício 7
 #Agora vamos explorar o outro protocolo de transporte que aprendemos. Crie um servidor UDP usando o mesmo módulo socketserver.
 python3 socketserver_udp/server.py
+
+#Exercício 8
+#Envie pacotes para o servidor UDP utilizando o Netcat (nc).
 nc -u 127.0.0.1 8084
+
+#Exercício 9
+#Faça uma chamada ao server utilizando o cURL.
+curl -X GET http://localhost:8084
+
+#Exercício 10
+#1. Crie um servidor HTTP em sua máquina executando na porta 80.
+python3 flask_api/server.py
+
+#2. Baixe o ngrok e extraia o arquivo baixado em uma pasta de sua preferência.
