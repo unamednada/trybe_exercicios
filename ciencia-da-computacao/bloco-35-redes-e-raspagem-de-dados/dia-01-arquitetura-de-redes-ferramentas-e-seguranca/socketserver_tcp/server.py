@@ -1,53 +1,25 @@
-import socketserver
-import sys
+from socketserver import TCPServer, StreamRequestHandler
+
+ADDRESS = "", 8085
 
 
-class MyTCPHandler(socketserver.BaseRequestHandler):
-    """
-    The request handler class for our server.
-
-    It is instantiated once per connection to the server, and must
-    override the handle() method to implement communication to the
-    client.
-    """
+class EchoHandler(StreamRequestHandler):
+    """Responde requisições repetindo o que foi recebido."""
 
     def handle(self):
-        # self.request is the TCP socket connected to the client
-        self.data = self.request.recv(1024).strip()
-        print("{} wrote:".format(self.client_address[0]))
-        print(self.data)
-        # just send back the same data, but upper-cased
-        self.request.sendall(self.data.upper() + '\n')
-
-
-class MyTCPHandlerStream(socketserver.StreamRequestHandler):
-
-    def handle(self):
-        # self.rfile is a file-like object created by the handler;
-        # we can now use e.g. readline() instead of raw recv() calls
-        self.data = self.rfile.readline().strip()
-        print("{} wrote:".format(self.client_address[0]))
-        print(self.data)
-        # Likewise, self.wfile is a file-like object used to write back
-        # to the client
-        self.wfile.write(self.data.upper() + '\n')
+        # Usar b'' é um jeito literal de escrever bytes em ascii
+        self.wfile.write(b"Ola, client\n")
+        # self.wfile e self.rfile são canais de entrada e saída
+        # programados para ter a mesma interface de arquivos!
+        for line in self.rfile:
+            # esta linha responde o cliente
+            self.wfile.write(line)
+            # esta linha imprime no console
+            print(line.decode("ascii").strip())
 
 
 if __name__ == "__main__":
-    HOST, PORT = "localhost", 8085
-
-    # Create the server, binding to localhost on port 8085 according to option
-    if len(sys.argv) > 1 and sys.argv[1] == 'stream':
-        server = socketserver.ThreadingTCPServer(
-            (HOST, PORT),
-            MyTCPHandlerStream
-        )
-    else:
-        server = socketserver.ThreadingTCPServer((HOST, PORT), MyTCPHandler)
-
-    try:
+    # usando with nosso TCPServer vai arrumar a casa direitinho quando
+    # encerrado
+    with TCPServer(ADDRESS, EchoHandler) as server:
         server.serve_forever()
-    except KeyboardInterrupt:
-        server.shutdown()
-        server.server_close()
-        sys.exit(0)
