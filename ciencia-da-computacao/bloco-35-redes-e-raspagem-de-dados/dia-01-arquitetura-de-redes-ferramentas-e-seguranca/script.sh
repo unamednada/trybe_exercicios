@@ -18,3 +18,8 @@ curl -L google.com
 #Exercício 3
 #Agora utilizando o wget, pegue o conteúdo da página do site da Trybe, depois abra o arquivo HTML baixado em seu navegador.
 wget http://www.trybe.com.br/
+
+#Exercício 4
+#Agora vamos para a camada de transporte. Crie um servidor TCP usando o módulo socketserver que já vem embutido com o Python.
+python3 socketserver_tcp/server.py
+telnet localhost 8085
