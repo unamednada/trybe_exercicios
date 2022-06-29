@@ -96,3 +96,15 @@ openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
 rm csr.pem
 
 #3. Acabamos de gerar dois arquivos, o cert.pem (o certificado) e o key.pem (chave privada). Copie os dois arquivos para um diretório onde vamos criar nosso servidor HTTPS.
+mkdir openssl && mv cert.pem key.pem openssl
+cd openssl
+
+#4. Agora vamos escrever um servidor https usando os módulos nativos do python ssl e http.server.
+
+#5. Acesse o servidor no endereço https://localhost:8000/ utilizando o Firefox (precisa ser o Firefox). 
+
+#6. Acesse o servidor novamente, porém desta vez utilizando cURL.
+curl -X GET https://localhost:8000/
+
+#7 Por último, vamos utilizar um recurso do cURL, somente para testes (somente utilize, caso realmente você esteja esperando por aquilo), que é o parâmetro -k ou --insecure.
+curl -k -X GET https://localhost:8000/
