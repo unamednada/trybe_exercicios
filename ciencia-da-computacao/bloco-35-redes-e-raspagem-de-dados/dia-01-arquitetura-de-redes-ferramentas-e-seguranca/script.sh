@@ -10,6 +10,7 @@ curl -X GET http://127.0.0.1:5000/headers -H "Authorization: token"
 
 
 #Exercício 2
+
 #1. Faça uma chamada GET, utilizando o cURL, para "google.com".
 curl -X GET google.com
 
@@ -18,6 +19,7 @@ curl -L google.com
 
 
 #Exercício 3
+
 #Agora utilizando o wget, pegue o conteúdo da página do site da Trybe, depois abra o arquivo HTML baixado em seu navegador.
 wget http://www.trybe.com.br/
 
@@ -29,6 +31,7 @@ telnet localhost 8085
 
 
 #Exercício 5
+
 #1. Conecte no server do exercício anterior e envie informações. O server deverá imprimir as mensagens enviadas no console.
 python3 socketserver_tcp/server.py
 telnet localhost 8085
@@ -55,6 +58,7 @@ nc -u 127.0.0.1 8084
 curl -X GET http://localhost:8084
 
 #Exercício 10
+
 #1. Crie um servidor HTTP em sua máquina executando na porta 80. !!! 8080 POR RAZÕES DE SEGURANÇA !!!
 python3 flask_api/server.py
 
@@ -68,3 +72,27 @@ ngrok http 8080
 #4. Acesse o o link disponibilizado em seu navegador. Utilize ele para acessar de outros dispositivos, como seu smartphone ou outro computador.
 curl -X GET http://localhost:8080
 curl -X GET https://4d46-2804-14d-5c85-4619-4e38-52ed-bc97-3eca.sa.ngrok.io
+
+#BÔNUS
+
+#Bônus 11.
+#Identifique o IP interno e externo da sua máquina.
+curl ifconfig.me
+ip a
+
+#Bônus 12
+#Identifique as interfaces de redes utilizadas por sua máquina e identifique qual está em uso agora.
+ip a
+
+#Bônus 13.
+
+#1. Vamos utilizar a ferramenta OpenSSL para gerar nossos certificados.
+where openssl
+
+#2.Para gerar nosso próprio certificado auto-assinado, utilize os comandos abaixo.
+openssl genrsa -out key.pem
+openssl req -new -key key.pem -out csr.pem
+openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
+rm csr.pem
+
+#3. Acabamos de gerar dois arquivos, o cert.pem (o certificado) e o key.pem (chave privada). Copie os dois arquivos para um diretório onde vamos criar nosso servidor HTTPS.
