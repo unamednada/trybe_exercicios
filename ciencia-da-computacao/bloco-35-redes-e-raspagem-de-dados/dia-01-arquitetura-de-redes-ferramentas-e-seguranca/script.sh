@@ -55,7 +55,16 @@ nc -u 127.0.0.1 8084
 curl -X GET http://localhost:8084
 
 #Exercício 10
-#1. Crie um servidor HTTP em sua máquina executando na porta 80.
+#1. Crie um servidor HTTP em sua máquina executando na porta 80. !!! 8080 POR RAZÕES DE SEGURANÇA !!!
 python3 flask_api/server.py
 
 #2. Baixe o ngrok e extraia o arquivo baixado em uma pasta de sua preferência.
+snap install ngrok
+ngrok config add-authtoken <token>
+
+#3. Conforme instruções do site, crie um túnel para a porta 80 de sua máquina. !!! 8080 POR RAZÕES DE SEGURANÇA !!!
+ngrok http 8080
+
+#4. Acesse o o link disponibilizado em seu navegador. Utilize ele para acessar de outros dispositivos, como seu smartphone ou outro computador.
+curl -X GET http://localhost:8080
+curl -X GET https://4d46-2804-14d-5c85-4619-4e38-52ed-bc97-3eca.sa.ngrok.io
