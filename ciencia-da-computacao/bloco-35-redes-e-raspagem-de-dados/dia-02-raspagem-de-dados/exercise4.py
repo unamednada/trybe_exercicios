@@ -8,7 +8,10 @@ selector = Selector(response.text)
 
 
 title = selector.css("h1::text").get()
-price = selector.css(".product_main  > .price_color::text").re_first(r"\d*\.\d{2}")
+price = selector.css(
+    ".product_main  > .price_color::text").re_first(r"\d*\.\d{2}")
+
+
 description = selector.css("#product_description ~ p::text").get()
 suffix = "...more"
 
