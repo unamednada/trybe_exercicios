@@ -6,7 +6,9 @@ db = client.catalogue
 
 
 def get_books(filter):
-    return db.books.find({"categories": {"$all": [filter]}})["title"]
+    return map(
+        lambda b: b["title"], db.books.find({"categories": {"$all": [filter]}})
+    )
 
 
 books = get_books(category)
