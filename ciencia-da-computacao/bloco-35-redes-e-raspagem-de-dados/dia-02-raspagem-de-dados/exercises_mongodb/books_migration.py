@@ -8,7 +8,7 @@ client = MongoClient(
 
 db = client.catalogue
 books = get_books()
-
+db.books.drop()
 db.books.insert_many(books)
 
 client.close()  # fecha a conexão com o banco de dados
