@@ -1,10 +1,6 @@
-from pymongo import MongoClient
 from books_recovery import get_books
+from mongo_client import client
 
-client = MongoClient(
-  "mongodb+srv://unamednada:Xe7Mu2uEfXGp48t@webscraping.vmz95sc.mongodb.net/"
-  + "?retryWrites=true&w=majority"
-)
 
 db = client.catalogue
 books = get_books()
