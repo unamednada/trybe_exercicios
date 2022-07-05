@@ -17,7 +17,7 @@ for url_image in gallery.getall():
         print(f"{filename} downloaded")
         print("-" * 20)
     except Exception as e:
-        print(f"{filename} not downloaded")
+        print(f"{filename} not downloaded", end="\n")
         print(e)
         print("-" * 20)
         continue
