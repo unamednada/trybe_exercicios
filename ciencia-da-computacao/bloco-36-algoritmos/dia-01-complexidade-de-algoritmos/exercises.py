@@ -14,13 +14,22 @@ def contains_duplicate(numbers):
 
 
 def better_contains_duplicate(numbers):
-    return len(numbers) != len(set(numbers))
+    previous_number = 'not a number';
+    for number in numbers:
+        if(previous_number == number): return True
+        previous_number = number
+
+    return False
 
 
 if __name__ == "__main__":
     five_thousand = list(range(5000))
     ten_thousand = list(range(10000))
     hundred_thousand = list(range(100000))
+
+    print("\nCheck results:")
+    print("Original -> ", contains_duplicate(five_thousand))
+    print("Better -> ", better_contains_duplicate(five_thousand))
 
     print('\nOriginal algorithm:')
     start_time = time.time()
