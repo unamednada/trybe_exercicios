@@ -12,6 +12,17 @@ def recursive_count_even(n):
     return int(n % 2 == 0) + recursive_count_even(n-1)
 
 
+def recursive_max(lista):
+    if len(lista) == 1:
+        return lista[0]
+    return max(lista[0], recursive_max(lista[1:]))
+
+
+def mdc(a, b):
+    if b == 0:
+        return a
+    return mdc(b, a % b)
+
+
 if __name__ == '__main__':
-    print(count_even(10))
-    print(recursive_count_even(10))
+    print(max([18, 3, 3, -7, 5]))
