@@ -24,5 +24,16 @@ def mdc(a, b):
     return mdc(b, a % b)
 
 
+def is_prime_recursive(n, a = 2):
+    if n in [1, a]:
+        return True
+    if n % a == 0:
+        return False
+    return is_prime_recursive(n, a + 1)
+
+
 if __name__ == '__main__':
-    print(max([18, 3, 3, -7, 5]))
+    print(is_prime_recursive(17))
+    print(is_prime_recursive(10))
+    print(is_prime_recursive(37))
+    print(is_prime_recursive(1))
