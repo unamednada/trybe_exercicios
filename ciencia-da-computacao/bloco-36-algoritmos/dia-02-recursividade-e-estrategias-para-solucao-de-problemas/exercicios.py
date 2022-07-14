@@ -32,8 +32,11 @@ def is_prime_recursive(n, a = 2):
     return is_prime_recursive(n, a + 1)
 
 
+def recursive_reverse(list):
+    if len(list) == 1:
+        return list
+    return recursive_reverse(list[1:]) + [list[0]]
+
+
 if __name__ == '__main__':
-    print(is_prime_recursive(17))
-    print(is_prime_recursive(10))
-    print(is_prime_recursive(37))
-    print(is_prime_recursive(1))
+    print(recursive_reverse([1, 2, 3, 4, 5]))
