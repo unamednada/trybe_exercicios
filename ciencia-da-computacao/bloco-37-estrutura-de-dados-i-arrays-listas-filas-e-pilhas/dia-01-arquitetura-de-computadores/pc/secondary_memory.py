@@ -27,5 +27,6 @@ class SecondaryMemory:
             return (int)(f.read())
 
     def clean(self):
+        """Limpa a memória secundária"""
         rmtree(self.disk_path)
         mkdir(self.disk_path)

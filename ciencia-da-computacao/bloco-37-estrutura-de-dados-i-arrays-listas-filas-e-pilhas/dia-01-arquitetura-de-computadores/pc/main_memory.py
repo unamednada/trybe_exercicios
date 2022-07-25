@@ -12,4 +12,5 @@ class MainMemory:
             return 0
 
     def clean(self):
+        """Limpa a memória principal"""
         self.loaded_memory = []
