@@ -11,6 +11,14 @@ class LinkedList:
 
     def __len__(self):
         return self.__length
+    
+    def __get_node_at(self, position):
+        value_to_be_returned = self.head_value
+        if value_to_be_returned:
+            while position > 0 and value_to_be_returned.next:
+                value_to_be_returned = value_to_be_returned.next
+                position -= 1
+        return value_to_be_returned
 
     def insert_first(self, value):
         first_value = Node(value)
@@ -18,15 +26,12 @@ class LinkedList:
         self.__length += 1
 
     def insert_last(self, value):
-        last_value = Node(value)
-        current_value = self.head_value
-
-        if current_value is None:
-            self.head_value = last_value
-
-        while current_value.next:
-            current_value = current_value.next
-        current_value.next = last_value
+        if self.is_empty():
+            return self.insert_first(value)
+        
+        new_last = Node(value)
+        last = self.__get_node_at(self.__length - 1)
+        last.next = new_last
         self.__length += 1
 
     def insert_at(self, value, index):
@@ -34,11 +39,8 @@ class LinkedList:
             return self.insert_first(value)
         if index >= self.__length:
             return self.insert_last(value)
-        current_value = self.head_value
-
-        while index > 1:
-            current_value = current_value.next
-            index -= 1
+        
+        current_value = self.__get_node_at(index - 1)
 
         new_value = Node(value)
         new_value.next = current_value.next
@@ -56,14 +58,11 @@ class LinkedList:
         if self.__length <= 1:
             return self.pop_first()
         
-        current_value = self.head_value
-
-        while current_value.next.next:
-            current_value = current_value.next
-        
+        current_value = self.__get_node_at(self.__length - 2)
         to_remove = current_value.next
         current_value.next = None
         self.__length -= 1
+
         return to_remove
     
     def pop_at(self, index):
@@ -71,15 +70,12 @@ class LinkedList:
             return self.pop_first()
         if index >= self.__length:
             return self.pop_last()
-        current_value = self.head_value
-
-        while index > 1:
-            current_value = current_value.next
-            index -= 1
-
+        
+        current_value = self.__get_node_at(index - 1)
         to_remove = current_value.next
         current_value.next = to_remove.next
         self.__length -= 1
+        
         return to_remove
 
     def get(self, index):
@@ -92,3 +88,17 @@ class LinkedList:
     
     def is_empty(self):
         return self.__length == 0
+    
+    def clear(self):
+        self.head_value = None
+        self.__length = 0
+    
+    def index_of(self, value):
+        current_value = self.head_value
+        index = 0
+        while current_value:
+            if current_value.value == value:
+                return index
+            current_value = current_value.next
+            index += 1
+        return -1
