@@ -2,11 +2,10 @@ from linked_list import LinkedList
 
 
 def linked_list_to_linked_set(linked_list):
-    linked_set = LinkedList()
-    current_value = linked_list.head_value
-    while current_value:
-        if not linked_set.contains(current_value):
-            linked_set.insert_last(current_value.value)
-        current_value = current_value.next
+    linked_set = linked_list()
+    while linked_list:
+        current_node = linked_list.pop_first()
+        if linked_list.index_of(current_node.value) == -1:
+            linked_set.insert_last(current_node.value)
     return linked_set
     
