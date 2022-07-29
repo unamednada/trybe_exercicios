@@ -14,3 +14,6 @@ class Stack:
 
     def peek(self):
         return self.__data[len(self.__data) - 1]
+
+    def min_value(self):
+        return min(self.__data)
