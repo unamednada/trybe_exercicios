@@ -1,19 +1,16 @@
-from linked_list import LinkedList
-
-
 class Stack:
 
     def __init__(self):
-        self.__data = LinkedList()
-    
+        self.__data = list()
+
     def is_empty(self):
-        return self.__data.is_empty()
-    
+        return not len(self.__data)
+
     def push(self, value):
-        self.__data.insert_last(value)
-    
+        self.__data.append(value)
+
     def pop(self):
-        return self.__data.pop_last()
-    
+        return self.__data.pop()
+
     def peek(self):
-        return self.__data.get(self.__data.__length - 1)
+        return self.__data[len(self.__data) - 1]
