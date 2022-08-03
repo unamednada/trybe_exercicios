@@ -1,8 +1,12 @@
 class VectorSet:
 
-    def __init__(self):
+    def __init__(self, elements=None):
         self.data = [False] * 1001
         self.last_element = 0
+
+        if elements:
+            for element in elements:
+                self.add(element)
 
     def add(self, element):
         if not self.data[element]:
@@ -14,7 +18,7 @@ class VectorSet:
         union_set = VectorSet()
         for i in range(1001):
             if other_set.data[i] or self.data[i]:
-                self.add(i)
+                union_set.add(i)
 
         return union_set
 
