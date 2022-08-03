@@ -14,8 +14,8 @@ def blefe_game(entrada):
     player_1_starting_score = player_1.difference(player_2).last_element
     player_2_starting_score = player_2.difference(player_1).last_element
 
-    player_1_reductor = min(list((player_1.difference(player_2)).data))
-    player_2_reductor = min(list((player_2.difference(player_1)).data))
+    player_1_reductor = list(player_1.difference(player_2).data).index(True)
+    player_2_reductor = list(player_2.difference(player_1).data).index(True)
 
     player_1_score = player_1_starting_score - player_1_reductor
     player_2_score = player_2_starting_score - player_2_reductor
